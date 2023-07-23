@@ -12,20 +12,21 @@ app.use(cors());
 mongoose.connect("mongodb+srv://michaelsault:70OByv77QoUUlQLb@cluster0.rrfulxt.mongodb.net/?retryWrites=true&w=majority").catch(err => console.log(err));
 
 //DB SCHEMA AND MODEL
-const postSchema = mongoose.Schema({
+const guestSchema = mongoose.Schema({
     email: String,
-    password: String,
+    code: String,
     name: String,
+    rsvp: Boolean,
     responseDate: Date
 });
 
-const Post = mongoose.model("Post", postSchema);
+const Guests = mongoose.model("Guests", guestSchema);
 
 app.get("/", (req, res) => {
     res.send("Express is here");
 });
 
-app.post("/RSVP", (req, res) => {
+/* app.post("/RSVP", (req, res) => {
     Post.create({
         email: req.body.email,
         password: req.body.password,
@@ -33,10 +34,10 @@ app.post("/RSVP", (req, res) => {
         responseDate: req.body.responseDate
     }).then(doc => console.log(doc))
     .catch(err => console.log(err));
-});
+}); */
 
-app.get("/guests", (req, res) => {
-    Post.find().then(items => res.json(items))
+app.get("/RSVPCode", (req, res) => {
+    Guests.find({code: 'req'}).then(items => res.json(items))
     .catch((err) => console.log(err));
 });
 
