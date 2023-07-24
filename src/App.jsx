@@ -21,6 +21,7 @@ function App() {
 
   const handleChange = (event) => {
     const {name, value} = event.target;
+    console.log(name);
 
     setGuest(prev => {
         return {
@@ -38,11 +39,11 @@ const handleClick = (event) => {
     event.preventDefault();
     console.log(guest);
 
-    axios.post("http://localhost:3001/create", guest)
+    axios.post("http://localhost:3001/RSVPCode", guest)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 
-    navigate("Posts");
+    navigate("Guests");
 
 };
 
@@ -53,10 +54,11 @@ const handleClick = (event) => {
         <h1>RSVP Here</h1>
         <FloatingLabel
           controlId="RSVPCode"
+          name="RSVPCode"
           label="Guest Code"
           className="mb-3"
         >
-          <Form.Control type="password" placeholder="password" onChange={handleChange}/>
+          <Form.Control type="password" placeholder="password" name="code" onChange={handleChange}/>
         </FloatingLabel>
         <Button variant="outline-dark" style={{width:"100%"}} onClick={handleClick}>Continue</Button>
       </div>
