@@ -41,6 +41,11 @@ app.get("/RSVPCode", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.get("/guests", (req, res) => {
+    Guests.find().then(items => res.json(items))
+    .catch((err) => console.log(err));
+});
+
 
 app.listen(3001, function() {
     console.log("Server is running");
