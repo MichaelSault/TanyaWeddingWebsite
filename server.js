@@ -15,7 +15,8 @@ mongoose.connect("mongodb+srv://michaelsault:70OByv77QoUUlQLb@cluster0.rrfulxt.m
 const guestSchema = mongoose.Schema({
     email: String,
     code: String,
-    name: String,
+    firstName: String,
+    lastName: String,
     rsvp: Boolean,
     responseDate: Date
 });
@@ -26,15 +27,17 @@ app.get("/", (req, res) => {
     res.send("Express is here");
 });
 
-/* app.post("/RSVP", (req, res) => {
-    Post.create({
+app.post("/InviteGuest", (req, res) => {
+    Guests.create({
         email: req.body.email,
-        password: req.body.password,
-        name: req.body.name,
-        responseDate: req.body.responseDate
+        code: req.body.code,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        rsvp: Boolean,
+        responseDate: Date
     }).then(doc => console.log(doc))
     .catch(err => console.log(err));
-}); */
+});
 
 app.get("/RSVPCode", (req, res) => {
     Guests.find({code: 'req'}).then(items => res.json(items))
@@ -43,6 +46,25 @@ app.get("/RSVPCode", (req, res) => {
 
 app.get("/guests", (req, res) => {
     Guests.find().then(items => res.json(items))
+    .catch((err) => console.log(err));
+});
+
+app.delete("/delete/:id", (req, res) => {
+    Guests.findByIdAndDelete({_id: req.params.id})
+    .then(doc => console.log(doc))
+    .catch((err) => console.log(err));
+});
+
+app.put("/update/:id", (req, res) => {
+    Guests.findByIdAndUpdate({_id: req.params.id}, {
+        email: req.body.email,
+        code: req.body.code,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        rsvp: Boolean,
+        responseDate: Date
+    })
+    .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
 });
 
