@@ -25,34 +25,34 @@ function Home() {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding1.jpg" className="d-block" width="100%" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding1.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding2.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding2.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding3.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding3.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding4.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding4.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding5.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding5.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding6.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding6.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding7.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding7.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding8.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding8.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding9.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding9.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="src/assets/CarouselPhotos/TanyaWedding10.jpg" className="d-block" width="500px" height="500px" alt="..."/>
+                    <img src="src/assets/CarouselPhotos/TanyaWedding10.jpg" className="d-block" width="100%" height="100%" alt="..."/>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
