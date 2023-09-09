@@ -5,6 +5,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import '../App.css'
 import Sidebar from "./Sidebar";
 import EngagementCarosel from "./EngagementCarosel";
+import TitleHeader from "./TitleBanner";
 
 function Home() {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ function Home() {
   return (
     
     <>
+        <TitleHeader />
+
         <Sidebar />
 
         <EngagementCarosel />
