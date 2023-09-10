@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'Emitha-Script';
-    src: local('./Emitha-Script.ttf') format('ttf');
-}
+    src: local('Emitha-Script'), url('./Emitha-Script.ttf') format('truetype');
+  }
 
-@font-face {
+  @font-face {
     font-family: 'Emitha-Swashes';
-    src: local('./Emitha-Swashes.ttf') format('ttf');
-}
+    src: local('Emitha-Swashes'), url('./Emitha-Swashes.ttf') format('truetype');
+  }

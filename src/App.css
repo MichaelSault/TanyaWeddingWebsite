@@ -44,12 +44,12 @@
   color: #888;
 }
 
-@font-face {
+h1 {
+  font-size: 145px;
   font-family: 'Emitha-Script';
-  src: local('./fonts/Emitha-Script.ttf') format('ttf');
+  color: #CEA300;
 }
 
-h1 {
-  font-size: 100px;
-  font-family: 'Emitha-Script';
+h2 {
+  color: #CEA300;
 }
