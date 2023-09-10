@@ -1,3 +1,5 @@
+@import "./fonts/font.css";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -42,6 +44,12 @@
   color: #888;
 }
 
+@font-face {
+  font-family: 'Emitha-Script';
+  src: local('./fonts/Emitha-Script.ttf') format('ttf');
+}
+
 h1 {
   font-size: 100px;
+  font-family: 'Emitha-Script';
 }

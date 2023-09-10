@@ -1,6 +1,7 @@
 import {useNavigate} from "react-router-dom";
 
 import '../App.css'
+import RSVP from "./RSVP";
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function Sidebar() {
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-                <p>Enter your RSVP Code Below</p>
+                <RSVP />
             </div>
         </div>
 

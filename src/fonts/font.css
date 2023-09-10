@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Emitha-Script';
+    src: local('./Emitha-Script.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Emitha-Swashes';
+    src: local('./Emitha-Swashes.ttf') format('ttf');
+}
