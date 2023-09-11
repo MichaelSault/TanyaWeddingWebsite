@@ -1,55 +1,40 @@
 @import "./fonts/font.css";
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 0rem;
+  padding: 0;
   text-align: center;
-  width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+#bodyTest {
+  max-width: 500px;
+  align-self: center;
 }
 
 h1 {
-  font-size: 145px;
+  font-size: 22vw;
   font-family: 'Emitha-Script';
   color: #CEA300;
 }
 
 h2 {
   color: #CEA300;
+}
+
+.ImageHeader {
+  background-image: url('./assets/Header/WeddingHeaderWide.jpg');
+  background-position: center top;
+  min-width: 100%;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  margin-bottom: 5em;
+  margin-top: 0;
+}
+
+#testClass {
+  background-color: aqua;
 }

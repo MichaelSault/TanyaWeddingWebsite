@@ -8,17 +8,22 @@ import RSVP from './components/RSVP.jsx';
 import Home from './components/Home.jsx';
 import GuestList from './components/GuestList.jsx';
 
+import TitleHeader from './components/TitleBanner';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <React.StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/RSVP' element={<RSVP />}/>
-          <Route path='/Guests' element={<GuestList/>}/>
-        </Routes>
-      </BrowserRouter>
-    </React.StrictMode>
+    <TitleHeader />  
+    <div id='bodyTest'>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/RSVP' element={<RSVP />}/>
+            <Route path='/Guests' element={<GuestList/>}/>
+          </Routes>
+        </BrowserRouter>
+      </React.StrictMode>
+    </div>
   </>
 )
