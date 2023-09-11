@@ -1,11 +1,9 @@
-import {useNavigate} from "react-router-dom";
+
 import Accordion from 'react-bootstrap/Accordion';
 
 import '../App.css'
 
 function EngagementCarosel() {
-    const navigate = useNavigate();
-  
     return (
       
       <>
@@ -64,7 +62,7 @@ function EngagementCarosel() {
               </button>
           </div>
   
-          <Accordion defaultActiveKey="0" style={{width:"500px"}}>
+          <Accordion defaultActiveKey="0" style={{width:"100%"}}>
               <Accordion.Item eventKey="1">
                   <Accordion.Header>Reception Party</Accordion.Header>
                   <Accordion.Body>
