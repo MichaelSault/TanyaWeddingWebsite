@@ -14,7 +14,6 @@ import TitleHeader from './components/TitleBanner';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <TitleHeader />  
-    <div id='bodyTest'>
       <React.StrictMode>
         <BrowserRouter>
           <Routes>
@@ -24,6 +23,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Routes>
         </BrowserRouter>
       </React.StrictMode>
-    </div>
   </>
 )

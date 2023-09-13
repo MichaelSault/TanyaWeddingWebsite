@@ -50,7 +50,7 @@ const handleClick = (event) => {
 
   return (
     <>
-      <div style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
+      <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
         <h2>RSVP Here</h2>
         <FloatingLabel
           controlId="RSVPCode"
