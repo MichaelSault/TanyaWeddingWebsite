@@ -20,7 +20,7 @@ function Home() {
           <EventBanner event={'Reception'} date={'Aug 1st'} location={'Burlington'} details={'Here are some initial details'}/>
           <EventBannerMirror event={'Wedding'} date={'Aug 2nd'} location={'Oakville'} details={'Here are some wedding details'}/>
           <EventBanner event={'After Party'} date={'Aug 3rd'} location={'Mississauga'} details={'Here are some more details'}/>
-
+          
     </>
   )
 }
