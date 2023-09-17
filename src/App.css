@@ -117,5 +117,14 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-right: 3em;
+  min-width: 100%;
+}
+
+.eventCard {
+  padding: .5em;
+  min-width: 20%;
+}
+
+#bodyEventCards {
+  align-self: center;
 }

@@ -7,8 +7,16 @@ function Events() {
 
   return (
     <>
-        <div id='bodyTest'>
+        <div id='bodyEventCards'>
             <div className='eventCardsRow'>
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+            </div>
+            <div className='eventCardsRow'>
+                <EventCard />
+                <EventCard />
                 <EventCard />
                 <EventCard />
             </div>
