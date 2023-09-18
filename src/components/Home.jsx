@@ -1,4 +1,5 @@
 import '../App.css'
+import TitleHeader from './TitleBanner';
 import Sidebar from "./Sidebar";
 import EngagementCarosel from "./EngagementCarosel";
 import EventBanner from './EventBanner';
@@ -9,6 +10,8 @@ function Home() {
 
   return (
     <>
+        <TitleHeader Title={'Tanya & Justin'}/> 
+
         <div id='bodyTest'>
 
           <Sidebar />

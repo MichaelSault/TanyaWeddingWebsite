@@ -1,16 +1,26 @@
+import { forwardRef } from 'react';
 import '../App.css'
 
-function TitleHeader() {
+// eslint-disable-next-line react/display-name
+const TitleHeader = forwardRef(
+  (
+  {
+    Title
+  },
+  ref
+
+  ) => {
 
   return (
     
     <>
       <div className='ImageHeader' width='100%'>
-        <h1>Tanya & Justin</h1>
+        <h1>{Title}</h1>
       </div>
 
     </>
   )
-}
+  }
+);
 
 export default TitleHeader

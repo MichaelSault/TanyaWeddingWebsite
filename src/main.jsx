@@ -13,8 +13,7 @@ import TitleHeader from './components/TitleBanner';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <TitleHeader />  
+  <> 
       <React.StrictMode>
         <BrowserRouter>
           <Routes>

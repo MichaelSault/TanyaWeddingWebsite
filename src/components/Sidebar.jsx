@@ -1,5 +1,5 @@
 import '../App.css'
-import RSVP from "./RSVP";
+import RSVP from "./RSVPForm";
 
 function Sidebar() {
 
