@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -9,39 +11,53 @@ import '../App.css'
 
 import event1 from '../assets/CarouselPhotos/TanyaWedding1.jpg'
 
-function EventCard() {
+// eslint-disable-next-line react/display-name
+const EventCard = forwardRef(
+    (
+        {
+            eventName,
+            date,
+            location,
+            time,
+            description
+        },
+        ref
+    ) => {
 
+    return (
+        <>
+            <div className='eventCard'>
+                <Card className='cardText'>
+                    <CardMedia
+                        sx={{ height: 140 }}
+                        image={event1}
+                        title="Wedding Reception"
+                    />
 
-  return (
-    <>
-        <div className='eventCard'>
-            <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                    sx={{ height: 140 }}
-                    image={event1}
-                    title="Wedding Reception"
-                />
+                    <CardContent className='cardText'>
+                        
+                        <Typography gutterBottom variant="h5" component="div">
+                            {eventName}
+                        </Typography>
+                        <Typography gutterBottom variant="caption" component="div">
+                            {date} - {time} @{location}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {description}
+                        </Typography>
+                    </CardContent>
 
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Wedding Reception
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                    </Typography>
-                </CardContent>
+                    <CardActions>
+                        <Button size="small">RSVP</Button>
+                        <Button size="small">Learn More</Button>
+                    </CardActions>
 
-                <CardActions>
-                    <Button size="small">RSVP</Button>
-                    <Button size="small">Learn More</Button>
-                </CardActions>
-
-            </Card>
-        </div>
-        
-    </>
-  )
-}
+                </Card>
+            </div>
+            
+        </>
+    )
+    }
+);
 
 export default EventCard;

@@ -116,7 +116,7 @@ h2 {
 .eventCardsRow {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
   min-width: 100%;
 }
 
@@ -127,4 +127,9 @@ h2 {
 
 #bodyEventCards {
   align-self: center;
+}
+
+.cardText {
+  min-height: 100%;
+  max-width: 360px;
 }
