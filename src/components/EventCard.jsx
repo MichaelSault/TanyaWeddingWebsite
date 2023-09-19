@@ -34,7 +34,8 @@ const EventCard = forwardRef(
                         title="Wedding Reception"
                     />
 
-                    <CardContent className='cardText'>
+                    <div className='cardText'>
+                    <CardContent>
                         
                         <Typography gutterBottom variant="h5" component="div">
                             {eventName}
@@ -47,11 +48,11 @@ const EventCard = forwardRef(
                         </Typography>
                     </CardContent>
 
-                    <CardActions>
+                    <CardActions className='cardLinks'>
                         <Button size="small">RSVP</Button>
                         <Button size="small">Learn More</Button>
                     </CardActions>
-
+                    </div>
                 </Card>
             </div>
             

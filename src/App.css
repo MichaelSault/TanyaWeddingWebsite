@@ -123,6 +123,8 @@ h2 {
 .eventCard {
   padding: .5em;
   min-width: 20%;
+  display: flex;
+  flex-direction: column;
 }
 
 #bodyEventCards {
@@ -130,6 +132,13 @@ h2 {
 }
 
 .cardText {
-  min-height: 100%;
   max-width: 360px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardLinks {
+  align-self: flex-end;
 }
