@@ -68,6 +68,23 @@ app.put("/update/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.post("/AddEvent", (req, res) => {
+    Event.create({
+        event: req.body.event,
+        date: req.body.date,
+        time: req.body.time,
+        location: req.body.location,
+        description: req.body.description
+    }).then(doc => console.log(doc))
+    .catch(err => console.log(err));
+});
+
+app.get("/Events", (req, res) => {
+    Event.find().then(items => res.json(items))
+    .catch((err) => console.log(err));
+});
+
+
 
 app.listen(3001, function() {
     console.log("Server is running");
