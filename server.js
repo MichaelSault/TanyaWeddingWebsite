@@ -84,6 +84,16 @@ app.get("/Events", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+//finds a list of users going to event #1
+app.get("/RSVPed", (req, res) => {
+    Guests.find( {event1: true})
+    .catch((err) => console.log(err));
+});
+
+app.post("/RSVP", (req, res) => {
+    Guests.findByIdAndUpdate(guest_id: req.gid, {event1: true})
+})
+
 
 
 app.listen(3001, function() {
