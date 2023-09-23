@@ -31,7 +31,7 @@ const EventCard = forwardRef(
                     <CardMedia
                         sx={{ height: 140 }}
                         image={event1}
-                        title="Wedding Reception"
+                        title={eventName}
                     />
 
                     <div className='cardText'>

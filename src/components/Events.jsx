@@ -9,7 +9,7 @@ function Events() {
   return (
     <>
         <TitleHeader Title={'Events'}/> 
-        <div id='bodyEventCards'>
+        <div id='bodyEventCards' className='hide-mobile'>
             <div className='eventCardsRow'>
                 <EventCard eventName = "Sangeet & Jaggo" date = "Monday, August 12, 2024" time = "6:00pm-11:00pm" location = "Burlington" description = "Join us for a night of music and dancing to kick off the wedding week.  Dancing and drinks will be provided."/>
                 <EventCard eventName = "Maiyan" date = "Wednesday, August 14, 2024" time = "5:00pm-9:00pm" location = "Burlington" description = "A paste of haldi (turmeric) is applied to the bride and groom's body before the wedding.  Haldi is used to cleanse and purify the body.  Guests will also have the opportunity to have mendhi (henna) applied to one hand.  Dinner will be provided."/>
