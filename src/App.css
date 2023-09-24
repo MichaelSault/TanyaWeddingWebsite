@@ -19,6 +19,7 @@ body {
 #bodyTest {
   max-width: 500px;
   align-self: center;
+  margin-bottom: 2em;
 }
 
 h1 {

@@ -1,3 +1,6 @@
+import TitleHeader from './TitleBanner';
+
+
 import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useState, useEffect} from 'react';
@@ -57,9 +60,7 @@ function GuestList() {
 
   return (
     <>
-      <div style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
-        <h1>Guest List</h1>
-      </div>
+      <TitleHeader Title={'Guest List'}/> 
     
       <Modal show={show} onHide={handleClose}>
                 <Modal.Header>

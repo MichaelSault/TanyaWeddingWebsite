@@ -62,7 +62,7 @@ function EngagementCarosel() {
               </button>
           </div>
   
-          <Accordion defaultActiveKey="0" style={{width:"100%"}}>
+          {/* <Accordion defaultActiveKey="0" style={{width:"100%"}}>
               <Accordion.Item eventKey="1">
                   <Accordion.Header>Reception Party</Accordion.Header>
                   <Accordion.Body>
@@ -84,7 +84,7 @@ function EngagementCarosel() {
                       <p>Ect...:</p>
                   </Accordion.Body>
               </Accordion.Item>
-          </Accordion>
+          </Accordion> */}
       </>
     )
   }
