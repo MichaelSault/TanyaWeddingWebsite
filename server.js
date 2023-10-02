@@ -90,10 +90,16 @@ app.get("/RSVPed", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.post("/RSVP", (req, res) => {
+/* app.post("/RSVP", (req, res) => {
     Guests.findByIdAndUpdate(guest_id: req.gid, {event1: true})
-})
+}) */
 
+app.post("/TestQuery", (req, res) => {
+    Guests.create({
+        email: "test_email@hotmail.com"
+    }).then(doc => console.log(doc))
+    .catch(err => console.log(err));
+});
 
 
 app.listen(3001, function() {

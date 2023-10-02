@@ -39,11 +39,11 @@ const handleClick = (event) => {
     event.preventDefault();
     console.log(guest);
 
-    axios.post("http://localhost:3001/RSVPCode", guest)
+    axios.post("http://localhost:3001/TestQuery", guest)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 
-    navigate("Guests");
+    // navigate("Guests");
 
 };
 
