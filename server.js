@@ -30,11 +30,11 @@ app.get("/", (req, res) => {
 app.post("/InviteGuest", (req, res) => {
     Guests.create({
         email: req.body.email,
-        code: req.body.code,
+        //code: req.body.code,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        rsvp: Boolean,
-        responseDate: Date
+        //rsvp: Boolean,
+        //responseDate: Date
     }).then(doc => console.log(doc))
     .catch(err => console.log(err));
 });
