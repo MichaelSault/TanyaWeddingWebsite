@@ -1,6 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import mongoose from 'mongoose';
+const express = require('express'),
+cors = require('cors'),
+mongoose = require('mongoose'),
+rsvp = require("./backend/rsvp.js");
 
 const app = express();
 
@@ -28,9 +29,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/InviteGuest", (req, res) => {
+    const rsvpCode = rsvp.makeCode(5);
     Guests.create({
         email: req.body.email,
-        //code: req.body.code,
+        code: rsvpCode,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         //rsvp: Boolean,
