@@ -28,8 +28,23 @@ app.get("/", (req, res) => {
     res.send("Express is here");
 });
 
-app.post("/InviteGuest", (req, res) => {
-    const rsvpCode = rsvp.makeCode(5);
+app.post("/InviteGuest", async (req, res) => {
+    //generates a random 5-digit rsvp code
+    var rsvpCode = rsvp.makeCode(5);
+
+    //checks if the code is already assigned to a guest
+    var codeExists = await Guests.find({code: rsvpCode}, {code:1}).exec();
+    console.log(codeExists);
+    console.log("break");
+
+    //if the code exists, generate a new 5-digit code until a unique code is found
+    while (codeExists.length > 0) {
+        rsvpCode = rsvp.makeCode(5);
+        codeExists = await Guests.find({code: rsvpCode}, {code:1}).exec();
+        console.log(codeExists);
+    }
+
+    //create the guest in the db
     Guests.create({
         email: req.body.email,
         code: rsvpCode,
@@ -41,60 +56,11 @@ app.post("/InviteGuest", (req, res) => {
     .catch(err => console.log(err));
 });
 
+//check if a guest exists
 app.get("/RSVPCode", (req, res) => {
     Guests.find({code: 'req'}).then(items => res.json(items))
     .catch((err) => console.log(err));
 });
-
-app.get("/guests", (req, res) => {
-    Guests.find().then(items => res.json(items))
-    .catch((err) => console.log(err));
-});
-
-app.delete("/delete/:id", (req, res) => {
-    Guests.findByIdAndDelete({_id: req.params.id})
-    .then(doc => console.log(doc))
-    .catch((err) => console.log(err));
-});
-
-app.put("/update/:id", (req, res) => {
-    Guests.findByIdAndUpdate({_id: req.params.id}, {
-        email: req.body.email,
-        code: req.body.code,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        rsvp: Boolean,
-        responseDate: Date
-    })
-    .then((doc) => console.log(doc))
-    .catch((err) => console.log(err));
-});
-
-app.post("/AddEvent", (req, res) => {
-    Event.create({
-        event: req.body.event,
-        date: req.body.date,
-        time: req.body.time,
-        location: req.body.location,
-        description: req.body.description
-    }).then(doc => console.log(doc))
-    .catch(err => console.log(err));
-});
-
-app.get("/Events", (req, res) => {
-    Event.find().then(items => res.json(items))
-    .catch((err) => console.log(err));
-});
-
-//finds a list of users going to event #1
-app.get("/RSVPed", (req, res) => {
-    Guests.find( {event1: true})
-    .catch((err) => console.log(err));
-});
-
-/* app.post("/RSVP", (req, res) => {
-    Guests.findByIdAndUpdate(guest_id: req.gid, {event1: true})
-}) */
 
 app.post("/TestQuery", (req, res) => {
     Guests.create({
