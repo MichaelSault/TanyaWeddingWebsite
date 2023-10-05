@@ -21,7 +21,7 @@ function RSVPForm() {
 
   const handleChange = (event) => {
     const {name, value} = event.target;
-    console.log(name);
+    console.log(value);
 
     setGuest(prev => {
         return {
@@ -37,15 +37,19 @@ function RSVPForm() {
 
 const handleClick = (event) => {
     event.preventDefault();
-    console.log(guest);
+    console.log(guest.code);
 
-    axios.post("http://localhost:3001/TestQuery", guest)
-    .then(res => console.log(res))
+    axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
+    .then(res => printResult(res))
     .catch(err => console.log(err));
 
     // navigate("Guests");
 
 };
+
+const printResult = (result) => {
+  console.log(result.data[0].firstName, result.data[0].lastName)
+}
 
 
   return (

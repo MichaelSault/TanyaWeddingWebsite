@@ -58,15 +58,9 @@ app.post("/InviteGuest", async (req, res) => {
 
 //check if a guest exists
 app.get("/RSVPCode", (req, res) => {
-    Guests.find({code: 'req'}).then(items => res.json(items))
+    console.log(req.query.code);
+    Guests.find({code: req.query.code}).then(items => res.json(items))
     .catch((err) => console.log(err));
-});
-
-app.post("/TestQuery", (req, res) => {
-    Guests.create({
-        email: "test_email@hotmail.com"
-    }).then(doc => console.log(doc))
-    .catch(err => console.log(err));
 });
 
 
