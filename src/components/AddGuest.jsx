@@ -2,6 +2,9 @@ import {Button, Form} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+
+import TitleHeader from './TitleBanner';
 import '../App.css';
 
 function AddGuest() {
@@ -37,10 +40,18 @@ function AddGuest() {
     };
 
     return(
-        <div style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
-            <h1>Invite a Guest</h1>
+        <>
+            <TitleHeader Title={'Invite a Guest'}/>
+            <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
+            <h2>Add a Guest</h2>
             <Form>
                 <Form.Group>
+                    <FloatingLabel
+                        controlId="firstName"
+                        name="firstName"
+                        label="First Name"
+                        className="mb-3"
+                    >
                     <Form.Control
                         name='firstName'
                         value={guest.firstName} 
@@ -48,6 +59,14 @@ function AddGuest() {
                         style={{marginBottom: '1rem'}} 
                         onChange={handleChange}
                     />
+                    </FloatingLabel>
+
+                    <FloatingLabel
+                        controlId="lastName"
+                        name="lastName"
+                        label="Last Name"
+                        className="mb-3"
+                    >
                     <Form.Control 
                         name="lastName"
                         value={guest.lastName} 
@@ -55,17 +74,27 @@ function AddGuest() {
                         style={{marginBottom: '1rem'}} 
                         onChange={handleChange}
                     />
-                    <Form.Control 
+                    </FloatingLabel>
+                    
+                    <FloatingLabel
+                        controlId="email"
+                        name="email"
+                        label="Email"
+                        className="mb-3"
+                    >
+                    <Form.Control
                         name="email"
                         value={guest.email} 
                         placeholder='Email' 
-                        style={{marginBottom: '1rem'}} 
                         onChange={handleChange}
+                        className="mb-3"
                     />
+                    </FloatingLabel>
                 </Form.Group>
-                <Button variant="outline-success" style={{width:"100%", marginBottom:'1rem'}} onClick={handleClick}>Invite Guest</Button>
+                <Button variant="outline-dark" style={{width:"100%", marginBottom:'1rem'}} onClick={handleClick}>Invite Guest</Button>
             </Form>
-        </div>
+            </div>
+        </>
     );
 }
 
