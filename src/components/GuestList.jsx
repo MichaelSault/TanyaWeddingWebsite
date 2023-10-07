@@ -22,7 +22,7 @@ function GuestList() {
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/posts")
+    axios.get("http://localhost:3001/guests")
     .then(res => {
         console.log(res);
         setGuests(res.data);
@@ -60,57 +60,32 @@ function GuestList() {
 
   return (
     <>
-      <TitleHeader Title={'Guest List'}/> 
-    
-      <Modal show={show} onHide={handleClose}>
-                <Modal.Header>
-                    <Modal.Title>Update a Post</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form>
-                        <Form.Group>
-                            <Form.Control 
-                                placeholder="title"
-                                name="title"
-                                onChange={handleChange}
-                            />
-                            <Form.Control 
-                                placeholder="description"
-                                name="description"
-                                onChange={handleChange}     
-                            />
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button onClick={saveUpdatedPost}>
-                        Save
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+        <TitleHeader Title={'Guest List'}/> 
+        <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
+        <h2>Guests:</h2>
+
+        
 
 
-    {guests ? (
-      <>
-          {guests.map((guest) => {
-              return(
-                  // eslint-disable-next-line react/jsx-key
-                  <div key={guest._id} style={{border:"solid lightgrey 1px", borderRadius: "8px", marginBottom: "1rem", padding: "1rem"}}>
-                      <h4>{guest.title}</h4>
-                      <p>{guest.description}</p>
-                      <div style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
-                          <Button style={{width:"100%", marginRight:"1rem"}}>UPDATE</Button>
-                          <Button style={{width:"100%", marginRight:"1rem"}}>DELETE</Button>
-                      </div>
-                  </div>
-              );
-          })}
-      </>
-    ) : <></>}
-
+        {guests ? (
+        
+        <>
+            {guests.map((guest) => {
+                return(
+                    // eslint-disable-next-line react/jsx-key
+                    <div key={guest._id} style={{border:"solid lightgrey 1px", borderRadius: "8px", marginBottom: "1rem", padding: "1rem"}}>
+                        <h4>{guest.firstName} {guest.lastName}</h4>
+                        <p>{guest.email}</p>
+                        <div style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
+                            <Button style={{width:"100%", marginRight:"1rem"}}>UPDATE</Button>
+                            <Button style={{width:"100%", marginRight:"1rem"}}>DELETE</Button>
+                        </div>
+                    </div>
+                );
+            })}
+        </>
+        ) : <></>}
+        </div>
   </>
   )
 }

@@ -56,6 +56,12 @@ app.post("/InviteGuest", async (req, res) => {
     .catch(err => console.log(err));
 });
 
+//fetches a complete list of guests
+app.get("/guests", (req, res) => {
+    Guests.find().then(items => res.json(items))
+    .catch((err) => console.log(err));
+});
+
 //check if a guest exists
 app.get("/RSVPCode", (req, res) => {
     console.log(req.query.code);
