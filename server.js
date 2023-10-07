@@ -69,6 +69,22 @@ app.get("/RSVPCode", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.delete("/delete/:id", (req, res) => {
+    Guests.findByIdAndDelete({_id: req.params.id})
+    .then(doc => console.log(doc))
+    .catch((err) => console.log(err));
+});
+
+app.put("/update/:id", (req, res) => {
+    Guests.findByIdAndUpdate({_id: req.params.id}, {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email
+    })
+    .then((doc) => console.log(doc))
+    .catch((err) => console.log(err));
+});
+
 
 app.listen(3001, function() {
     console.log("Server is running");
