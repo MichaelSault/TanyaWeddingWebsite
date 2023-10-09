@@ -1,7 +1,8 @@
 const express = require('express'),
-cors = require('cors'),
-mongoose = require('mongoose'),
-rsvp = require("./backend/rsvp.js");
+    JWT = require('./backend/JWT'),
+    cors = require('cors'),
+    mongoose = require('mongoose'),
+    rsvp = require("./backend/rsvp.js");
 
 const app = express();
 
@@ -83,6 +84,51 @@ app.put("/update/:id", (req, res) => {
     })
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
+});
+
+////////////////////////////////////////////////////
+////////////////JWT Functions///////////////////////
+////////////////////////////////////////////////////
+
+//returns data from JWT payload
+app.post('/decodeJWT', async(req, res) => {
+    //set JWT
+    const jwtToVerify = req.body.Token;
+    //validate JWT
+    const validated = await JWT.verifyJWT(jwtToVerify);
+    console.log(validated);
+    //if valid, decode the payload
+    if (validated){
+        console.log("JWT to decode: " + jwtToVerify);
+        const decoded = await JWT.decodeJWT(jwtToVerify);
+        console.log("decoded token: " + decoded);
+        res.send(decoded);
+    } else {
+        throw new Error("Invalid Signature!");
+    }
+});
+
+app.post('/JWT', async(req, res) => {
+    //console.log("called JWT on server.js");
+    console.log(req.body.Token);
+    const JasonWebToken = await JWT.getJWT(req.body);
+    console.log("JWT Returned by the function: " + JasonWebToken);
+    const decoded = await JWT.decodeJWT(JasonWebToken);
+    console.log("decoded token: " + decoded);
+    console.log(req.body);
+    const validated = await JWT.verifyJWT(JasonWebToken);
+    console.log(validated);
+    res.send(JasonWebToken);
+
+});
+
+//returns true if valid JWT
+app.post('/verifyJWT', async(req, res) => {
+    const jwtToVerify = req.body.Token;
+    console.log("JWT to verify: " + jwtToVerify);
+    const validated = await JWT.verifyJWT(jwtToVerify);
+    console.log(validated);
+    res.send(req.body); 
 });
 
 

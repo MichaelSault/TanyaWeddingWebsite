@@ -2,14 +2,26 @@ import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 import '../App.css'
 
-function RSVPForm() {
+export default function RSVPForm() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedInUser = document.cookie;
+    console.log(loggedInUser);
+    if (loggedInUser) {
+        console.log("Guest is logged in");
+    } else {
+        console.log("No guest is logged in");
+    }
+    console.log(loggedInUser);
+  }, []);
 
   const [guest, setGuest] = useState({
     email: String,
@@ -30,10 +42,6 @@ function RSVPForm() {
         };
     });
   };
-
-  useEffect(() => {
-      console.log(guest);
-  }, [guest]);
 
 const handleClick = (event) => {
     event.preventDefault();
@@ -70,5 +78,3 @@ const printResult = (result) => {
     </>
   )
 }
-
-export default RSVPForm;
