@@ -2,7 +2,6 @@ import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import Cookies from 'universal-cookie';
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
