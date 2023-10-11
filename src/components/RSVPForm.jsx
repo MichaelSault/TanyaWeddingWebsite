@@ -9,6 +9,8 @@ import Form from "react-bootstrap/Form";
 import '../App.css'
 
 export default function RSVPForm() {
+  const [returnedData, setReturnedData] = useState({email: "", code: "", firstName: "", lastName: ""});
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,10 +48,12 @@ const handleClick = (event) => {
     event.preventDefault();
     console.log(guest.code);
 
-    axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
+    let userData = axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
     .then(res => printResult(res))
     .catch(err => console.log(err));
 
+
+    //getJWT(userData);
     // navigate("Guests");
 
 };
@@ -70,7 +74,7 @@ const printResult = (result) => {
           label="Guest Code"
           className="mb-3"
         >
-          <Form.Control type="password" placeholder="password" name="code" onChange={handleChange}/>
+          <Form.Control type="text" name="code" onChange={handleChange}/>
         </FloatingLabel>
         <Button variant="outline-dark" style={{width:"100%"}} onClick={handleClick}>Continue</Button>
       </div>

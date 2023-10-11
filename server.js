@@ -65,9 +65,13 @@ app.get("/guests", (req, res) => {
 
 //check if a guest exists
 app.get("/RSVPCode", (req, res) => {
-    console.log(req.query.code);
-    Guests.find({code: req.query.code}).then(items => res.json(items))
-    .catch((err) => console.log(err));
+    try {
+        console.log(req.query.code);
+        let guest = Guests.find({code: req.query.code}).then(items => res.json(items))
+        .catch((err) => console.log(err));
+    } catch(error) {
+        console.log(error);
+    }
 });
 
 app.delete("/delete/:id", (req, res) => {
