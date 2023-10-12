@@ -64,11 +64,16 @@ app.get("/guests", (req, res) => {
 });
 
 //check if a guest exists
-app.get("/RSVPCode", (req, res) => {
+app.get("/RSVPCode", async(req, res) => {
     try {
         console.log(req.query.code);
-        let guest = Guests.find({code: req.query.code}).then(items => res.json(items))
+        const guest = await Guests.find({code: req.query.code})
         .catch((err) => console.log(err));
+        
+        console.log("Returned from Query");
+        console.log(guest[0]);
+        res.send(guest[0]);
+
     } catch(error) {
         console.log(error);
     }

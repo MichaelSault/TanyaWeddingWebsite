@@ -52,16 +52,10 @@ const getJWT = async(userData) => {
     
     //create payload
     const payload = {
-        iss: 'running_log',    //name of the server that issued the token
-        exp: 60*60*24,      // sets to expire in 24hours
+        iss: 'rsvp_wedding',    //name of the server that issued the token
+        exp: 60*60*48,      // sets to expire in 48hours
         
-        //user data
-        RunnerID: userData.RunnerID,
-        First: userData.First,
-        Last: userData.Last,
-        Email: userData.Email,
-        Display: userData.Display,
-        Registered: userData.Registered,
+        
     }
 
     // converts payload to base64

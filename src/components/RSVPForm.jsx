@@ -2,6 +2,7 @@ import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
@@ -9,9 +10,21 @@ import Form from "react-bootstrap/Form";
 import '../App.css'
 
 export default function RSVPForm() {
-  const [returnedData, setReturnedData] = useState({email: "", code: "", firstName: "", lastName: ""});
-
   const navigate = useNavigate();
+
+  const [returnedData, setReturnedData] = useState({
+    email: "", 
+    code: "", 
+    firstName: "", 
+    lastName: ""
+  });
+
+  const [guest, setGuest] = useState({
+    email: String, 
+    code: String, 
+    firstName: String, 
+    lastName: String
+  });
 
   useEffect(() => {
     const loggedInUser = document.cookie;
@@ -23,14 +36,6 @@ export default function RSVPForm() {
     }
     console.log(loggedInUser);
   }, []);
-
-  const [guest, setGuest] = useState({
-    email: String,
-    code: String,
-    name: String,
-    rsvp: Boolean,
-    responseDate: Date
-  });
 
   const handleChange = (event) => {
     const {name, value} = event.target;
@@ -44,22 +49,51 @@ export default function RSVPForm() {
     });
   };
 
-const handleClick = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     console.log(guest.code);
 
-    let userData = axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
-    .then(res => printResult(res))
+    const userData = await axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
+    .then(res => res.data)
     .catch(err => console.log(err));
 
+    console.log(userData);
+    setReturnedData(userData);
+    getJWT(userData);
 
-    //getJWT(userData);
     // navigate("Guests");
+  };
 
-};
+  const cookies = new Cookies();
 
-const printResult = (result) => {
-  console.log(result.data[0].firstName, result.data[0].lastName)
+  async function getJWT(newData) {
+    //add check to see if user and pass match
+    console.log(returnedData.code);
+    console.log(guest.code);
+    var JWT = "";
+
+    if (returnedData.code = guest.code){
+        JWT = await fetch('http://localhost:3001/JWT', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              email: returnedData.email, 
+              code: returnedData.code, 
+              firstName: returnedData.firstName, 
+              lastName: returnedData.lastName
+            })
+        })
+        .then(res => res.text());
+        console.log(JWT);
+        cookies.set("user-authentication", JWT);
+        //navigate("/logrun");
+    } else {
+        console.log("RSVP Code Mismatch!");
+    }
+    console.log(JWT);
 }
 
 
@@ -76,7 +110,7 @@ const printResult = (result) => {
         >
           <Form.Control type="text" name="code" onChange={handleChange}/>
         </FloatingLabel>
-        <Button variant="outline-dark" style={{width:"100%"}} onClick={handleClick}>Continue</Button>
+        <Button variant="outline-dark" style={{width:"100%"}} onClick={handleSubmit}>Continue</Button>
       </div>
     </>
   )
