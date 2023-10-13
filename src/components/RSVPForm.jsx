@@ -31,6 +31,7 @@ export default function RSVPForm() {
     console.log(loggedInUser);
     if (loggedInUser) {
         console.log("Guest is logged in");
+        navigate("/Guest", {relative: "path"})
     } else {
         console.log("No guest is logged in");
     }

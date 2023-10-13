@@ -9,6 +9,7 @@ import Home from './components/Home.jsx';
 import GuestList from './components/GuestList.jsx';
 import Events from './components/Events.jsx';
 import AddGuest from './components/AddGuest';
+import Guest from './components/Guest';
 
 import TitleHeader from './components/TitleBanner';
 
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='/Guests' element={<GuestList/>}/>
             <Route path='/Events' element={<Events/>}/>
             <Route path='/Invite' element={<AddGuest/>}/>
+            <Route path='/Guest' element={<Guest/>}/>
           </Routes>
         </BrowserRouter>
       </React.StrictMode>
