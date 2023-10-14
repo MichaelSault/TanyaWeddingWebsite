@@ -42,14 +42,14 @@ function Guest() {
         })
         .then(res => res.json());
 
-        setRunnerData(tokenData);
-        updateRunnerID(tokenData);
+        console.log(tokenData);
+        setGuest(tokenData);
     }
 
     return (
         <>
             <TitleHeader Title={'Events'}/> 
-            <h4>Welcome Guest Name</h4>
+            <h4>Welcome {guest.firstName} {guest.lastName}</h4>
             <div id='bodyEventCards' className='hide-mobile'>
                 <div className='eventCardsRow'>
                     <EventCard eventName = "Sangeet & Jaggo" date = "Monday, August 12, 2024" time = "6:00pm-11:00pm" location = "Burlington" description = "Join us for a night of music and dancing to kick off the wedding week.  Dancing and drinks will be provided."/>

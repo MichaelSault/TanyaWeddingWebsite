@@ -68,11 +68,10 @@ export default function RSVPForm() {
 
   async function getJWT(newData) {
     //add check to see if user and pass match
-    console.log(returnedData.code);
-    console.log(guest.code);
+    console.log(newData);
     var JWT = "";
 
-    if (returnedData.code = guest.code){
+    if (newData.code = guest.code){
         JWT = await fetch('http://localhost:3001/JWT', {
             method: 'POST',
             headers: {
@@ -80,10 +79,10 @@ export default function RSVPForm() {
               'Accept': 'application/json'
             },
             body: JSON.stringify({
-              email: returnedData.email, 
-              code: returnedData.code, 
-              firstName: returnedData.firstName, 
-              lastName: returnedData.lastName
+              email: newData.email, 
+              code: newData.code, 
+              firstName: newData.firstName, 
+              lastName: newData.lastName
             })
         })
         .then(res => res.text());

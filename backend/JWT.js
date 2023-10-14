@@ -44,6 +44,7 @@ const createSignature = (jwtB64Header, jwtB64Payload, secret) => {
 }
 
 const getJWT = async(userData) => {
+    console.log(userData);
     //create the header
     const b64Header = toBase64 (header);
     const jwtB64Header = replaceSpecialChars(b64Header);
@@ -53,7 +54,13 @@ const getJWT = async(userData) => {
     //create payload
     const payload = {
         iss: 'rsvp_wedding',    //name of the server that issued the token
-        exp: 60*60*48,      // sets to expire in 48hours  
+        exp: 60*60*48,      // sets to expire in 48hours
+
+        //guest data
+        email: userData.email,
+        code: userData.code,
+        firstName: userData.firstName,
+        lastName: userData.lastName
     }
 
     // converts payload to base64
