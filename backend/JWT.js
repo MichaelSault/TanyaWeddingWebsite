@@ -53,9 +53,7 @@ const getJWT = async(userData) => {
     //create payload
     const payload = {
         iss: 'rsvp_wedding',    //name of the server that issued the token
-        exp: 60*60*48,      // sets to expire in 48hours
-        
-        
+        exp: 60*60*48,      // sets to expire in 48hours  
     }
 
     // converts payload to base64
@@ -64,7 +62,7 @@ const getJWT = async(userData) => {
     console.log ("the payload is: ", jwtB64Payload);
 
     //create signature
-    const secret = 'a_secret_to_everyone';
+    const secret = 'a_secret_to_everyone_at_the_wedding';
     const signature = createSignature(jwtB64Header, jwtB64Payload, secret);
     console.log("the signature is: ", signature);
     //OUTPUTS the signature is:    bWLt85oF80pZ6QfHF9BjgjvVolR3DD6Mv2ixS47nmHo
@@ -77,6 +75,7 @@ const getJWT = async(userData) => {
 }
 
 const decodeJWT = async(JWT) => {
+    console.log("does this run?");
     const token = JWT;
     const tokenDecodablePart = token.split('.')[1];
     console.log("decodable part: ", tokenDecodablePart);
@@ -101,7 +100,7 @@ const verifyJWT = async(JWT) => {
     console.log("Decoded Payload: ", decodedPayload);
 
     //create signature
-    const secret = 'a_secret_to_everyone';
+    const secret = 'a_secret_to_everyone_at_the_wedding';
     const newSignature = createSignature(header, payload, secret);
     console.log("Signature should be: ", signature);
     //OUTPUTS the signature is:    bWLt85oF80pZ6QfHF9BjgjvVolR3DD6Mv2ixS47nmHo

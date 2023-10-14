@@ -1,22 +1,50 @@
 import TitleHeader from './TitleBanner';
 import EventCard from './EventCard';
 import {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 import '../App.css'
 
 function Guest() {
+    const navigate = useNavigate();
+    const [guest, setGuest] = useState({
+        email: String, 
+        code: String, 
+        firstName: String, 
+        lastName: String
+      });
 
     useEffect(() => {
-        const loggedInUser = document.cookie;
+        const loggedInUser = document.cookie.split('=')[1];
         console.log(loggedInUser);
         if (loggedInUser) {
             console.log("Guest is logged in");
+            decodeJWT(loggedInUser);
         } else {
             console.log("No guest is logged in");
+            navigate("/RSVP");
         }
         console.log(loggedInUser);
     }, []);
+
+    const decodeJWT = async (token) => {
+        console.log("token: ", token)
+        const tokenData = await fetch('http://localhost:3001/decodeJWT', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Token: token
+        })
+        })
+        .then(res => res.json());
+
+        setRunnerData(tokenData);
+        updateRunnerID(tokenData);
+    }
 
     return (
         <>

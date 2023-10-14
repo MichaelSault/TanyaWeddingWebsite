@@ -27,7 +27,7 @@ export default function RSVPForm() {
   });
 
   useEffect(() => {
-    const loggedInUser = document.cookie;
+    const loggedInUser = document.cookie.split('=')[1];
     console.log(loggedInUser);
     if (loggedInUser) {
         console.log("Guest is logged in");
@@ -62,7 +62,6 @@ export default function RSVPForm() {
     setReturnedData(userData);
     getJWT(userData);
 
-    // navigate("Guests");
   };
 
   const cookies = new Cookies();
@@ -89,9 +88,9 @@ export default function RSVPForm() {
         })
         .then(res => res.text());
         console.log(JWT);
-        cookies.set("user-authentication", JWT);
-        //navigate("/logrun");
-    } else {
+        cookies.set("userAuthentication", JWT);
+        navigate("/Guest", {relative: "path"})
+      } else {
         console.log("RSVP Code Mismatch!");
     }
     console.log(JWT);
