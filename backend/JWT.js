@@ -43,7 +43,7 @@ const createSignature = (jwtB64Header, jwtB64Payload, secret) => {
     return signature;
 }
 
-const getJWT = async(userData) => {
+const getJWT = async(userData, secret) => {
     console.log(userData);
     //create the header
     const b64Header = toBase64 (header);
@@ -69,7 +69,6 @@ const getJWT = async(userData) => {
     console.log ("the payload is: ", jwtB64Payload);
 
     //create signature
-    const secret = 'a_secret_to_everyone_at_the_wedding';
     const signature = createSignature(jwtB64Header, jwtB64Payload, secret);
     console.log("the signature is: ", signature);
     //OUTPUTS the signature is:    bWLt85oF80pZ6QfHF9BjgjvVolR3DD6Mv2ixS47nmHo
@@ -92,7 +91,7 @@ const decodeJWT = async(JWT) => {
     return(decoded);
 }
 
-const verifyJWT = async(JWT) => {
+const verifyJWT = async(JWT, secret) => {
     const signature = JWT.split('.')[2];
     console.log("Signature to Verify: ", signature);
     
@@ -107,7 +106,6 @@ const verifyJWT = async(JWT) => {
     console.log("Decoded Payload: ", decodedPayload);
 
     //create signature
-    const secret = 'a_secret_to_everyone_at_the_wedding';
     const newSignature = createSignature(header, payload, secret);
     console.log("Signature should be: ", signature);
     //OUTPUTS the signature is:    bWLt85oF80pZ6QfHF9BjgjvVolR3DD6Mv2ixS47nmHo
