@@ -4,6 +4,9 @@ const express = require('express'),
     mongoose = require('mongoose'),
     rsvp = require("./backend/rsvp.js");
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -11,7 +14,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
 //eventually this should be removed due to security issues but while testing I'll leave it
-mongoose.connect("mongodb+srv://michaelsault:70OByv77QoUUlQLb@cluster0.rrfulxt.mongodb.net/?retryWrites=true&w=majority").catch(err => console.log(err));
+mongoose.connect(process.env.DB_CONN).catch(err => console.log(err));
 
 //DB SCHEMA AND MODEL
 const guestSchema = mongoose.Schema({
