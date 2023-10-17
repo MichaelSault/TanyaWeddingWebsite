@@ -43,7 +43,7 @@ function AddGuest() {
         <>
             <TitleHeader Title={'Invite a Guest'}/>
             <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
-            <h2>Add a Guest</h2>
+            <h2>Invite a Guest</h2>
             <Form>
                 <Form.Group>
                     <FloatingLabel
@@ -90,6 +90,15 @@ function AddGuest() {
                         className="mb-3"
                     />
                     </FloatingLabel>
+                    <h3>Events</h3>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox" style={{width:"100%", margin:"auto auto", textAlign:"left"}}>
+                        <Form.Check type="checkbox" label="Sangeet & Jaggo" />
+                        <Form.Check type="checkbox" label="Maiyan" />
+                        <Form.Check type="checkbox" label="Mendhi" />
+                        <Form.Check type="checkbox" label="Choora" />
+                        <Form.Check type="checkbox" label="Anand Karaj (Sikh Ceremony)" />
+                        <Form.Check type="checkbox" label="Civil Ceremony & Reception" />
+                    </Form.Group>
                 </Form.Group>
                 <Button variant="outline-dark" style={{width:"100%", marginBottom:'1rem'}} onClick={handleClick}>Invite Guest</Button>
             </Form>

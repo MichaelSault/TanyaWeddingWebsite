@@ -39,6 +39,11 @@ h2 {
   text-shadow: 1px 2px 0 #000;
 }
 
+h3 {
+  color: #CEA300;
+  text-shadow: 1px 2px 0 #000;
+}
+
 #eventText {
   font-size: 5vw;
   display: flex;
