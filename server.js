@@ -22,8 +22,12 @@ const guestSchema = mongoose.Schema({
     code: String,
     firstName: String,
     lastName: String,
-    rsvp: Boolean,
-    responseDate: Date
+    sangeet: Boolean,
+    maiyan: Boolean,
+    mendhi: Boolean,
+    choora: Boolean,
+    sikh: Boolean,
+    civil: Boolean
 });
 
 const secretSchema = mongoose.Schema({
@@ -60,8 +64,12 @@ app.post("/InviteGuest", async (req, res) => {
         code: rsvpCode,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        //rsvp: Boolean,
-        //responseDate: Date
+        sangeet: req.body.sangeet,
+        maiyan: req.body.maiyan,
+        mendhi: req.body.mendhi,
+        choora: req.body.choora,
+        sikh: req.body.sikh,
+        civil: req.body.civil
     }).then(doc => console.log(doc))
     .catch(err => console.log(err));
 });
