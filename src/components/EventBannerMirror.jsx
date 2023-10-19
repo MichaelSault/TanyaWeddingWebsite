@@ -16,7 +16,7 @@ const EventBannerMirror = forwardRef(
 
   return (
     <>
-      <div className='EventHeader' width='100%'>
+      <div className='EventHeaderMirror' width='100%'>
       <div className='eventDetails'>
             <div className='eventRowLeft'><h1 id='eventText'>Date: </h1><h1 id='eventTextinfo'>{date}</h1></div>
             <div className='eventRowLeft'><h1 id='eventText'>Location: </h1><h1 id='eventTextinfo'>{location}</h1></div>
