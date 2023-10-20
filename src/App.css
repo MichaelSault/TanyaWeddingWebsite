@@ -76,6 +76,7 @@ h3 {
   background-color: #141414;
   background-position: center top;
   min-width: 100%;
+  height: 100vh;
   padding-bottom: 1em;
   padding-top: 1em;
   margin-bottom: 0;
@@ -89,6 +90,7 @@ h3 {
   background-color: #1a1919;
   background-position: center top;
   min-width: 100%;
+  height: 100vh;
   padding-bottom: 1em;
   padding-top: 1em;
   margin-bottom: 0;
