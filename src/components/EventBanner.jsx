@@ -21,9 +21,9 @@ const EventBanner = forwardRef(
             <h1 id='eventTitle'>{event}</h1>
         </div>
         <div className='eventDetails'>
-            <div className='eventRowRight'><h1 id='eventText'>Date: </h1><h1 id='eventTextinfo'>{date}</h1></div>
-            <div className='eventRowRight'><h1 id='eventText'>Location: </h1><h1 id='eventTextinfo'>{location}</h1></div>
-            <div className='eventRowRight'><h1 id='eventText'>Details: </h1><h1 id='eventTextinfo'>{details}</h1></div>
+            <div className='eventRowRight'><h2 id='eventText'>Date: </h2><p id='eventTextinfo'>{date}</p></div>
+            <div className='eventRowRight'><h2 id='eventText'>Location: </h2><p id='eventTextinfo'>{location}</p></div>
+            <div className='eventRowRight'><h2 id='eventText'>Details: </h2><p id='eventTextinfo'>{details}</p></div>
         </div>
       </div>
 

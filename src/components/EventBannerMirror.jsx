@@ -18,9 +18,9 @@ const EventBannerMirror = forwardRef(
     <>
       <div className='EventHeaderMirror' height='100%' width='100%'>
       <div className='eventDetails'>
-            <div className='eventRowLeft'><h1 id='eventText'>Date: </h1><h1 id='eventTextinfo'>{date}</h1></div>
-            <div className='eventRowLeft'><h1 id='eventText'>Location: </h1><h1 id='eventTextinfo'>{location}</h1></div>
-            <div className='eventRowLeft'><h1 id='eventText'>Details: </h1><h1 id='eventTextinfo'>{details}</h1></div>
+            <div className='eventRowLeft'><h2 id='eventText'>Date: </h2><p id='eventTextinfo'>{date}</p></div>
+            <div className='eventRowLeft'><h2 id='eventText'>Location: </h2><h3 id='eventTextinfo'>{location}</h3></div>
+            <div className='eventRowLeft'><h2 id='eventText'>Details: </h2><h3 id='eventTextinfo'>{details}</h3></div>
         </div>
         <div className='eventName'>
             <h1 id='eventTitle'>{event}</h1>
