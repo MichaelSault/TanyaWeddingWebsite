@@ -11,11 +11,11 @@ import Events from './components/Events.jsx';
 import AddGuest from './components/AddGuest';
 import Guest from './components/Guest';
 
-import TitleHeader from './components/TitleBanner';
-
+import Navbar from './components/navbar.component.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <> 
+      <Navbar />
       <React.StrictMode>
         <BrowserRouter>
           <Routes>
