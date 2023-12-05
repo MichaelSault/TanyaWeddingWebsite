@@ -12,7 +12,7 @@ function Home() {
     <>
         <TitleHeader Title={'Tanya & Justin'}/> 
 
-        <div id='bodyTest'>
+        <div id='bodyCarousel'>
 
           {/* <Sidebar /> */}
 
