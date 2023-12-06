@@ -1,6 +1,6 @@
 import '../App.css'
-import TitleHeader from './TitleBanner';
-import RSVPForm from './RSVPForm';
+import TitleHeader from './titleBanner.component';
+import RSVPForm from './RSVPForm.component';
 
 
 function RSVP() {

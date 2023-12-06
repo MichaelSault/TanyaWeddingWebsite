@@ -1,9 +1,9 @@
 import '../App.css'
-import TitleHeader from './TitleBanner';
-import Sidebar from "./Sidebar";
-import EngagementCarosel from "./EngagementCarosel";
-import EventBanner from './EventBanner';
-import EventBannerMirror from './EventBannerMirror';
+import TitleHeader from './titleBanner.component';
+import Sidebar from "./sidebar.component";
+import EngagementCarosel from "./engagementCarosel.component";
+import EventBanner from './eventBanner.component';
+import EventBannerMirror from './eventBannerMirror.component';
 
 
 function Home() {

@@ -1,4 +1,4 @@
-import TitleHeader from './TitleBanner';
+import TitleHeader from './titleBanner.component';
 
 import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";

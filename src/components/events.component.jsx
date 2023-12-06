@@ -1,5 +1,5 @@
-import TitleHeader from './TitleBanner';
-import EventCard from './EventCard';
+import TitleHeader from './titleBanner.component';
+import EventCard from './eventCard.component';
 
 import '../App.css'
 

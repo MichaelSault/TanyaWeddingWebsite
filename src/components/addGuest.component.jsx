@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 
-import TitleHeader from './TitleBanner';
+import TitleHeader from './titleBanner.component';
 import '../App.css';
 
 function AddGuest() {
