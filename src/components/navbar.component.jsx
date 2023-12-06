@@ -134,7 +134,7 @@ export default function Navbar() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem href="rsvp" component="a" onClick={handleClose}>RSVP</MenuItem>
+              <MenuItem href="RSVP" component="a" onClick={handleClose}>RSVP</MenuItem>
           </Menu>
           </div>
           )}
@@ -172,7 +172,10 @@ export default function Navbar() {
                 onClose={handleUserClose}
               >
                 <MenuItem href="../" component="a" onClick={handleUserClose}>Home</MenuItem>
+                <MenuItem href="../Guests" component="a" onClick={handleUserClose}>Guest List</MenuItem>
                 <MenuItem href="../Events" component="a" onClick={handleUserClose}>Events</MenuItem>
+                <MenuItem href="../Invite" component="a" onClick={handleUserClose}>Invite</MenuItem>
+                <MenuItem href="../Guest" component="a" onClick={handleUserClose}>Profile</MenuItem>
                 {/* Will delete the JWT token */}
                 <MenuItem href="../Logout" component="a" onClick={handleUserClose}>Log Out</MenuItem> 
               </Menu>
