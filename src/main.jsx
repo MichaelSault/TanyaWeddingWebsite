@@ -4,12 +4,12 @@ import './index.css';
 import 'bootstrap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import RSVP from './components/RSVP.jsx';
-import Home from './components/Home.jsx';
-import GuestList from './components/GuestList.jsx';
-import Events from './components/Events.jsx';
-import AddGuest from './components/AddGuest';
-import Guest from './components/Guest';
+import RSVP from './components/RSVP.component.jsx';
+import Home from './components/home.component.jsx';
+import GuestList from './components/guestList.component.jsx';
+import Events from './components/events.component.jsx';
+import AddGuest from './components/addGuest.component.jsx';
+import Guest from './components/guest.component.jsx';
 
 import Navbar from './components/navbar.component.jsx';
 

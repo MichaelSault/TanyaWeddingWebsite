@@ -73,7 +73,7 @@ function GuestList() {
     return (
     <>
         <TitleHeader Title={'Guest List'}/> 
-        <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
+        <div id='bodyGuestList' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
         <h2>Guests:</h2>
 
         <Modal show={show} onHide={handleClose}>
@@ -147,7 +147,7 @@ function GuestList() {
             {guests.map((guest) => {
                 return(
                     // eslint-disable-next-line react/jsx-key
-                    <div key={guest._id} style={{border:"solid lightgrey 1px", borderRadius: "8px", marginBottom: "1rem", padding: "1rem"}}>
+                    <div key={guest._id} style={{border:"solid lightgrey 1px", backgroundColor: "ivory", borderRadius: "8px", marginBottom: "1rem", padding: "1rem"}}>
                         <h4>{guest.firstName} {guest.lastName}</h4>
                         <p>{guest.email}</p>
                         <div style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
