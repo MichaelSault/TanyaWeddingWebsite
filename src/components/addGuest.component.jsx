@@ -31,6 +31,27 @@ function AddGuest() {
         });
     };
 
+    const handleChangeBool = (event) => {
+        let {name, value} = event.target;
+        
+        console.log(guest[name]);
+
+        if(guest[name] != true){
+            value = true;
+        } else {
+            value = false;
+        }
+
+        console.log(name, ":", value);
+
+        setGuest(prev => {
+            return {
+                ...prev,
+                [name]: value,
+            }
+        });
+    }
+
     useEffect(() => {
         console.log(guest);
     }, [guest]);
@@ -98,12 +119,12 @@ function AddGuest() {
                     </FloatingLabel>
                     <h3>Events</h3>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox" style={{width:"100%", margin:"auto auto", textAlign:"left"}}>
-                        <Form.Check type="checkbox" label="Sangeet & Jaggo" name="sangeet" onChange={handleChange}/>
-                        <Form.Check type="checkbox" label="Maiyan" name="maiyan" onChange={handleChange}/>
-                        <Form.Check type="checkbox" label="Mendhi" name="mendhi" onChange={handleChange}/>
-                        <Form.Check type="checkbox" label="Choora" name="choora" onChange={handleChange}/>
-                        <Form.Check type="checkbox" label="Anand Karaj (Sikh Ceremony)" name="sikh" onChange={handleChange}/>
-                        <Form.Check type="checkbox" label="Civil Ceremony & Reception" name="civil" onChange={handleChange}/>
+                        <Form.Check inline type="checkbox" label="Sangeet & Jaggo" name="sangeet" onChange={handleChangeBool}/>
+                        <Form.Check inline type="checkbox" label="Maiyan" name="maiyan" onChange={handleChangeBool}/>
+                        <Form.Check inline type="checkbox" label="Mendhi" name="mendhi" onChange={handleChangeBool}/>
+                        <Form.Check inline type="checkbox" label="Choora" name="choora" onChange={handleChangeBool}/>
+                        <Form.Check inline type="checkbox" label="Anand Karaj (Sikh Ceremony)" name="sikh" onChange={handleChangeBool}/>
+                        <Form.Check inline type="checkbox" label="Civil Ceremony & Reception" name="civil" onChange={handleChangeBool}/>
                     </Form.Group>
                 </Form.Group>
                 <Button variant="outline-dark" style={{width:"100%", marginBottom:'1rem'}} onClick={handleClick}>Invite Guest</Button>
