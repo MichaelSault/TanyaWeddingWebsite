@@ -60,7 +60,13 @@ const getJWT = async(userData, secret) => {
         email: userData.email,
         code: userData.code,
         firstName: userData.firstName,
-        lastName: userData.lastName
+        lastName: userData.lastName,
+        sangeet: userData.sangeet,
+        maiyan: userData.maiyan,
+        mendhi: userData.mendhi,
+        choora: userData.choora,
+        sikh: userData.sikh,
+        civil: userData.civil
     }
 
     // converts payload to base64

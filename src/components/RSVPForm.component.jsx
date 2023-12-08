@@ -82,7 +82,13 @@ export default function RSVPForm() {
               email: newData.email, 
               code: newData.code, 
               firstName: newData.firstName, 
-              lastName: newData.lastName
+              lastName: newData.lastName,
+              sangeet: newData.sangeet,
+              maiyan: newData.maiyan,
+              mendhi: newData.mendhi,
+              choora: newData.choora,
+              sikh: newData.sikh,
+              civil: newData.civil
             })
         })
         .then(res => res.text());
