@@ -53,6 +53,27 @@ function GuestList() {
         });
     };
 
+/*     const handleChangeBool = (event) => {
+        let {name, value} = event.target;
+        
+        console.log(updatedGuest[name]);
+
+        if(updatedGuest[name] != true){
+            value = true;
+        } else {
+            value = false;
+        }
+
+        console.log(name, ":", value);
+
+        setUpdatedGuest(prev => {
+            return {
+                ...prev,
+                [name]: value,
+            }
+        });
+    } */
+
     const saveUpdatedGuest = () => {
         console.log(updatedGuest);
         axios.put(`http://localhost:3001/update/${updatedGuest._id}`, updatedGuest)
@@ -127,6 +148,14 @@ function GuestList() {
                         className="mb-3"
                     />
                     </FloatingLabel>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox" style={{width:"100%", margin:"auto auto", textAlign:"left"}}>
+                        <Form.Check inline type="checkbox" label="Sangeet & Jaggo" name="sangeet" value={guests.sangeet} defaultValue={selectedGuest.sangeet} onChange={handleChange}/>
+                        <Form.Check inline type="checkbox" label="Maiyan" name="maiyan" value={guests.maiyan} defaultValue={selectedGuest.maiyan} onChange={handleChange}/>
+                        <Form.Check inline type="checkbox" label="Mendhi" name="mendhi" value={guests.mendhi} defaultValue={selectedGuest.mendhi} onChange={handleChange}/>
+                        <Form.Check inline type="checkbox" label="Choora" name="choora" value={guests.choora} defaultValue={selectedGuest.choora} onChange={handleChange}/>
+                        <Form.Check inline type="checkbox" label="Anand Karaj (Sikh Ceremony)" name="sikh" value={guests.sikh} defaultValue={selectedGuest.sikh} onChange={handleChange}/>
+                        <Form.Check inline type="checkbox" label="Civil Ceremony & Reception" name="civil" value={guests.civil} defaultValue={selectedGuest.civil} onChange={handleChange}/>
+                    </Form.Group>
                 </Form.Group>
             </Form>
             </Modal.Body>
