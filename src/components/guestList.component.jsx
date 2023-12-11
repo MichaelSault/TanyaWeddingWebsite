@@ -9,6 +9,9 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 import axios from 'axios';
 
+import checked from "../assets/checkbox/checked.png";
+import unchecked from "../assets/checkbox/unchecked.png";
+
 import '../App.css'
 
 function GuestList() {
@@ -53,27 +56,6 @@ function GuestList() {
         });
     };
 
-/*     const handleChangeBool = (event) => {
-        let {name, value} = event.target;
-        
-        console.log(updatedGuest[name]);
-
-        if(updatedGuest[name] != true){
-            value = true;
-        } else {
-            value = false;
-        }
-
-        console.log(name, ":", value);
-
-        setUpdatedGuest(prev => {
-            return {
-                ...prev,
-                [name]: value,
-            }
-        });
-    } */
-
     const saveUpdatedGuest = () => {
         console.log(updatedGuest);
         axios.put(`http://localhost:3001/update/${updatedGuest._id}`, updatedGuest)
@@ -90,6 +72,8 @@ function GuestList() {
         handleShow();
     };
 
+    const imageRefChecked = React.createRef();
+    const imageRefUnchecked = React.createRef();
 
     return (
     <>
@@ -148,6 +132,7 @@ function GuestList() {
                         className="mb-3"
                     />
                     </FloatingLabel>
+                    
                     <Form.Group className="mb-3" controlId="formBasicCheckbox" style={{width:"100%", margin:"auto auto", textAlign:"left"}}>
                         <Form.Check inline type="checkbox" label="Sangeet & Jaggo" name="sangeet" value={guests.sangeet} defaultValue={selectedGuest.sangeet} onChange={handleChange}/>
                         <Form.Check inline type="checkbox" label="Maiyan" name="maiyan" value={guests.maiyan} defaultValue={selectedGuest.maiyan} onChange={handleChange}/>
