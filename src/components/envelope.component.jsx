@@ -1,6 +1,6 @@
 
 import '../stylesheets/envelope.css';
-import invitation from '../../public/Luxaryball.png'
+import invitation from '../../public/icon.png'
 
 function Envelope() {
 
