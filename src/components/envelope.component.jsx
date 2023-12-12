@@ -11,8 +11,9 @@ function Envelope() {
             <div className='envelope'>
                 <div className='top-side'></div>
                 <div className='left-side'></div>
-                <div className='image'></div>
-                    <img src={invitation} alt='wedding invitation'></img>
+                <div className='invite'>
+                    <img src={invitation} alt='wedding invitation'/>
+                </div>
                 <div className='right-side'></div>
                 <div className='bottom-side'></div>
             </div>

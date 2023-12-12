@@ -56,8 +56,8 @@ body{
     z-index: 4;
 }
 
-image{
-    width: 90%;
+.invite{
+    width: 100%;
     position: absolute;
     top: 0;
     left: 50%;
@@ -66,8 +66,8 @@ image{
     transition: all 1s ease;
 }
 
-.image img{
-    width: 100%;
+.invite img{
+    width: 70%;
 }
 
 .envelope:hover .top-side{
@@ -76,8 +76,14 @@ image{
     transition-delay: .3s;
 }
 
-.envelope:hover .image{
-    top: 70%;
+.envelope:hover .invite{
+    top: -75%;
+    z-index: 3;
+    transition-delay: .6s;
+}
+
+.envelope:click .invite{
+    top: -100%;
     z-index: 3;
     transition-delay: .6s;
 }
