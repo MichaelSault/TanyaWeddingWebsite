@@ -10,6 +10,7 @@ import GuestList from './components/guestList.component.jsx';
 import Events from './components/events.component.jsx';
 import AddGuest from './components/addGuest.component.jsx';
 import Guest from './components/guest.component.jsx';
+import Envelope from './components/envelope.component.jsx';
 
 import Navbar from './components/navbar.component.jsx';
 
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='/Events' element={<Events/>}/>
             <Route path='/Invite' element={<AddGuest/>}/>
             <Route path='/Guest' element={<Guest/>}/>
+            <Route path='/Envelope' element={<Envelope/>}/>
           </Routes>
         </BrowserRouter>
       </React.StrictMode>

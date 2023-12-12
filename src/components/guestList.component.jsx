@@ -72,8 +72,8 @@ function GuestList() {
         handleShow();
     };
 
-    const imageRefChecked = React.createRef();
-    const imageRefUnchecked = React.createRef();
+    // const imageRefChecked = React.createRef();
+    // const imageRefUnchecked = React.createRef();
 
     return (
     <>
