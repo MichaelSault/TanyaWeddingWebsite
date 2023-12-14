@@ -7,17 +7,17 @@ function Envelope() {
 
     return (
         <>
-        <body>
+        <envelopebody>
             <div className='envelope'>
                 <div className='top-side'></div>
                 <div className='left-side'></div>
                 <div className='invite'>
-                    <img src={invitation} alt='wedding invitation'/>
+                    <a href='\guest'><img src={invitation} alt='wedding invitation'/></a>
                 </div>
                 <div className='right-side'></div>
                 <div className='bottom-side'></div>
             </div>
-        </body>
+        </envelopebody>
         </>
   )
 }
