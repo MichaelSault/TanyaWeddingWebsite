@@ -94,7 +94,7 @@ export default function RSVPForm() {
         .then(res => res.text());
         console.log(JWT);
         cookies.set("userAuthentication", JWT);
-        navigate("/Guest", {relative: "path"})
+        navigate("/Envelope", {relative: "path"})
       } else {
         console.log("RSVP Code Mismatch!");
     }
