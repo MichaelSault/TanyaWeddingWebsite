@@ -102,6 +102,12 @@ export default function Navbar() {
     setAnchorE2(null);
   };
 
+  const logOutUser = () => {
+    console.log("Attempting to delete JWT");
+    document.cookie = "userAuthentication=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+    setAnchorE2(null);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: 'rgba(196, 196, 179, 0.9)' }}>
@@ -177,7 +183,7 @@ export default function Navbar() {
                 <MenuItem href="../Invite" component="a" onClick={handleUserClose}>Invite</MenuItem>
                 <MenuItem href="../Guest" component="a" onClick={handleUserClose}>Profile</MenuItem>
                 {/* Will delete the JWT token */}
-                <MenuItem href="../Logout" component="a" onClick={handleUserClose}>Log Out</MenuItem> 
+                <MenuItem href="../" component="a" onClick={logOutUser}>Log Out</MenuItem> 
               </Menu>
           </div>
           )}
