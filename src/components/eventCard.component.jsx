@@ -15,6 +15,7 @@ import event1 from '../assets/CarouselPhotos/TanyaWedding1.jpg'
 const EventCard = forwardRef(
     (
         {
+            rsvpCode,
             eventName,
             date,
             location,
@@ -24,6 +25,25 @@ const EventCard = forwardRef(
         ref
     ) => {
 
+        const rsvpEvent = async(event) => {
+            event.preventDefault();
+            console.log("user is rsvping for:", eventName);
+        
+            const runnerData = await fetch('http://localhost:3001/rsvpEvent', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    Event: eventName,
+                    rsvpCode: rsvpCode
+                })
+            })
+            .then(res => res.json());
+        
+          };
+    
     return (
         <>
             <div className='eventCard'>
@@ -49,7 +69,7 @@ const EventCard = forwardRef(
                     </CardContent>
 
                     <CardActions className='cardLinks'>
-                        <Button size="small">RSVP</Button>
+                        <Button size="small" onClick={rsvpEvent}>RSVP</Button>
                         {/* <Button size="small">Learn More</Button> */}
                     </CardActions>
                     </div>

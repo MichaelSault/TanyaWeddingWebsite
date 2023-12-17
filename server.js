@@ -112,6 +112,14 @@ app.put("/update/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.put("/update/:id", (req, res) => {
+    Guests.findByIdAndUpdate({_id: req.params.id}, {
+        eventName: eventName
+    })
+    .then((doc) => console.log(doc))
+    .catch((err) => console.log(err));
+});
+
 ////////////////////////////////////////////////////
 ////////////////JWT Functions///////////////////////
 ////////////////////////////////////////////////////

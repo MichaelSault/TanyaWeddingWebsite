@@ -26,10 +26,10 @@ body {
 }
 
 #bodyCarousel {
-  max-width: 50%;
+  max-width: 45%;
   align-self: center;
   margin-bottom: 2em;
-  height: 100vh;
+  height: 90%;
 }
 
 #bodyGuestList {

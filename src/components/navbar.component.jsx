@@ -21,7 +21,7 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorE2, setAnchorE2] = React.useState(null);
 
-  const [runnerData, setRunnerData] = useState([]);
+  const [guestData, setGuestData] = useState([]);
 
   useEffect(() => {
       const loggedInUser = document.cookie.split('=')[1];
@@ -46,7 +46,7 @@ export default function Navbar() {
 
   const verifyJWT = async (token) => {
     console.log("token: ", token)
-    const tokenData = await fetch('http://localhost:5000/verifyJWT', {
+    const tokenData = await fetch('http://localhost:3001/verifyJWT', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export default function Navbar() {
 
   const decodeJWT = async (token) => {
     console.log("token: ", token)
-    const runnerData = await fetch('http://localhost:5000/decodeJWT', {
+    const guestData = await fetch('http://localhost:3001/decodeJWT', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -78,8 +78,8 @@ export default function Navbar() {
     })
     .then(res => res.json());
 
-    console.log("does this run? ", runnerData);
-    setRunnerData(runnerData);
+    console.log("does this run? ", guestData);
+    setGuestData(guestData);
   }
 
   const handleChange = (event) => {
@@ -149,7 +149,7 @@ export default function Navbar() {
           </Typography>
           {auth && (
             <div>
-              {runnerData.Display}
+              {guestData.Display}
               <IconButton
                 size="large"
                 aria-label="account of current user"
