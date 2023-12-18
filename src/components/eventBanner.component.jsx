@@ -16,7 +16,7 @@ const EventBanner = forwardRef(
 
   return (
     <>
-      <div className='EventHeader' width='100%'>
+      <div className='EventHeader'>
         <div className='eventName'>
             <h1 id='eventTitle'>{event}</h1>
         </div>
