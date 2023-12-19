@@ -182,6 +182,7 @@ export default function Navbar() {
                 <MenuItem href="../Events" component="a" onClick={handleUserClose}>Events</MenuItem>
                 <MenuItem href="../Invite" component="a" onClick={handleUserClose}>Invite</MenuItem>
                 <MenuItem href="../Guest" component="a" onClick={handleUserClose}>Profile</MenuItem>
+                <MenuItem href="../Photos" component="a" onClick={handleUserClose}>Photos</MenuItem>
                 {/* Will delete the JWT token */}
                 <MenuItem href="../" component="a" onClick={logOutUser}>Log Out</MenuItem> 
               </Menu>

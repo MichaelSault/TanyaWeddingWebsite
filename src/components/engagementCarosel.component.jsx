@@ -61,30 +61,6 @@ function EngagementCarosel() {
                   <span className="visually-hidden">Next</span>
               </button>
           </div>
-  
-          {/* <Accordion defaultActiveKey="0" style={{width:"100%"}}>
-              <Accordion.Item eventKey="1">
-                  <Accordion.Header>Reception Party</Accordion.Header>
-                  <Accordion.Body>
-                      Information about the reception can go here and we can make visible to only users who are invited.
-                  </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="2">
-                  <Accordion.Header>The Big Day!</Accordion.Header>
-                  <Accordion.Body>
-                      Information about the actual wedding.
-                  </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="3">
-                  <Accordion.Header>After Party</Accordion.Header>
-                  <Accordion.Body>
-                      <p>Date:</p>
-                      <p>Time:</p>
-                      <p>Location:</p>
-                      <p>Ect...:</p>
-                  </Accordion.Body>
-              </Accordion.Item>
-          </Accordion> */}
       </>
     )
   }
