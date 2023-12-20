@@ -14,10 +14,7 @@ const TitleHeader = forwardRef(
   return (
     
     <>
-      <div className='ImageHeader' width='100%'>
-        <h1>{Title}</h1>
-      </div>
-
+      <div className='ImageHeader' width='100%' />
     </>
   )
   }
