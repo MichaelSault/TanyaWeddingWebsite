@@ -14,6 +14,13 @@ function Home() {
 
           {/* <EventBanner event={'Anand Karaj'} date={'Aug 17th'} location={'Burlington'} details={"The day will begin with the baraat (groom's parade). The anand karaj is comprised of a series of prayers and hymns (lavanns) which symbolizes the bride and grooms vows to one another."}/>
           <EventBannerMirror event={'Civil Ceremony'} date={'Aug 18th'} location={'Burlington'} details={"The civil wedding ceremony will take place followed by cocktail hour, dinner and dancing to celebrate the final day of the wedding week."}/> */}
+        
+          <img src="src/assets/Header/WeddingEvents.png" className="d-block" width="100%" height="60%" alt="..."/>
+        <div id='primaryEvents'>
+          <div id='red' width="33%" height="40%"><h2 id='redText'>Anand Karaj (Sikh Ceremony)</h2></div>
+          <div id='blue' width="33%" height="40%"><h2 id='redText'>Civil Ceremony</h2></div>
+          <div id='green' width="33%" height="40%"><h2 id='redText'>Reception</h2></div>
+        </div>
     </>
   )
 }
