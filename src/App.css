@@ -80,18 +80,30 @@ h3 {
   text-shadow: 1px 2px 0 #000;
 }
 
+#eventTitle{
+  min-width: 100%;
+}
+
 #primaryEvents {
   height: 100vh;
   display: flex;
   width: 100%;
+  min-width: 957px;
 }
 
-#red {
+#event {
   border-color: red;
   border-style: dashed;
-  width: 33.33%;
-  height: 40%;
+  width: 384px;
+  min-width: 384px;
+  height: 150px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+li {
   justify-content: flex-start;
 }
 
@@ -103,6 +115,7 @@ h3 {
 #blue {
   border-color: blue;
   border-style: dashed;
+  min-width: 319px;
   width: 33.33%;
   height: 40%;
   display: flex;
@@ -112,6 +125,7 @@ h3 {
 #green {
   border-color: green;
   border-style: dashed;
+  min-width: 319px;
   width: 33.33%;
   height: 40%;
   display: flex;
@@ -120,7 +134,7 @@ h3 {
 
 .ImageHeader {
   background-image: url('./assets/Header/Header.png');
-  background-position: center top;
+  background-position: center left;
   width: 100%;
   height: 100vh;
   padding-top: 1em;
