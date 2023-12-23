@@ -16,7 +16,7 @@ function Home() {
           <EventBannerMirror event={'Civil Ceremony'} date={'Aug 18th'} location={'Burlington'} details={"The civil wedding ceremony will take place followed by cocktail hour, dinner and dancing to celebrate the final day of the wedding week."}/> */}
         
         
-          <img src="src/assets/Header/WeddingEvents.png" className="d-block" width="100%" height="60%" alt="..."/>
+          <img src="src/assets/Header/WeddingEvents.png" className="d-block" width="1920px" height="60%" alt="..."/>
         <div id='primaryEvents'>
           <div id='event' width="33%" height="40%">
             <div className='eventTitle'> 
