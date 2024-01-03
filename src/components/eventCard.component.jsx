@@ -19,8 +19,10 @@ const EventCard = forwardRef(
             eventName,
             date,
             location,
+            address,
             time,
-            description
+            description,
+            active
         },
         ref
     ) => {
@@ -66,12 +68,18 @@ const EventCard = forwardRef(
                         <Typography variant="body2" color="text.secondary">
                             {description}
                         </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {address}
+                        </Typography>
                     </CardContent>
 
+                    {active ?
                     <CardActions className='cardLinks'>
                         <Button size="small" onClick={rsvpEvent}>RSVP</Button>
                         {/* <Button size="small">Learn More</Button> */}
                     </CardActions>
+                    : ""
+                    }
                     </div>
                 </Card>
             </div>
