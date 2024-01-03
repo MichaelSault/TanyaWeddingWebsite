@@ -1,9 +1,10 @@
 import '../App.css'
 import TitleHeader from './titleBanner.component';
 import Sidebar from "./sidebar.component";
-import EngagementCarosel from "./engagementCarosel.component";
+import EngagementCarousel from "./engagementCarousel.component";
 import EventBanner from './eventBanner.component';
 import EventBannerMirror from './eventBannerMirror.component';
+import EventCard from './eventCard.component';
 
 
 function Home() {
@@ -12,22 +13,23 @@ function Home() {
     <>
         <TitleHeader Title={'Justin & Tanya'}/> 
 
-          {/* <EventBanner event={'Anand Karaj'} date={'Aug 17th'} location={'Burlington'} details={"The day will begin with the baraat (groom's parade). The anand karaj is comprised of a series of prayers and hymns (lavanns) which symbolizes the bride and grooms vows to one another."}/>
-          <EventBannerMirror event={'Civil Ceremony'} date={'Aug 18th'} location={'Burlington'} details={"The civil wedding ceremony will take place followed by cocktail hour, dinner and dancing to celebrate the final day of the wedding week."}/> */}
+        <img src="src/assets/Header/WeddingEvents.png" className="d-block" width="1920px" height="60%" alt="..."/>
         
-        
-          <img src="src/assets/Header/WeddingEvents.png" className="d-block" width="1920px" height="60%" alt="..."/>
-        <div id='primaryEvents'>
-          <div id='event' width="33%" height="40%">
-            <div className='eventTitle'> 
-              <h2 id='redText'>Anand Karaj (Sikh Ceremony)</h2>
+        <div id='bodyEventCards' className='hide-mobile'>
+            <div className='eventCardsRow'>
+                <EventCard eventName = "Anand Karaj (Sikh Ceremony)" date = "Saturday, August 17, 2024" time = "8:30am" location = "Gurdwara Shaheedgarh Sahib Hamilton" address = "200 Old Guelph Rd, Hamilton, ON L9H 5X6" description = "" active = {false}/>
+                <EventCard eventName = "Civil Ceremony" date = "Sunday, August 18, 2024" time = "3:00pm" location = "The Pearle Hotel. The Laurentide Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
+                <EventCard eventName = "Civil Ceremony & Reception" date = "Sunday, August 18, 2024" time = "3:30pm" location = "The Pearle Hotel. The Edgewater Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
             </div>
-            <ul>
-              <li>Gurdwara Shaheedgarh Sahib Hamilton</li>
-              <li>8:30am</li>
-              <li>200 Old Guelph Rd, Hamilton, ON L9H 5X6</li>
-            </ul>
-          </div>
+        </div>
+    </>
+  )
+}
+
+export default Home
+
+
+{/* <div id='primaryEvents'>
           <div id='event' width="33%" height="40%">
             <h2 id='redText'>Civil Ceremony</h2>
             <ul>
@@ -48,9 +50,4 @@ function Home() {
             </ul>
             </div>
           </div>
-        </div>
-    </>
-  )
-}
-
-export default Home
+        </div> */}

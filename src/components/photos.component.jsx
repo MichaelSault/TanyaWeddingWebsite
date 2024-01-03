@@ -2,7 +2,7 @@
 import '../App.css';
 
 import TitleHeader from './titleBanner.component';
-import EngagementCarosel from './engagementCarosel.component';
+import EngagementCarousel from './engagementCarousel.component';
 
 function Photos() {
 
@@ -11,9 +11,9 @@ function Photos() {
         <>
             <TitleHeader Title={'Photos'}/>
             <div id='bodyCarousel'>
-                <EngagementCarosel />
+                <EngagementCarousel />
             </div>
-            <h2>Sumbit addition photos to tanya.samra94@gmail.com</h2>
+            <h2>Submit additional photos to tanya.samra94@gmail.com</h2>
         </>
   )
 }

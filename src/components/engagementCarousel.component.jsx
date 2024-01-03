@@ -3,10 +3,10 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import '../App.css'
 
-function EngagementCarosel() {
+function EngagementCarousel() {
     return (
       
-      <>
+    <>
           <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
               <div className="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -65,5 +65,5 @@ function EngagementCarosel() {
     )
   }
   
-  export default EngagementCarosel
+  export default EngagementCarousel
   
