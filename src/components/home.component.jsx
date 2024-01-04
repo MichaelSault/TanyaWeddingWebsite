@@ -1,10 +1,7 @@
 import '../App.css'
 import TitleHeader from './titleBanner.component';
-import Sidebar from "./sidebar.component";
-import EngagementCarousel from "./engagementCarousel.component";
-import EventBanner from './eventBanner.component';
-import EventBannerMirror from './eventBannerMirror.component';
 import EventCard from './eventCard.component';
+import FAQ from './faq.componenet';
 
 
 function Home() {
@@ -22,32 +19,10 @@ function Home() {
                 <EventCard eventName = "Civil Ceremony & Reception" date = "Sunday, August 18, 2024" time = "3:30pm" location = "The Pearle Hotel. The Edgewater Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
             </div>
         </div>
+
+        <FAQ/>
     </>
   )
 }
 
 export default Home
-
-
-{/* <div id='primaryEvents'>
-          <div id='event' width="33%" height="40%">
-            <h2 id='redText'>Civil Ceremony</h2>
-            <ul>
-              <li>The Pearle Hotel. The Laurentide Room</li>
-              <li>3:00 p.m</li>
-              <li>3 Elizabeth St, Burlington, ON L7R 0G3</li>
-            </ul>
-          </div>
-          <div id='event' width="33%" height="40%">
-            <div className='eventTitle'>
-              <h2 id='redText'>Reception</h2>
-            </div>
-            <div width='1000px'>
-            <ul>
-              <li>The Pearle Hotel. The Edgewater Room</li>
-              <li>3:30 p.m</li>
-              <li>3 Elizabeth St, Burlington, ON L7R 0G3</li>
-            </ul>
-            </div>
-          </div>
-        </div> */}
