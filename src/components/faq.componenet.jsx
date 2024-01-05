@@ -1,7 +1,4 @@
-
 import '../App.css';
-
-import TitleHeader from './titleBanner.component';
 
 function FAQ() {
 
@@ -21,7 +18,7 @@ function FAQ() {
                     <div className='faqQuestionsSubCol'>
                         <h2>WHAT IS THE ANAND KARAJ?</h2>
                         <h3>The Anand Karaj is the Sikh wedding ceremony. The Anand Karaj is comprised of a series of prayers and hymns (lavaans) which symbolizes the bride and grooms vows to one another. </h3>
-                        
+
                         <h2>WHAT DO I WEAR TO THE ANAND KARAJ?</h2>
                         <h3>You will be required to sit on the ground during the ceremony for approximately 1 hour. Comfortable pants, long dresses and modest tops are ideal. Most men wear suits. Your head will also need to be covered in the gurdwara (Sikh temple). Head coverings will be provided for men. Ladies will need to bring a shawl to drape over their heads.</h3>
                     

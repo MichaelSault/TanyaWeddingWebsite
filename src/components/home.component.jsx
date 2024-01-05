@@ -2,6 +2,7 @@ import '../App.css'
 import TitleHeader from './titleBanner.component';
 import EventCard from './eventCard.component';
 import FAQ from './faq.componenet';
+import EngagementShoot from './engagementShoot.component';
 
 
 function Home() {
@@ -21,6 +22,8 @@ function Home() {
         </div>
 
         <FAQ/>
+
+        <EngagementShoot/>
     </>
   )
 }
