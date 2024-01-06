@@ -46,6 +46,26 @@ body {
   justify-content: space-between;
 }
 
+.engagementShootCol {
+  height: 100%;
+  width: 50%;
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+
+}
+
+.engagementSubCol{
+  width: 85%;
+  border-style: dashed;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 25%;
+}
+
 #event {
   border-color: red;
   border-style: dashed;
