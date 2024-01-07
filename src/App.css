@@ -63,7 +63,6 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding-top: 25%;
 }
 
 #event {

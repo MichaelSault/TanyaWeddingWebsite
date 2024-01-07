@@ -76,7 +76,6 @@ const EventCard = forwardRef(
                     {active ?
                     <CardActions className='cardLinks'>
                         <Button size="small" onClick={rsvpEvent}>RSVP</Button>
-                        {/* <Button size="small">Learn More</Button> */}
                     </CardActions>
                     : ""
                     }
