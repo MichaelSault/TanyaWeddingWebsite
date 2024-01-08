@@ -55,7 +55,7 @@ function Guest() {
     return (
         <>
             <TitleHeader Title={guest.firstName + " " + guest.lastName}/> 
-            <h4>Welcome {guest.firstName} {guest.lastName}</h4>
+            <h5>{guest.firstName} {guest.lastName}</h5>
             <div id='bodyEventCards' className='hide-mobile'>
                 <div className='eventCardsRow'>
                     { guest.sangeet ? 

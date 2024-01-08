@@ -70,7 +70,7 @@ function AddGuest() {
         <>
             <TitleHeader Title={'Invite a Guest'}/>
             <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
-            <h2>Invite a Guest</h2>
+            <h6>Invite a Guest</h6>
             <Form>
                 <Form.Group>
                     <FloatingLabel
@@ -117,7 +117,7 @@ function AddGuest() {
                         className="mb-3"
                     />
                     </FloatingLabel>
-                    <h3>Events</h3>
+                    <h6>Events</h6>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox" style={{width:"100%", margin:"auto auto", textAlign:"left"}}>
                         <Form.Check inline type="checkbox" label="Sangeet & Jaggo" name="sangeet" onChange={handleChangeBool}/>
                         <Form.Check inline type="checkbox" label="Maiyan" name="maiyan" onChange={handleChangeBool}/>

@@ -162,7 +162,7 @@ function GuestList() {
                 return(
                     // eslint-disable-next-line react/jsx-key
                     <div key={guest._id} style={{border:"solid lightgrey 1px", backgroundColor: "ivory", borderRadius: "8px", marginBottom: "1rem", padding: "1rem"}}>
-                        <h4>{guest.firstName} {guest.lastName}</h4>
+                        <h6>{guest.firstName} {guest.lastName}</h6>
                         <p>{guest.email}</p>
                         <div style={{display:"flex", flexDirection: "row", justifyContent: "space-between"}}>
                             <Button style={{width:"100%", marginRight:"1rem"}} onClick={() => updateGuest(guest)}>UPDATE</Button>

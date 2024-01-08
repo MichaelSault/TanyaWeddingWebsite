@@ -248,8 +248,21 @@ h3 {
 h4 {
   font-size: 40px;
   font-family: 'DreamAvenue';
-  color: black;
   text-align: start;
+  margin: 0;
+  color: #5c5a5a;
+}
+
+h5 {
+  font-size: 5em;
+  font-family: 'DreamAvenue';
+  padding-top: 1em;
+  color: #5c5a5a
+}
+
+h6 {
+  font-size: 40px;
+  font-family: 'DreamAvenue';
   margin: 0;
   color: #5c5a5a;
 }
