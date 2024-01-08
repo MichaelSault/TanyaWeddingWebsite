@@ -52,9 +52,15 @@ export default function RSVPForm() {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    console.log(guest.code);
+    console.log(guest.email);
 
-    const userData = await axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
+    //use this function if RSVP-ing with CODE
+    /* const userData = await axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
+    .then(res => res.data)
+    .catch(err => console.log(err)); */
+
+    //use this function if RSVP-ing with EMAIL
+    const userData = await axios.get("http://localhost:3001/RSVPEmail", {params: {email: guest.email}})
     .then(res => res.data)
     .catch(err => console.log(err));
 
@@ -71,7 +77,38 @@ export default function RSVPForm() {
     console.log(newData);
     var JWT = "";
 
-    if (newData.code = guest.code){
+    //use this block for RSVP-ing with CODE
+    /* if (newData.code = guest.code){
+        JWT = await fetch('http://localhost:3001/JWT', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              email: newData.email, 
+              code: newData.code, 
+              firstName: newData.firstName, 
+              lastName: newData.lastName,
+              sangeet: newData.sangeet,
+              maiyan: newData.maiyan,
+              mendhi: newData.mendhi,
+              choora: newData.choora,
+              sikh: newData.sikh,
+              civil: newData.civil
+            })
+        })
+        .then(res => res.text());
+        console.log(JWT);
+        cookies.set("userAuthentication", JWT);
+        navigate("/Envelope", {relative: "path"})
+      } else {
+        console.log("RSVP Code Mismatch!");
+    }
+    console.log(JWT); */
+
+    //use this block for RSVP-ing with EMAIL
+    if (newData.email = guest.email){
         JWT = await fetch('http://localhost:3001/JWT', {
             method: 'POST',
             headers: {
@@ -110,10 +147,13 @@ export default function RSVPForm() {
         <FloatingLabel
           controlId="RSVPCode"
           name="RSVPCode"
-          label="Guest Code"
+          label="Email Address"
           className="mb-3"
         >
-          <Form.Control type="text" name="code" onChange={handleChange}/>
+
+          <Form.Control type="text" name="email" onChange={handleChange}/>
+          {/*Use this line for rsvp using user code*/}
+          {/* <Form.Control type="text" name="code" onChange={handleChange}/> */}
         </FloatingLabel>
         <Button variant="outline-dark" style={{width:"100%"}} onClick={handleSubmit}>Continue</Button>
       </div>
