@@ -10,7 +10,7 @@ function EngagementShoot() {
             <div className='faqRow'>
                 
                 <div className='engagementShootCol'>
-                    <div className='engagementSubCol'>
+                    <div className='engagementShootSubCol'>
                         <EngagementCarousel />
                     </div>
                 </div>

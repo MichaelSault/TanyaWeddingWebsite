@@ -52,17 +52,25 @@ body {
   border-style: dashed;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   text-align: left;
 
 }
 
-.engagementSubCol{
-  width: 85%;
+.engagementShootSubCol{
+  min-width: 370px;
   border-style: dashed;
+  display: block;
+  margin: auto;
+}
+
+.faqTitleSubCol{
   display: flex;
   flex-direction: column;
-  text-align: left;
+  width: 50%;
+  border-style: dashed;
+  justify-content: start;
+  padding-top: 5em;
 }
 
 #event {
@@ -189,6 +197,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 50%;
+  min-width: 270px;
   border-style: dashed;
   justify-content: start;
   padding-top: 5em;
@@ -206,6 +215,7 @@ body {
 .faqQuestionsSubCol{
   height: 100%;
   width: 75%;
+  min-width: 295px;
   border-style: dashed;
   display: flex;
   flex-direction: column;
