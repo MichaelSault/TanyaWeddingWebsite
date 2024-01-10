@@ -59,6 +59,7 @@ body {
 
 .engagementShootSubCol{
   min-width: 370px;
+  width: 80%;
   border-style: dashed;
   display: block;
   margin: auto;
@@ -277,6 +278,13 @@ h6 {
   color: #5c5a5a;
 }
 
+h6 {
+  font-size: 50px;
+  font-family: 'DreamAvenue';
+  margin: 0;
+  color: #000000;
+}
+
 hr {
   width: 100%;
   border-width: 2px;
@@ -311,6 +319,15 @@ hr {
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgba(196, 196, 179, 0.6);
+}
+
+.scheduleTitleSubCol{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border-style: dashed;
+  justify-content: start;
+  padding-top: 6em;
 }
 
 .titleText {

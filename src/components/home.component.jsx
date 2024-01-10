@@ -3,6 +3,7 @@ import TitleHeader from './titleBanner.component';
 import EventCard from './eventCard.component';
 import FAQ from './faq.componenet';
 import EngagementShoot from './engagementShoot.component';
+import Schedule from './schedule.component';
 
 
 function Home() {
@@ -24,6 +25,8 @@ function Home() {
         <FAQ/>
 
         <EngagementShoot/>
+
+        <Schedule/>
     </>
   )
 }
