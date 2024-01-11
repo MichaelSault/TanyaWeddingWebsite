@@ -4,6 +4,7 @@ import EventCard from './eventCard.component';
 import FAQ from './faq.componenet';
 import EngagementShoot from './engagementShoot.component';
 import Schedule from './schedule.component';
+import Songs from './songs.component';
 
 
 function Home() {
@@ -27,6 +28,8 @@ function Home() {
         <EngagementShoot/>
 
         <Schedule/>
+
+        <Songs/>
     </>
   )
 }

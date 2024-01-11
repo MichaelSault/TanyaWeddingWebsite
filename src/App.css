@@ -285,6 +285,10 @@ h6 {
   color: #000000;
 }
 
+.song {
+  color: whitesmoke;
+}
+
 hr {
   width: 100%;
   border-width: 2px;
@@ -321,10 +325,72 @@ hr {
   background-color: rgba(196, 196, 179, 0.6);
 }
 
+.scheduleImageSubCol{
+  width: 90%;
+  min-width: 295px;
+  max-width: 570px;
+  border-style: dashed;
+  display: block;
+  margin: auto;
+  flex-direction: column;
+  text-align: left;
+}
+
 .scheduleTitleSubCol{
   display: flex;
   flex-direction: column;
   width: 70%;
+  border-style: dashed;
+  justify-content: start;
+  padding-top: 6em;
+}
+
+.songImageCol{
+  height: 100%;
+  width: 70%;
+  border-style: dashed;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.songImageSubCol{
+  width: 100%;
+  min-width: 295px;
+  max-width: 850px;
+  border-style: dashed;
+  display: block;
+  margin: auto;
+  flex-direction: column;
+  text-align: left;
+}
+
+.songRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 91vh;
+  justify-content: center;
+  padding: 3em 3em;
+  border-style: dashed;
+  background-color: #141414;
+}
+
+.songTitleCol{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 30%;
+  border-style: dashed;
+  justify-content: center;
+}
+
+.songTitleSubCol{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-width: 290px;
   border-style: dashed;
   justify-content: start;
   padding-top: 6em;
