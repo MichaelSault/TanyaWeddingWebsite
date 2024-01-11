@@ -1,7 +1,7 @@
 import '../App.css';
 
 //replace with a taller version of the photo from user
-import WeddingPhoto10 from '../assets/CarouselPhotos/TanyaWedding10.jpg'
+import SchedulePhoto from '../assets/Photos/SchedulePhoto.png'
 
 function Schedule() {
 
@@ -17,9 +17,7 @@ function Schedule() {
                     </div>
                 </div>
                 <div className='faqQuestionsCol'>
-                    <div className='faqQuestionsSubCol'>
-                        <img src={WeddingPhoto10} alt="Wedding Photo" width="100%" />
-                    </div>
+                        <img src={SchedulePhoto} className='scheduleImageSubCol' alt="Wedding Photo"/>
                 </div>
             </div>
         </>
