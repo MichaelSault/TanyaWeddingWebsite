@@ -5,6 +5,8 @@ import FAQ from './faq.componenet';
 import EngagementShoot from './engagementShoot.component';
 import Schedule from './schedule.component';
 import Songs from './songs.component';
+import Registry from './registry.component';
+import Attire from './attire.component';
 
 
 function Home() {
@@ -30,6 +32,10 @@ function Home() {
         <Schedule/>
 
         <Songs/>
+
+        <Registry/>
+
+        <Attire/>
     </>
   )
 }
