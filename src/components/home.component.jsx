@@ -7,6 +7,7 @@ import Schedule from './schedule.component';
 import Songs from './songs.component';
 import Registry from './registry.component';
 import Attire from './attire.component';
+import RSVPTag from './RSVPTag.compopnent';
 
 
 function Home() {
@@ -36,6 +37,8 @@ function Home() {
         <Registry/>
 
         <Attire/>
+
+        <RSVPTag/>
     </>
   )
 }
