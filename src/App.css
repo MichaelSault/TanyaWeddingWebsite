@@ -1,5 +1,17 @@
 @import "./fonts/font.css";
 
+.attireRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 91vh;
+  justify-content: center;
+  padding: 3em 3em;
+  border-style: dashed;
+  background-color: #d4bdad;
+}
+
 body {
   flex-direction: column;
   justify-content: flex-start;
@@ -278,15 +290,13 @@ h6 {
   color: #5c5a5a;
 }
 
-h6 {
-  font-size: 50px;
-  font-family: 'DreamAvenue';
-  margin: 0;
-  color: #000000;
-}
-
 .song {
   color: whitesmoke;
+}
+
+.attireTitle {
+  background-color: #d4bdad;
+  min-width: 100%;
 }
 
 hr {
@@ -328,7 +338,7 @@ hr {
 .scheduleImageSubCol{
   width: 90%;
   min-width: 295px;
-  max-width: 570px;
+  max-width: 540px;
   border-style: dashed;
   display: block;
   margin: auto;

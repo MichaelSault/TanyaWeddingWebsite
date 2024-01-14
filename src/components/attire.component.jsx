@@ -9,7 +9,7 @@ function Attire() {
     return (
         <>
             <h6>Attire</h6>
-            <div className='faqRow'>
+            <div className='attireRow'>
                 <div className='faqTitleCol'>
                     <div className='scheduleTitleSubCol'>
                         <h2>WHAT DO I WEAR TO THE ANAND KARAJ?</h2>
