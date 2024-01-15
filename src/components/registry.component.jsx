@@ -1,14 +1,16 @@
 import '../App.css';
 
+import RegistryBanner from '../assets/Photos/RegistryBanner.png';
+
 function Registry() {
 
 
     return (
         <>
-            <div className='faqRow'>
+            <div className='registryRow'>
                 <div className='faqTitleCol'>
                     <div className='faqTitleSubCol'>
-                        <h6>Your Presence at our wedding is the only present we require</h6>
+                        <h6>Your presence at our wedding is the only present we require</h6>
                     </div>
                 </div>
                 <div className='faqQuestionsCol'>
@@ -17,7 +19,7 @@ function Registry() {
                     </div>
                 </div>
             </div>
-            {/* <img src="src/assets/Header/WeddingEvents.png" className="d-block" width="1920px" height="40%" alt="..."/> */}
+            <img src={RegistryBanner} className="d-block" height="40%" alt="..."/>
         </>
   )
 }

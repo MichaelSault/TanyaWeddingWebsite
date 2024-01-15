@@ -1,6 +1,8 @@
 import { forwardRef } from 'react';
 import '../App.css'
 
+import Header from '../assets/Header/Header.png';
+
 // eslint-disable-next-line react/display-name
 const TitleHeader = forwardRef(
   (
@@ -14,7 +16,7 @@ const TitleHeader = forwardRef(
   return (
     
     <>
-      <div className='ImageHeader' width='100%' />
+      <image src={Header}/>
     </>
   )
   }

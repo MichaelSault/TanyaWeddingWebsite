@@ -5,7 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 91vh;
+  height: 100vh;
   justify-content: center;
   padding: 3em 3em;
   border-style: dashed;
@@ -77,6 +77,18 @@ body {
   margin: auto;
 }
 
+.engagementShootRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 100vh;
+  justify-content: center;
+  padding: 3em 3em;
+  border-style: dashed;
+  background-color: #e8ddd4;
+}
+
 .faqTitleSubCol{
   display: flex;
   flex-direction: column;
@@ -100,7 +112,7 @@ body {
 
 .eventCard {
   padding: .5em;
-  height: 500px;
+  height: 400px;
   min-width: 376px;
   display: flex;
   flex-direction: column;
@@ -190,6 +202,7 @@ body {
   display: flex;
   justify-content: flex-start;
 }
+
 #eventTextinfo {
   font-size: 2.5vw;
   display: flex;
@@ -240,10 +253,11 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 91vh;
+  height: 100vh;
   justify-content: center;
   padding: 3em 3em;
   border-style: dashed;
+  background-color: #f6f2e7;
 }
 
 h1 {
@@ -324,6 +338,18 @@ hr {
   min-width: 957px;
 }
 
+.registryRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 45vh;
+  justify-content: center;
+  padding: 3em 3em;
+  border-style: dashed;
+  background-color: #e8ddd4;
+}
+
 #root {
   margin: 0 auto;
   padding-bottom: 0;
@@ -375,12 +401,24 @@ hr {
   text-align: left;
 }
 
+.scheduleRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 100vh;
+  justify-content: center;
+  padding: 3em 3em;
+  border-style: dashed;
+  background-color: #fffbf7;
+}
+
 .songRow{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 91vh;
+  height: 100vh;
   justify-content: center;
   padding: 3em 3em;
   border-style: dashed;
@@ -408,6 +446,10 @@ hr {
 
 .titleText {
   align-content: left;
+}
+
+.weddingEventsBackground{
+  background-color: #f5f5ef;
 }
 
 @media only screen and (max-device-width: 480px) {

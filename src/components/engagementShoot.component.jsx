@@ -7,7 +7,7 @@ function EngagementShoot() {
 
     return (
         <>
-            <div className='faqRow'>
+            <div className='engagementShootRow'>
                 
                 <div className='engagementShootCol'>
                     <div className='engagementShootSubCol'>

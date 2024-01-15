@@ -8,7 +8,7 @@ function Schedule() {
 
     return (
         <>
-            <div className='faqRow'>
+            <div className='scheduleRow'>
                 <div className='faqTitleCol'>
                     <div className='scheduleTitleSubCol'>
                         <h6>WEDDING WEEK SCHEDULE</h6>
