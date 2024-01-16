@@ -343,9 +343,21 @@ hr {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 45vh;
+  height: 50vh;
   justify-content: center;
-  padding: 3em 3em;
+  padding: 3em, 0em, 0em, 0em;
+  border-style: dashed;
+  background-color: #e8ddd4;
+}
+
+.registryImage{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 50vh;
+  
+  justify-content: center;
   border-style: dashed;
   background-color: #e8ddd4;
 }
@@ -452,20 +464,20 @@ hr {
   background-color: #f5f5ef;
 }
 
-@media only screen and (max-device-width: 480px) {
-  .show-mobile {
-    display: block;
-  }
-  .hide-mobile {
+@media only screen and (max-device-width: 820px) {
+  .engagementShootCol {
     display: none;
+  }
+  .engagementShootMobile {
+    display: block;
   }
 }
 
-@media only screen and (min-device-width: 481px) {
-  .show-mobile {
-    display: none;
-  }
-  .hide-mobile {
+@media only screen and (min-device-width: 821px) {
+  .engagementShootCol {
     display: block;
+  }
+  .engagementShootMobile {
+    display: none;
   }
 }
