@@ -18,8 +18,10 @@ function Registry() {
                         <h2>However, if you wish to further bless our special day with a gift, we have created an online registry at www.reallygreatsite.com.</h2>
                     </div>
                 </div>
+                
             </div>
-            <img src={RegistryBanner} className="d-block" height="40%" alt="..."/>
+            <img src={RegistryBanner} className='registryImage' alt="..."/>
+            
         </>
   )
 }
