@@ -29,19 +29,19 @@ function Home() {
           </div>
         </div>
 
-        <FAQ />
+          <FAQ />
 
-        <EngagementShoot/>
+          <EngagementShoot/>
 
-        <Schedule/>
+          <Schedule/>
 
-        <Songs/>
+          <Songs/>
 
-        <Registry/>
+          <Registry/>
 
-        <Attire/>
+          <Attire/>
 
-        <RSVPTag/>
+          <RSVPTag/>
     </>
   )
 }
