@@ -9,7 +9,7 @@ function Schedule() {
     return (
         <>
             <div className='scheduleRow'>
-                <div className='faqTitleCol'>
+                <div className='faqTitleCol mobile-hidden'>
                     <div className='scheduleTitleSubCol'>
                         <h6>WEDDING WEEK SCHEDULE</h6>
                         <hr></hr>
@@ -17,6 +17,11 @@ function Schedule() {
                     </div>
                 </div>
                 <div className='faqQuestionsCol'>
+                    <div className='scheduleTitleSubCol mobile-shown'>
+                        <h6>WEDDING WEEK SCHEDULE</h6>
+                        <hr></hr>
+                        <h2>Coming soon.</h2>
+                    </div>
                         <img src={SchedulePhoto} className='scheduleImageSubCol' alt="Wedding Photo"/>
                 </div>
             </div>

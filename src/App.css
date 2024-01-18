@@ -361,6 +361,26 @@ hr {
   background-color: #e8ddd4;
 }
 
+.registryTitle{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 270px;
+  border-style: dashed;
+  justify-content: start;
+  padding-top: 5em;
+}
+
+.registryDescription{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 270px;
+  border-style: dashed;
+  justify-content: start;
+  padding-top: 5em;
+}
+
 #root {
   margin: 0 auto;
   padding-bottom: 0;
@@ -386,17 +406,19 @@ hr {
 .scheduleTitleSubCol{
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 90%;
   border-style: dashed;
-  justify-content: start;
+  justify-content: center;
   padding-top: 6em;
 }
 
 .songImageCol{
-  height: 100%;
   width: 70%;
+  min-width: 700px;
+  max-width: 850px;
   border-style: dashed;
   display: flex;
+  margin: auto;
   flex-direction: column;
   text-align: left;
 }
@@ -429,7 +451,7 @@ hr {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   padding: 3em 3em;
   border-style: dashed;
@@ -470,6 +492,30 @@ hr {
   .mobile-shown {
     display: block;
   }
+  .engagementShootCol {
+    width: 100%;
+    flex-direction: column;
+  }
+  .scheduleTitleSubCol {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .faqQuestionsCol {
+    width: 100%;
+  }
+  .scheduleImageSubCol {
+    padding: 2em;
+  }
+  .faqTitleSubCol {
+    width: 100%;
+    padding: 0;
+  }
+
+  .faqQuestionsSubCol {
+    width: 100%
+  }
+  
 }
 
 @media only screen and (min-width: 821px) {
@@ -479,4 +525,5 @@ hr {
   .mobile-shown {
     display: none;
   }
+
 }

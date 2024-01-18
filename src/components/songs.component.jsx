@@ -18,9 +18,7 @@ function Songs() {
                         <h2 className='song'>To be added closer to the wedding date with Spotify song search.</h2>
                     </div>
                 </div>
-                <div className='songImageCol'>
-                        <img src={SongPhoto} className='songImageSubCol' alt="Wedding Photo"/>
-                </div>
+                <img src={SongPhoto} className='songImageCol' alt="Wedding Photo"/>
             </div>
         </>
   )
