@@ -1,6 +1,6 @@
 @import "./fonts/font.css";
 
-.attireRow{
+.attireRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -8,8 +8,17 @@
   height: 100vh;
   justify-content: center;
   padding: 3em 3em;
-  border-style: dashed;
+  /* border-style: dashed; */
   background-color: #d4bdad;
+}
+
+.attireQuestionsCol {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 50%;
+  /* border-style: dashed; */
+  justify-content: center;
 }
 
 body {
@@ -61,23 +70,31 @@ body {
 .engagementShootCol {
   height: 100%;
   width: 50%;
-  border-style: dashed;
+  /* border-style: dashed; */
   display: flex;
-  align-items: center;
+  align-items: start;
   flex-direction: row;
   text-align: left;
 
 }
 
-.engagementShootSubCol{
+.engagementShootSubCol {
   min-width: 370px;
-  width: 80%;
-  border-style: dashed;
+  width: 100%;
+  /* border-style: dashed; */
   display: block;
   margin: auto;
 }
 
-.engagementShootRow{
+.engagementShootPhotoCol {
+  min-width: 370px;
+  width: 80%;
+  /* border-style: dashed; */
+  display: block;
+  margin: auto;
+}
+
+.engagementShootRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -85,22 +102,22 @@ body {
   height: 100vh;
   justify-content: center;
   padding: 3em 3em;
-  border-style: dashed;
+  /* border-style: dashed; */
   background-color: #e8ddd4;
 }
 
-.faqTitleSubCol{
+.faqTitleSubCol {
   display: flex;
   flex-direction: column;
   width: 50%;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: start;
   padding-top: 5em;
 }
 
 #event {
   border-color: red;
-  border-style: dashed;
+  /* border-style: dashed; */
   width: 384px;
   min-width: 384px;
   height: 150px;
@@ -124,7 +141,7 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  padding: 3em 3em;
+  padding: 3em 0em;
 }
 
 .eventDetails {
@@ -210,45 +227,45 @@ body {
   text-shadow: 1px 2px 0 #000;
 }
 
-.faqTitleCol{
+.faqTitleCol {
   display: flex;
   flex-direction: row;
   height: 100%;
   width: 50%;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: center;
 }
 
-.faqTitleSubCol{
+.faqTitleSubCol {
   display: flex;
   flex-direction: column;
   width: 50%;
   min-width: 270px;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: start;
   padding-top: 5em;
 }
 
-.faqQuestionsCol{
+.faqQuestionsCol {
   height: 100%;
   width: 50%;
-  border-style: dashed;
+  /* border-style: dashed; */
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.faqQuestionsSubCol{
+.faqQuestionsSubCol {
   height: 100%;
   width: 75%;
   min-width: 295px;
-  border-style: dashed;
+  /* border-style: dashed; */
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.faqRow{
+.faqRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -256,7 +273,7 @@ body {
   height: 100vh;
   justify-content: center;
   padding: 3em 3em;
-  border-style: dashed;
+  /* border-style: dashed; */
   background-color: #f6f2e7;
 }
 
@@ -338,18 +355,18 @@ hr {
   min-width: 957px;
 }
 
-.registryRow{
+.registryRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
   height: 50vh;
   justify-content: center;
-  border-style: dashed;
+  /* border-style: dashed; */
   background-color: #e8ddd4;
 }
 
-.registryImage{
+.registryImage {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -357,26 +374,26 @@ hr {
   height: 50vh;
   
   justify-content: center;
-  border-style: dashed;
+  /* border-style: dashed; */
   background-color: #e8ddd4;
 }
 
-.registryTitle{
+.registryTitle {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-width: 270px;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: start;
   padding-top: 5em;
 }
 
-.registryDescription{
+.registryDescription {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-width: 270px;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: start;
   padding-top: 5em;
 }
@@ -392,49 +409,7 @@ hr {
   background-color: rgba(196, 196, 179, 0.6);
 }
 
-.scheduleImageSubCol{
-  width: 90%;
-  min-width: 295px;
-  max-width: 540px;
-  border-style: dashed;
-  display: block;
-  margin: auto;
-  flex-direction: column;
-  text-align: left;
-}
-
-.scheduleTitleSubCol{
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  border-style: dashed;
-  justify-content: center;
-  padding-top: 6em;
-}
-
-.songImageCol{
-  width: 70%;
-  min-width: 700px;
-  max-width: 850px;
-  border-style: dashed;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  text-align: left;
-}
-
-.songImageSubCol{
-  width: 100%;
-  min-width: 295px;
-  max-width: 850px;
-  border-style: dashed;
-  display: block;
-  margin: auto;
-  flex-direction: column;
-  text-align: left;
-}
-
-.scheduleRow{
+.rsvpRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -442,11 +417,97 @@ hr {
   height: 100vh;
   justify-content: center;
   padding: 3em 3em;
-  border-style: dashed;
+  /* border-style: dashed; */
+  background-color: #f6f2e7;
+}
+
+.rsvpTitleCol {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 50%;
+  /* border-style: dashed; */
+  justify-content: center;
+}
+
+.rsvpTitleSubCol {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-width: 270px;
+  /* border-style: dashed; */
+  justify-content: start;
+  padding-top: 5em;
+}
+
+.rsvpDeadline {
+  height: 100%;
+  width: 50%;
+  /* border-style: dashed; */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.rsvpTagButton {
+  width: 90%;
+}
+
+.scheduleImageSubCol {
+  width: 90%;
+  min-width: 295px;
+  max-width: 540px;
+  /* border-style: dashed; */
+  display: block;
+  margin: auto;
+  flex-direction: column;
+  text-align: left;
+}
+
+.scheduleTitleSubCol {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  /* border-style: dashed; */
+  justify-content: center;
+  padding-top: 6em;
+}
+
+.songImageCol {
+  width: 70%;
+  min-width: 700px;
+  max-width: 850px;
+  /* border-style: dashed; */
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  text-align: left;
+}
+
+.songImageSubCol {
+  width: 100%;
+  min-width: 295px;
+  max-width: 850px;
+  /* border-style: dashed; */
+  display: block;
+  margin: auto;
+  flex-direction: column;
+  text-align: left;
+}
+
+.scheduleRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 100vh;
+  justify-content: center;
+  padding: 3em 3em;
+  /* border-style: dashed; */
   background-color: #fffbf7;
 }
 
-.songRow{
+.songRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -454,25 +515,25 @@ hr {
   min-height: 100vh;
   justify-content: center;
   padding: 3em 3em;
-  border-style: dashed;
+  /* border-style: dashed; */
   background-color: #141414;
 }
 
-.songTitleCol{
+.songTitleCol {
   display: flex;
   flex-direction: row;
   height: 100%;
   width: 30%;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: center;
 }
 
-.songTitleSubCol{
+.songTitleSubCol {
   display: flex;
   flex-direction: column;
   width: 70%;
   min-width: 290px;
-  border-style: dashed;
+  /* border-style: dashed; */
   justify-content: start;
   padding-top: 6em;
 }
@@ -481,7 +542,7 @@ hr {
   align-content: left;
 }
 
-.weddingEventsBackground{
+.weddingEventsBackground {
   background-color: #f5f5ef;
 }
 
@@ -491,10 +552,18 @@ hr {
   }
   .mobile-shown {
     display: block;
+    width: 100%;
+  }
+
+  .engagementShootRow {
+    padding: 0;
   }
   .engagementShootCol {
     width: 100%;
     flex-direction: column;
+  }
+  .engagementShootSubCol {
+    padding: 2em
   }
   .scheduleTitleSubCol {
     display: block;
@@ -515,6 +584,49 @@ hr {
   .faqQuestionsSubCol {
     width: 100%
   }
+
+  .attireRow {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .attireQuestionsCol {
+    width: 100%;
+    height: auto;
+  }
+
+  .songTitleCol {
+    width: 100%;
+    padding-top: 0;
+  }
+  
+  .songTitleSubCol {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .songImageCol {
+    min-width: 400px;
+  }
+
+  .rsvpRow {
+    height: auto;
+  }
+
+  .rsvpTitleCol {
+    width: 100%;
+  }
+
+  .rsvpTitleSubCol {
+    width: 100%;
+  }
+
+  .rsvpDeadline {
+    width: 100%;
+    padding-top: 4em;
+    align-items: center;
+    text-align: center;
+  }
   
 }
 
@@ -524,6 +636,29 @@ hr {
   }
   .mobile-shown {
     display: none;
+  }
+
+  .engagementShootSubCol {
+    display: none
+  }
+
+  .rsvpRow {
+    align-items: center;
+  }
+
+  .rsvpTitleCol {
+    width: 100%;
+  }
+
+  .rsvpTitleSubCol {
+    width: 100%;
+  }
+
+  .rsvpDeadline {
+    width: 100%;
+    padding-top: 4em;
+    align-items: center;
+    text-align: center;
   }
 
 }
