@@ -9,6 +9,8 @@ import Registry from './registry.component';
 import Attire from './attire.component';
 import RSVPTag from './RSVPTag.compopnent';
 
+import Header from '../assets/Header/Header.png';
+import WeddingEvents from '../assets/Header/WeddingEvents.png';
 
 function Home() {
 
@@ -16,8 +18,8 @@ function Home() {
     <>
         <TitleHeader Title={'Justin & Tanya'}/> 
 
-        <img src="src/assets/Header/Header.png" className="d-block" height="60%" alt="..."/>
-        <img src="src/assets/Header/WeddingEvents.png" className="d-block" height="60%" alt="..."/>
+        <img src={Header} className="d-block" height="60%" alt="..."/>
+        <img src={WeddingEvents} className="d-block" height="60%" alt="..."/>
         
         <div className='weddingEventsBackground'>
           <div id='bodyEventCards'>

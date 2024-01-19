@@ -1,5 +1,17 @@
 import '../App.css'
 
+//import photos because gh-pages doesn't like direct links apparently
+import carouselPhoto1 from '../assets/CarouselPhotos/TanyaWedding1.jpg';
+import carouselPhoto2 from '../assets/CarouselPhotos/TanyaWedding2.jpg';
+import carouselPhoto3 from '../assets/CarouselPhotos/TanyaWedding3.jpg';
+import carouselPhoto4 from '../assets/CarouselPhotos/TanyaWedding4.jpg';
+import carouselPhoto5 from '../assets/CarouselPhotos/TanyaWedding5.jpg';
+import carouselPhoto6 from '../assets/CarouselPhotos/TanyaWedding6.jpg';
+import carouselPhoto7 from '../assets/CarouselPhotos/TanyaWedding7.jpg';
+import carouselPhoto8 from '../assets/CarouselPhotos/TanyaWedding8.jpg';
+import carouselPhoto9 from '../assets/CarouselPhotos/TanyaWedding9.jpg';
+import carouselPhoto10 from '../assets/CarouselPhotos/TanyaWedding10.jpg';
+
 function EngagementCarousel() {
     return (
       
@@ -19,34 +31,34 @@ function EngagementCarousel() {
               </div>
               <div className="carousel-inner">
                   <div className="carousel-item active">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding1.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto1} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding2.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto2} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding3.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto3} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding4.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto4} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding5.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto5} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding6.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto6} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding7.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto7} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding8.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto8} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding9.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto9} className="d-block" width="100%" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src="src/assets/CarouselPhotos/TanyaWedding10.jpg" className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto10} className="d-block" width="100%" alt="..."/>
                   </div>
               </div>
               <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

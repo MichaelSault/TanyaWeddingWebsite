@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import RSVP from './components/RSVP.component.jsx';
 import Home from './components/home.component.jsx';
@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <> 
       {/* <Navbar /> */}
       <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/RSVP' element={<RSVP />}/>
@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='/Envelope' element={<Envelope/>}/>
             <Route path='/Photos' element={<Photos/>}/>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </React.StrictMode>
   </>
 )
