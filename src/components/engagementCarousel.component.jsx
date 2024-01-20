@@ -31,34 +31,34 @@ function EngagementCarousel() {
               </div>
               <div className="carousel-inner">
                   <div className="carousel-item active">
-                      <img src={carouselPhoto1} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto1} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto2} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto2} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto3} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto3} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto4} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto4} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto5} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto5} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto6} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto6} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto7} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto7} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto8} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto8} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto9} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto9} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
                   <div className="carousel-item">
-                      <img src={carouselPhoto10} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto10} className="d-block" width="100%" height="700px" alt="..."/>
                   </div>
               </div>
               <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
