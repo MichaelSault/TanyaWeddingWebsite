@@ -12,7 +12,7 @@ function Attire() {
             <div className='attireRow'>
                 <h6 className='attireTitle'>Attire</h6>
                 <div className='attireQuestionsCol'>
-                    <div className='scheduleTitleSubCol'>
+                    <div className='attireTitleSubCol'>
                         <h2>WHAT DO I WEAR TO THE ANAND KARAJ?</h2>
                         <hr/>
                         <h2>You will be required to sit on the ground during the ceremony for approximately 1 hour. Comfortable pants, long dresses and modest tops are ideal. Most men wear suits. Your head will also need to be covered in the gurdwara (Sikh temple). Head coverings will be provided for men. Ladies will need to bring a shawl to drape over their heads. You will also be required to remove your shoes at the temple. </h2>
