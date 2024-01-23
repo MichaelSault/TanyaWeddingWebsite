@@ -375,8 +375,7 @@ hr {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 50vh;
-  justify-content: center;
+  height: 100vh;
   /* border-style: dashed; */
   background-color: #e8ddd4;
 }
@@ -386,8 +385,7 @@ hr {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 50vh;
-  
+  width: 100%;
   justify-content: center;
   /* border-style: dashed; */
   background-color: #e8ddd4;

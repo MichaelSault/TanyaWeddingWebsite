@@ -14,9 +14,9 @@ function Registry() {
                     <div className='registryDescription'>
                         <h2>However, if you wish to further bless our special day with a gift, we have created an online registry at www.reallygreatsite.com.</h2>
                     </div>
-                
+                    <img src={RegistryBanner} className='registryImage' alt="..."/>
             </div>
-            <img src={RegistryBanner} className='registryImage' alt="..."/>
+            
             
         </>
   )
