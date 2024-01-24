@@ -26,8 +26,17 @@
   width: 50%;
   /* border-style: dashed; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: left;
+  justify-content: center;
+
+}
+
+.attireImage {
+  padding-top: 3em;
+  width: 70%;
+  height: fit-content;
+  min-width: 350px;
 }
 
 body {
@@ -360,6 +369,11 @@ hr {
   border-width: 2px;
 }
 
+.hrAttire {
+  align-self: center;
+  width: 75%;
+}
+
 .hrFaq {
   width: 75%;
 }
@@ -367,6 +381,11 @@ hr {
 .hrSongTitle {
   align-self: center;
   width: 45%;
+}
+
+.hrRSVP {
+  align-self: center;
+  width: 100%;
 }
 
 .ImageHeader {
@@ -445,10 +464,10 @@ hr {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   height: 100vh;
   justify-content: center;
-  padding: 3em 3em;
+  padding: 10em 3em;
   /* border-style: dashed; */
   background-color: #f6f2e7;
 }
@@ -479,10 +498,12 @@ hr {
   display: flex;
   flex-direction: column;
   text-align: left;
+  justify-content: center;
 }
 
 .rsvpTagButton {
-  width: 90%;
+  width: 15em;
+  background-color: #7cbeba60;
 }
 
 .scheduleImageSubCol {
@@ -706,6 +727,11 @@ hr {
     padding-top: 4em;
     align-items: center;
     text-align: center;
+  }
+
+  .attireImage {
+    padding-top: 5em;
+    max-width: 525px;
   }
 
 }
