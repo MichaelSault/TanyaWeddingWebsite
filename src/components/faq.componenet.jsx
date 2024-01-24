@@ -11,7 +11,7 @@ function FAQ() {
                         <h4>FREQUENTLY</h4>
                         <h4>ASKED</h4>
                         <h4>QUESTIONS</h4>
-                    <hr/>
+                    <hr className='hrFaq'/>
                     </div>
                 
                 <div className='faqQuestionsCol'>

@@ -11,6 +11,7 @@ function Attire() {
 
             <div className='attireRow'>
                 <h6 className='attireTitle'>Attire</h6>
+                <hr />
                 <div className='attireQuestionsCol'>
                     <div className='attireTitleSubCol'>
                         <h2>WHAT DO I WEAR TO THE ANAND KARAJ?</h2>
@@ -27,7 +28,7 @@ function Attire() {
                         
                     </div>
                 </div>
-                <div className='faqQuestionsCol'>
+                <div className='attirePhotoCol'>
                         <img src={AttireExample} className='scheduleImageSubCol' alt="Wedding Photo"/>
                 </div>
             </div>
