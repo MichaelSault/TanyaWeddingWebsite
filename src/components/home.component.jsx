@@ -1,4 +1,6 @@
 import '../App.css'
+import { useState, useCallback } from 'react';
+
 import TitleHeader from './titleBanner.component';
 import EventCard from './eventCard.component';
 import FAQ from './faq.componenet';
@@ -9,13 +11,31 @@ import Registry from './registry.component';
 import Attire from './attire.component';
 import RSVPTag from './RSVPTag.compopnent';
 
+import Code from './code.componenet';
+
+
 import Header from '../assets/Header/Header.png';
 import WeddingEvents from '../assets/Header/WeddingEvents.png';
 
 function Home() {
 
+  const [code, setCode] = useState({
+    isValid: false
+  });
+
+  const validate = useCallback(() => {
+    setCode(prev => {
+      return {
+        ...prev,
+        isValid: true
+      };
+    });
+    console.log(code.isValid);
+  });
+
   return (
     <>
+        { !code.isValid ? <Code validate={validate}/> : <>
         <TitleHeader Title={'Justin & Tanya'}/> 
 
         <img src={Header} className="d-block" height="60%" alt="..."/>
@@ -44,8 +64,10 @@ function Home() {
           <Attire/>
 
           <RSVPTag/>
+          </>
+      }
     </>
   )
 }
 
-export default Home
+export default Home;
