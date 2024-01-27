@@ -37,7 +37,7 @@ const Code = ({validate}) => {
     return (
         <>
 
-        <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
+        <div id='bodyTest' style={{width:"20em", margin:"auto auto", textAlign:"center"}}>
             <h2>Login</h2>
             <FloatingLabel
             controlId="code"

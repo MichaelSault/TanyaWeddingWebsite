@@ -416,17 +416,7 @@ hr {
   height: 100vh;
   /* border-style: dashed; */
   background-color: #e8ddd4;
-}
-
-.registryImage {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  width: 100%;
-  justify-content: center;
-  /* border-style: dashed; */
-  background-color: #e8ddd4;
+  align-content: space-between;
 }
 
 .registryTitle {
@@ -670,7 +660,7 @@ hr {
   }
 
   .songImageCol {
-    min-width: 400px;
+    min-width: 350px;
   }
 
   .rsvpRow {
@@ -695,6 +685,20 @@ hr {
   .engagementShootRow {
     padding-bottom: 0em;
     max-height: 130vh;
+  }
+
+  .registryImage {
+    display: none;
+  }
+
+  .registryImageMobile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 50vh;
+    max-width: 100vw;
+    justify-content: center;
+    background-color: #e8ddd4;
   }
 }
 
@@ -732,6 +736,19 @@ hr {
   .attireImage {
     padding-top: 5em;
     max-width: 525px;
+  }
+
+  .registryImage {
+    display: flex;
+    flex-direction: row;
+    min-height: 60vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8ddd4;
+  }
+
+  .registryImageMobile {
+    display: none;
   }
 
 }
