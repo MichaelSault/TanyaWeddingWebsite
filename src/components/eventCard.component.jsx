@@ -9,8 +9,6 @@ import Typography from '@mui/material/Typography';
 
 import '../App.css'
 
-import event1 from '../assets/CarouselPhotos/TanyaWedding1.jpg'
-
 // eslint-disable-next-line react/display-name
 const EventCard = forwardRef(
     (
@@ -22,7 +20,8 @@ const EventCard = forwardRef(
             address,
             time,
             description,
-            active
+            active,
+            eventPhoto
         },
         ref
     ) => {
@@ -52,7 +51,7 @@ const EventCard = forwardRef(
                 <Card className='cardText'>
                     <CardMedia
                         sx={{ height: 140 }}
-                        image={event1}
+                        image={eventPhoto}
                         title={eventName}
                     />
 

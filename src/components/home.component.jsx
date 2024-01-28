@@ -16,6 +16,9 @@ import Code from './code.componenet';
 
 import Header from '../assets/Header/Header.png';
 import WeddingEvents from '../assets/Header/WeddingEvents.png';
+import event1 from '../assets/eventPhotos/event1.png';
+import event2 from '../assets/eventPhotos/event2.jpg';
+import event3 from '../assets/eventPhotos/event3.jpg';
 
 function Home() {
 
@@ -44,9 +47,9 @@ function Home() {
         <div className='weddingEventsBackground'>
           <div id='bodyEventCards'>
               <div className='eventCardsRow'>
-                  <EventCard eventName = "Anand Karaj (Sikh Ceremony)" date = "Saturday, August 17, 2024" time = "8:30am" location = "Gurdwara Shaheedgarh Sahib Hamilton" address = "200 Old Guelph Rd, Hamilton, ON L9H 5X6" description = "" active = {false}/>
-                  <EventCard eventName = "Civil Ceremony" date = "Sunday, August 18, 2024" time = "3:00pm" location = "The Pearle Hotel. The Laurentide Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
-                  <EventCard eventName = "Civil Ceremony & Reception" date = "Sunday, August 18, 2024" time = "3:30pm" location = "The Pearle Hotel. The Edgewater Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
+                  <EventCard eventPhoto = {event1} eventName = "Anand Karaj (Sikh Ceremony)" date = "Saturday, August 17, 2024" time = "8:30am" location = "Gurdwara Shaheedgarh Sahib Hamilton" address = "200 Old Guelph Rd, Hamilton, ON L9H 5X6" description = "" active = {false}/>
+                  <EventCard eventPhoto = {event2} eventName = "Civil Ceremony" date = "Sunday, August 18, 2024" time = "3:00pm" location = "The Pearle Hotel. The Laurentide Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
+                  <EventCard eventPhoto = {event3} eventName = "Civil Ceremony & Reception" date = "Sunday, August 18, 2024" time = "3:30pm" location = "The Pearle Hotel. The Edgewater Room" address = "Elizabeth St, Burlington, ON L7R 0G3" description = "" active = {false}/>
               </div>
           </div>
         </div>
