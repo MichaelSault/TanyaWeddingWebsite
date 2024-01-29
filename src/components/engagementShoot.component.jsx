@@ -11,9 +11,9 @@ function EngagementShoot() {
                     
                 <div className='engagementShootCol'>
                     <div className='engagementShootSubColMobile'>
-                        <h6>ENGAGEMENT SHOOT</h6>
+                        <h6>ENGAGEMENT </h6>
+                        <h6>SHOOT</h6>
                         <hr/>
-                        <h2>Will send engagement pictures to be added as gallery closer to wedding date.</h2>
                         
                     </div>
                     <div className='engagementShootPhotoCol'>
@@ -21,12 +21,11 @@ function EngagementShoot() {
                     </div>
                 </div>
                 
-                <div className='engagementShootCol'>
+                <div className='engagementShootCol mobile-hidden'>
                     <div className='engagementShootSubColDesktop' >
-                        <h6>ENGAGEMENT SHOOT</h6>
-                        <hr/>
-                        <h2>Will send engagement pictures to be added as gallery closer to wedding date.</h2>
-                        
+                        <h6>ENGAGEMENT</h6>
+                        <h6>SHOOT</h6>
+                        <hr/>                        
                     </div>
                 </div>
 

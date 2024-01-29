@@ -78,7 +78,7 @@ function EngagementCarousel() {
               </div>
               <div className="carousel-inner">
                   <div className="carousel-item active">
-                      <img src={carouselPhoto1} className="d-block" width="100%" alt="..."/>
+                      <img src={carouselPhoto1} className="d-block" width="100%" height="90%" alt="..."/>
                   </div>
                   <div className="carousel-item">
                       <img src={carouselPhoto2} className="d-block" width="100%" alt="..."/>
