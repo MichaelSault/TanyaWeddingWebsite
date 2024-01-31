@@ -28,7 +28,7 @@ function FAQ() {
                         <h2>WILL THE WEDDING CEREMONIES BE INDOORS?</h2>
                         <h3>Yes, both wedding ceremonies (Anand Karaj and civil ceremony) and the reception will take place indoors. </h3>
                         <div>
-                            <h2>IF YOU HAVE ANY ADDITIONAL QUESTIONS, PLEASE EMAIL US AT SAMRAROSSWEDDING@GMAIL.COM.</h2>
+                            <h3 className='faqEmail'>IF YOU HAVE ANY ADDITIONAL QUESTIONS, PLEASE EMAIL US AT SAMRAROSSWEDDING@GMAIL.COM.</h3>
                         </div>
                     
                     </div>

@@ -9,6 +9,22 @@
 }
 
 @font-face {
+  font-family: 'Elsie-Regular';
+  src: local('Elsie-Regular'), url('./EElsie-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Elsie-Black';
+  src: local('Elsie-Black'), url('./EElsie-Black.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Emitha-Swashes';
+  src: local('Emitha-Swashes'), url('./Emitha-Swashes.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Syne';
   src: local('Syne'), url('./Syne-VariableFont_wght.ttf') format("truetype-variations");
 }

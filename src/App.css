@@ -322,22 +322,27 @@ h1 {
 }
 
 h2 {
-  font-size: 15px;
-  font-family: 'DreamAvenue';
+  font-size: 20px;
+  font-family: 'Rufina';
   color: #5c5a5a;
   margin: 0;
+  font-weight: bold;
+}
+
+.faqEmail {
+  font-size: 12px;
 }
 
 h3 {
   font-size: 15px;
-  font-family: 'DreamAvenue';
+  font-family: 'Rufina';
   color: #000000;
   margin: 0 0 20px 0;
 }
 
 h4 {
   font-size: 60px;
-  font-family: 'DreamAvenue';
+  font-family: 'BodoniModa';
   text-align: start;
   margin: 0;
   color: #5c5a5a;
@@ -345,17 +350,29 @@ h4 {
 
 h5 {
   font-size: 5em;
-  font-family: 'DreamAvenue';
+  font-family: 'Syne';
   padding-top: 1em;
   color: #5c5a5a
 }
 
 h6 {
   font-size: 60px;
-  font-family: 'Syne';
-  font-weight: bold;
+  font-family: 'BodoniModa';
   margin: 0;
   color: #5c5a5a;
+}
+
+.poiret {
+  font-family: PoiretOne;
+  size: 30px;
+}
+
+.elsie {
+  font-family: Elsie-Regular;
+}
+
+.syne {
+  font-family: Syne;
 }
 
 .song {
@@ -451,6 +468,20 @@ hr {
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgba(196, 196, 179, 0.6);
+}
+
+.css-h93ljk-MuiTypography-root {
+  font-family: Syne !important;
+  font-size: 1.3rem !important;
+}
+
+.css-1hleqvg-MuiTypography-root {
+  font-family: Syne !important;
+  font-weight: bold !important;
+}
+
+.css-r40f8v-MuiTypography-root {
+  font-family: Syne !important;
 }
 
 .rsvpRow {
@@ -742,6 +773,10 @@ hr {
 
   h6, h4{
     font-size: 50px;
+  }
+
+  .engagementTitle {
+    font-size: 48px;
   }
 }
 

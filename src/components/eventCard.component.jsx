@@ -58,7 +58,7 @@ const EventCard = forwardRef(
                     <div className='cardText'>
                     <CardContent>
                         
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography className='Syne' gutterBottom variant="h5" component="div">
                             {eventName}
                         </Typography>
                         <Typography gutterBottom variant="caption" component="div">

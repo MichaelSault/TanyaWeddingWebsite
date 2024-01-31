@@ -38,12 +38,12 @@ const Code = ({validate}) => {
         <>
 
         <div id='bodyTest' style={{width:"20em", margin:"auto auto", textAlign:"center"}}>
-            <h2>Login</h2>
+            <h2 className="poiret">Login</h2>
             <FloatingLabel
             controlId="code"
             name="code"
             label="Access Code"
-            className="mb-3"
+            className="mb-3, poiret"
             >
 
             <Form.Control type="text" name="code" onChange={handleChange}/>
