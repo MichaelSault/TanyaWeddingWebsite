@@ -1,5 +1,6 @@
 import '../App.css'
-import { useState, useCallback } from 'react';
+import * as React from 'react';
+import { useState, useCallback, useRef } from 'react';
 
 import TitleHeader from './titleBanner.component';
 import EventCard from './eventCard.component';
@@ -10,6 +11,18 @@ import Songs from './songs.component';
 import Registry from './registry.component';
 import Attire from './attire.component';
 import RSVPTag from './RSVPTag.compopnent';
+import Navbar from './navbarScroll.component';
+
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+
+
 
 import Code from './code.componenet';
 
@@ -21,6 +34,33 @@ import event2 from '../assets/eventPhotos/event2.jpg';
 import event3 from '../assets/eventPhotos/event3.jpg';
 
 function Home() {
+  const scheduleRef = useRef();
+  const faqRef = useRef();
+  const engagementShootRef = useRef();
+  // const songRef = useRef();
+  // const registryRef = useRef();
+  const attireRef = useRef();
+  const rsvpRef = useRef();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const scrollToSection = (elementRef) => {
+    console.log(elementRef);
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth'
+   });
+   handleClose();
+  };
+  
 
   const [code, setCode] = useState({
     isValid: false
@@ -39,23 +79,89 @@ function Home() {
   return (
     <>
         { !code.isValid ? <Code validate={validate}/> : <>
+        
+        {/* Navbar Component */}
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="fixed" sx={{ backgroundColor: 'rgba(196, 196, 179, 0.9)' }}>
+            <Toolbar>
+              <div>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                onClick={handleMenu}
+              >
+                <MenuIcon />
+              </IconButton>
+              
+              <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={() => scrollToSection(scheduleRef)}>Schedule</MenuItem>
+                  <MenuItem onClick={() => scrollToSection(faqRef)}>FAQs</MenuItem>
+                  <MenuItem onClick={() => scrollToSection(engagementShootRef)}>Engagement Shoot</MenuItem>
+                  {/* <MenuItem onClick={() => scrollToSection(songRef)}>Songs</MenuItem> */}
+                  {/* <MenuItem onClick={() => scrollToSection(registryRef)}>Registry</MenuItem> */}
+                  <MenuItem onClick={() => scrollToSection(attireRef)}>Attire</MenuItem>
+                  <MenuItem onClick={() => scrollToSection(rsvpRef)}>RSVP</MenuItem>
+              </Menu>
+              </div>
+              
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
+                Tanya & Justin
+              </Typography>
+              
+            </Toolbar>
+          </AppBar>
+        </Box>
+
+        {/* <Navbar ref={scheduleRef} /> */}
         <TitleHeader Title={'Justin & Tanya'}/> 
 
         <img src={Header} className="d-block" height="60%" alt="..."/>
 
-        <Schedule/>
+        <div ref={scheduleRef}>
+          <Schedule/>
+        </div>
+        
+        <div ref={faqRef}>
+          <FAQ />
+        </div>
 
-        <FAQ />
+        <div ref={engagementShootRef}>
+          <EngagementShoot/>
+        </div>
 
-        <EngagementShoot/>
+        {/* <div ref={songRef}>
+          <Songs/>
+        </div> */}
 
-        {/* <Songs/> */}
+        {/* <div ref={registryRef}>
+          <Registry/>
+        </div> */}
 
-        {/* <Registry/> */}
+        <div ref={attireRef}>
+          <Attire/>
+        </div>
 
-        <Attire/>
+        <div ref={rsvpRef}>
+          <RSVPTag/>
+        </div>
 
-        <RSVPTag/>
         </>
       }
     </>
