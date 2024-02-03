@@ -122,7 +122,7 @@ function Home() {
               </div>
               
               <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
-                Tanya & Justin
+                Justin & Tanya
               </Typography>
               
             </Toolbar>

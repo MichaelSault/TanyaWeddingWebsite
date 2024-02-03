@@ -26,8 +26,8 @@ const Code = ({validate}) => {
     };
 
     const handleSubmit = async(event) => {
+        console.log(Code.code)
         if (Code.code == "RossWedding2024") {
-            console.log("User will be logged in");
             validate();
         } else {
             console.log("Incorrect Code:", Code.code);

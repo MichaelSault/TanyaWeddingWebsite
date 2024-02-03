@@ -3,7 +3,7 @@ const toBase64 = obj => {
     const str = JSON.stringify (obj);
     // returns string converted to base64
     return Buffer.from(str).toString('base64');
- };
+};
 
 const replaceSpecialChars = b64string => {
     // create a regex to match any of the characters =,+ or / and replace them with their // substitutes
