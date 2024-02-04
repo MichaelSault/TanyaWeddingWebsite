@@ -9,7 +9,7 @@
   justify-content: center;
   padding: 3em 3em;
   /* border-style: dashed; */
-  background-color: #d4bdad;
+  background-color: #f9f5f2;
 }
 
 .attireQuestionsCol {
@@ -323,19 +323,19 @@ h1 {
 
 h2 {
   font-size: 20px;
-  font-family: 'Rufina';
+  font-family: 'Montserrat';
   color: #5c5a5a;
   margin: 0;
   font-weight: bold;
 }
 
 .faqEmail {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 h3 {
   font-size: 15px;
-  font-family: 'Rufina';
+  font-family: 'Montserrat';
   color: #000000;
   margin: 0 0 20px 0;
 }
@@ -343,7 +343,7 @@ h3 {
 h4 {
   font-size: 60px;
   font-family: 'Playfair';
-  text-align: start;
+  text-align: cent;
   margin: 0;
   color: #5c5a5a;
 }
@@ -360,10 +360,13 @@ h6 {
   font-family: 'Playfair';
   margin: 0;
   color: #5c5a5a;
+  text-align: center;
+
 }
 
 .poiret {
   font-family: PoiretOne;
+  color: #000000;
   size: 30px;
 }
 
@@ -380,7 +383,6 @@ h6 {
 }
 
 .attireTitle {
-  background-color: #d4bdad;
   min-width: 100%;
 }
 
@@ -395,7 +397,8 @@ hr {
 }
 
 .hrFaq {
-  width: 75%;
+  align-self: center;
+  width: 50%;
 }
 
 .hrSongTitle {

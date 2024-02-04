@@ -13,7 +13,7 @@ function EngagementShoot() {
                     <div className='engagementShootSubColMobile'>
                         <h6 className='engagementTitle'>ENGAGEMENT </h6>
                         <h6 className='engagementTitle'>SHOOT</h6>
-                        <hr/>
+                        <hr />
                         
                     </div>
                     <div className='engagementShootPhotoCol'>

@@ -111,18 +111,18 @@ function Home() {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={() => scrollToSection(scheduleRef)}>Schedule</MenuItem>
-                  <MenuItem onClick={() => scrollToSection(faqRef)}>FAQs</MenuItem>
-                  <MenuItem onClick={() => scrollToSection(engagementShootRef)}>Engagement Shoot</MenuItem>
-                  {/* <MenuItem onClick={() => scrollToSection(songRef)}>Songs</MenuItem> */}
-                  {/* <MenuItem onClick={() => scrollToSection(registryRef)}>Registry</MenuItem> */}
-                  <MenuItem onClick={() => scrollToSection(attireRef)}>Attire</MenuItem>
-                  <MenuItem onClick={() => scrollToSection(rsvpRef)}>RSVP</MenuItem>
+                  <MenuItem onClick={() => scrollToSection(scheduleRef)}><div className='poiret'>Schedule</div></MenuItem>
+                  <MenuItem onClick={() => scrollToSection(faqRef)}><div className='poiret'>FAQs</div></MenuItem>
+                  <MenuItem onClick={() => scrollToSection(engagementShootRef)}><div className='poiret'>Engagement Shoot</div></MenuItem>
+                  {/* <MenuItem onClick={() => scrollToSection(songRef)}><div className='poiret'>Songs</div></MenuItem> */}
+                  {/* <MenuItem onClick={() => scrollToSection(registryRef)}><div className='poiret'>Registry</div></MenuItem> */}
+                  <MenuItem onClick={() => scrollToSection(attireRef)}><div className='poiret'>Attire</div></MenuItem>
+                  <MenuItem onClick={() => scrollToSection(rsvpRef)}><div className='poiret'>RSVP</div></MenuItem>
               </Menu>
               </div>
               
               <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
-                Justin & Tanya
+                <div className='poiret'>Justin & Tanya</div>
               </Typography>
               
             </Toolbar>
