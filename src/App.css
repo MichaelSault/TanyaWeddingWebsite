@@ -19,6 +19,8 @@
   width: 50%;
   padding-top: 3em;
   /* border-style: dashed; */
+  justify-content: center;
+
 }
 
 .attirePhotoCol {
@@ -33,10 +35,12 @@
 
 .attireQuestionsSubCol {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
   padding-top: 3em;
+  align-self: center;
 }
 
 .attireImage {
@@ -44,6 +48,7 @@
   width: 70%;
   height: fit-content;
   min-width: 350px;
+  align-self: center;
 }
 
 body {
@@ -110,11 +115,13 @@ body {
   display: block;
   margin: auto;
   padding: 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .engagementShootSubColDesktop {
   min-width: 370px;
-  width: 90%;
+  width: 75%;
   /* border-style: dashed; */
   display: flex;
   flex-direction: column;
@@ -299,6 +306,7 @@ body {
   flex-direction: column;
   text-align: left;
   padding-top: 7em;
+  align-self: center;
 }
 
 .faqRow {
@@ -327,6 +335,10 @@ h2 {
   color: #5c5a5a;
   margin: 0;
   font-weight: bold;
+}
+
+.attireSubText {
+  align-self: center;
 }
 
 .faqEmail {
@@ -387,18 +399,19 @@ h6 {
 }
 
 hr {
-  width: 100%;
+  align-self: center;
+  width: 60%;
   border-width: 2px;
 }
 
 .hrAttire {
   align-self: center;
-  width: 100%;
+  width: 60%;
 }
 
 .hrFaq {
   align-self: center;
-  width: 50%;
+  width: 60%;
 }
 
 .hrSongTitle {
@@ -545,6 +558,8 @@ hr {
 }
 
 .scheduleTitleSubCol {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   /* border-style: dashed; */
   justify-content: center;
@@ -649,7 +664,7 @@ hr {
   background-color: #f5f5ef;
 }
 
-@media only screen and (max-width: 855px) {
+@media only screen and (max-width: 949px) {
   .mobile-hidden {
     display: none;
   }
@@ -783,7 +798,7 @@ hr {
   }
 }
 
-@media only screen and (min-width: 856px) {
+@media only screen and (min-width: 950px) {
   .mobile-hidden {
     display: block;
   }

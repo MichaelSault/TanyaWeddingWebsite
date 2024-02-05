@@ -23,8 +23,7 @@ function EngagementShoot() {
                 
                 <div className='engagementShootCol mobile-hidden'>
                     <div className='engagementShootSubColDesktop' >
-                        <h6>ENGAGEMENT</h6>
-                        <h6>SHOOT</h6>
+                        <h6>ENGAGEMENT SHOOT</h6>
                         <hr/>                        
                     </div>
                 </div>

@@ -138,7 +138,7 @@ function Home() {
           <Schedule/>
         </div>
         
-        <div ref={faqRef}>
+        <div className='test' ref={faqRef}>
           <FAQ />
         </div>
 
