@@ -9,8 +9,6 @@ import SchedulePhoto from '../assets/Photos/SchedulePhoto.png';
 import EventCard from './eventCard.component';
 
 function Schedule() {
-
-
     return (
         <>
             <div className='scheduleRow'>
