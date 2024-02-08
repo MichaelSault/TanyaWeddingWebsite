@@ -486,20 +486,6 @@ hr {
   background-color: rgba(196, 196, 179, 0.6);
 }
 
-.css-h93ljk-MuiTypography-root {
-  font-family: Syne !important;
-  font-size: 1.3rem !important;
-}
-
-.css-1hleqvg-MuiTypography-root {
-  font-family: Syne !important;
-  font-weight: bold !important;
-}
-
-.css-r40f8v-MuiTypography-root {
-  font-family: Syne !important;
-}
-
 .rsvpRow {
   display: flex;
   flex-direction: row;
@@ -686,7 +672,7 @@ hr {
   }
 
   .scheduleTitleSubCol {
-    display: block;
+    display: flex;
     width: 100%;
     padding: 0;
   }
@@ -717,7 +703,7 @@ hr {
   }
 
   .attireImage {
-    width: auto;
+    width: 100%;
     min-width: 0;
   }
 
@@ -741,7 +727,7 @@ hr {
   }
 
   .rsvpRow {
-    height: auto;
+    height: 100vh;
   }
 
   .rsvpTitleCol {

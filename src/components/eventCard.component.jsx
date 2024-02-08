@@ -6,6 +6,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { ThemeProvider } from 'react-bootstrap';
+import { createTheme } from '@mui/material';
+
 
 import '../App.css'
 
@@ -50,24 +53,23 @@ const EventCard = forwardRef(
             <div className='eventCard'>
                 <Card className='cardText'>
                     <CardMedia
-                        sx={{ height: 140 }}
+                        sx={{ minHeight: 75 }}
                         image={eventPhoto}
                         title={eventName}
                     />
 
                     <div className='cardText'>
                     <CardContent>
-                        
-                        <Typography className='Syne' gutterBottom variant="h5" component="div">
+                        <Typography fontFamily='Montserrat' gutterBottom variant="h5" component="div">
                             {eventName}
                         </Typography>
-                        <Typography gutterBottom variant="caption" component="div">
+                        <Typography fontFamily='Montserrat' fontWeight='bold' gutterBottom variant="caption" component="div">
                             {date} - {time} @{location}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography fontFamily='Montserrat' variant="body2" color="text.secondary">
                             {description}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography fontFamily='Montserrat' variant="body2" color="text.secondary">
                             {address}
                         </Typography>
                     </CardContent>
