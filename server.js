@@ -5,6 +5,7 @@ const express = require('express'),
     rsvp = require("./backend/rsvp.js");
 
 const dotenv = require('dotenv');
+const { Int32 } = require('mongodb');
 dotenv.config();
 
 const app = express();
@@ -22,12 +23,12 @@ const guestSchema = mongoose.Schema({
     code: String,
     firstName: String,
     lastName: String,
-    sangeet: Boolean,
-    maiyan: Boolean,
-    mendhi: Boolean,
-    choora: Boolean,
-    sikh: Boolean,
-    civil: Boolean
+    sangeet: Number,
+    maiyan: Number,
+    mendhi: Number,
+    choora: Number,
+    sikh: Number,
+    civil: Number
 });
 
 const secretSchema = mongoose.Schema({
@@ -124,7 +125,13 @@ app.put("/update/:id", (req, res) => {
     Guests.findByIdAndUpdate({_id: req.params.id}, {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email
+        email: req.body.email,
+        sangeet: req.body.sangeet,
+        maiyan: req.body.maiyan,
+        mendhi: req.body.mendhi,
+        choora: req.body.choora,
+        sikh: req.body.sikh,
+        civil: req.body.civil
     })
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));

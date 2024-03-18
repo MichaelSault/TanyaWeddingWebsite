@@ -78,7 +78,7 @@ function Home() {
 
   return (
     <>
-        { !code.isValid ? <Code validate={validate}/> : <>
+        { code.isValid ? <Code validate={validate}/> : <>
         
         {/* Navbar Component */}
         <Box sx={{ flexGrow: 1 }}>

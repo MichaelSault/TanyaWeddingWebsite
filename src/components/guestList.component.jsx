@@ -25,6 +25,10 @@ function GuestList() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const a = 0;
+  const b = 1;
+  const c = 2;
+
     useEffect(() => {
         axios.get("http://localhost:3001/guests")
         .then(res => {
@@ -47,13 +51,27 @@ function GuestList() {
 
     const handleChange = (e) => {
         const {name, value} = e.target;
+        var newValue = "";
+        console.log(name, value);
+        console.log(updatedGuest);
+
+        if (value == "0"){
+            newValue = 0
+        } else if (value == "1"){
+            newValue = 1
+        } else if (value == "2"){
+            newValue = 2
+        } else {
+            newValue = value
+        }
 
         setUpdatedGuest((prev) => {
             return {
                 ...prev,
-                [name]: value,
+                [name]: newValue,
             };
         });
+        console.log(updatedGuest);
     };
 
     const saveUpdatedGuest = () => {
@@ -132,15 +150,62 @@ function GuestList() {
                         className="mb-3"
                     />
                     </FloatingLabel>
-                    
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox" style={{width:"100%", margin:"auto auto", textAlign:"left"}}>
-                        <Form.Check inline type="checkbox" label="Sangeet & Jaggo" name="sangeet" value={guests.sangeet} defaultValue={selectedGuest.sangeet} onChange={handleChange}/>
-                        <Form.Check inline type="checkbox" label="Maiyan" name="maiyan" value={guests.maiyan} defaultValue={selectedGuest.maiyan} onChange={handleChange}/>
-                        <Form.Check inline type="checkbox" label="Mendhi" name="mendhi" value={guests.mendhi} defaultValue={selectedGuest.mendhi} onChange={handleChange}/>
-                        <Form.Check inline type="checkbox" label="Choora" name="choora" value={guests.choora} defaultValue={selectedGuest.choora} onChange={handleChange}/>
-                        <Form.Check inline type="checkbox" label="Anand Karaj (Sikh Ceremony)" name="sikh" value={guests.sikh} defaultValue={selectedGuest.sikh} onChange={handleChange}/>
-                        <Form.Check inline type="checkbox" label="Civil Ceremony & Reception" name="civil" value={guests.civil} defaultValue={selectedGuest.civil} onChange={handleChange}/>
-                    </Form.Group>
+
+                    <Modal.Title>Event Invites</Modal.Title>
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select disabled={selectedGuest.sangeet == 2 ? "disabled" : ""} className="form-select" name="sangeet" value={guests.sangeet} defaultValue={selectedGuest.sangeet} onChange={handleChange}>
+                            <option value={a}>Not Invited</option>
+                            <option value={b}>Invited</option>
+                            <option value={c}>Already RSVP'd</option>
+                        </select>
+                        <label htmlFor="floatingSelect">Sangeet</label>
+                    </div>
+
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select disabled={selectedGuest.maiyan == 2 ? "disabled" : ""} className="form-select" name="maiyan" value={guests.maiyan} defaultValue={selectedGuest.maiyan} onChange={handleChange}>
+                            <option value={a}>Not Invited</option>
+                            <option value={b}>Invited</option>
+                            <option value={c}>Already RSVP'd</option>
+                        </select>
+                        <label htmlFor="floatingSelect">Maiyan</label>
+                    </div>
+
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select disabled={selectedGuest.mendhi == 2 ? "disabled" : ""} className="form-select" name="mendhi" value={guests.mendhi} defaultValue={selectedGuest.mendhi} onChange={handleChange}>
+                            <option value={a}>Not Invited</option>
+                            <option value={b}>Invited</option>
+                            <option value={c}>Already RSVP'd</option>
+                        </select>
+                        <label htmlFor="floatingSelect">Mendhi</label>
+                    </div>
+
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select disabled={selectedGuest.choora == 2 ? "disabled" : ""} className="form-select" name="choora" value={guests.choora} defaultValue={selectedGuest.choora} onChange={handleChange}>
+                            <option value={a}>Not Invited</option>
+                            <option value={b}>Invited</option>
+                            <option value={c}>Already RSVP'd</option>
+                        </select>
+                        <label htmlFor="floatingSelect">Choora</label>
+                    </div>
+
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select disabled={selectedGuest.sikh == 2 ? "disabled" : ""} className="form-select" name="sikh" value={guests.sikh} defaultValue={selectedGuest.sikh} onChange={handleChange}>
+                            <option value={a}>Not Invited</option>
+                            <option value={b}>Invited</option>
+                            <option value={c}>Already RSVP'd</option>
+                        </select>
+                        <label htmlFor="floatingSelect">Sikh</label>
+                    </div>
+
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select disabled={selectedGuest.civil == 2 ? "disabled" : ""} className="form-select" name="civil" value={guests.civil} defaultValue={selectedGuest.civil} onChange={handleChange}>
+                            <option value={a}>Not Invited</option>
+                            <option value={b}>Invited</option>
+                            <option value={c}>Already RSVP'd</option>
+                        </select>
+                        <label htmlFor="floatingSelect">Civil</label>
+                    </div>
+
                 </Form.Group>
             </Form>
             </Modal.Body>
