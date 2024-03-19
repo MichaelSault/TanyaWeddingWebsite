@@ -50,7 +50,7 @@ const EventCard = forwardRef(
     
     return (
         <>
-            <div className='eventCard'>
+            <div className='eventCardRSVP'>
                 <Card className='cardText'>
                     <CardMedia
                         sx={{ minHeight: 75 }}
@@ -78,7 +78,10 @@ const EventCard = forwardRef(
                     <CardActions className='cardLinks'>
                         <Button size="small" onClick={rsvpEvent}>RSVP</Button>
                     </CardActions>
-                    : ""
+                    :
+                    <CardActions className='cardLinks'>
+                        <Button size="small" onClick={rsvpEvent}>RSVP</Button>
+                    </CardActions>
                     }
                     </div>
                 </Card>

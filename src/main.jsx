@@ -17,13 +17,13 @@ import Navbar from './components/navbar.component.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <> 
-      {/* <Navbar /> */}
+      <Navbar />
       <React.StrictMode>
         <HashRouter>
           <Routes>
-            {/* <Route path='/' element={<Home />}/> */}
+            <Route path='/' element={<Home />}/>
             <Route path='/RSVP' element={<RSVP />}/>
-            <Route path='/' element={<GuestList/>}/>
+            <Route path='/Guests' element={<GuestList/>}/>
             <Route path='/Events' element={<Events/>}/>
             <Route path='/Invite' element={<AddGuest/>}/>
             <Route path='/Guest' element={<Guest/>}/>

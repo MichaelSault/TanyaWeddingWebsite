@@ -178,6 +178,14 @@ body {
   flex-direction: column;
 }
 
+.eventCardRSVP {
+  padding: .5em;
+  height: 400px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
 .eventCardsRow {
   display: flex;
   flex-direction: row;

@@ -12,7 +12,7 @@ function Envelope() {
                 <div className='top-side'></div>
                 <div className='left-side'></div>
                 <div className='invite'>
-                    <a href='\guest'><img src={invitation} alt='wedding invitation'/></a>
+                    <a href='/#/guest'><img src={invitation} alt='wedding invitation'/></a>
                 </div>
                 <div className='right-side'></div>
                 <div className='bottom-side'></div>

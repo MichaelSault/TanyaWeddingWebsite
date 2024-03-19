@@ -13,12 +13,12 @@ function Guest() {
         code: String, 
         firstName: String, 
         lastName: String,
-        sangeet: Int,
-        maiyan: Int,
-        mendhi: Int,
-        choora: Int,
-        sikh: Int,
-        civil: Int
+        sangeet: Number,
+        maiyan: Number,
+        mendhi: Number,
+        choora: Number,
+        sikh: Number,
+        civil: Number
       });
 
     useEffect(() => {
@@ -29,7 +29,7 @@ function Guest() {
             decodeJWT(loggedInUser);
         } else {
             console.log("No guest is logged in");
-            navigate("/RSVP");
+            navigate("/#/RSVP");
         }
         console.log(loggedInUser);
     }, []);
@@ -71,7 +71,7 @@ function Guest() {
                         <EventCard eventName = "Choora" date = "Saturday, August 16, 2024" time = "5:00pm-8:00pm" location = "Burlington" description = "The bride's maternal uncles and aunts perform the Choora ceremony. The Choora are bangles worn by the bride for 40 days to bring luck to the newlywed couple. Kaleeras are tied by the bride's cousins and close friends to provide best wishes to the bride."/>
                     : "" }
                     { guest.sikh > 0 ? 
-                        <EventCard eventName = "Anand Karaj (Sikh Ceremony)" date = "Saturday, August 17, 2024" time = "9:00am-2:00pm" location = "Dundas & Burlington" description = "The day will begin with the baraat (groom's parade). The anand karaj is comprised of a series of prayers and hymns (lavanns) which symbolizes the bride and grooms vows to one another. Chai and breakfast will be provided before the ceremony. A vegetarian langar (lunch) will be provided after the ceremony. Family and wedding party will then go to the bride's mother's house for the doli ceremony."/>
+                        <EventCard eventName = "Anand Karaj (Sikh Ceremony)" date = "Saturday, August 17, 2024" time = "9:00am-2:00pm" location = "Dundas & Burlington" description = "The day will begin with the baraat (groom's parade). The anand karaj is comprised of a series of prayers and hymns (lavanns) which symbolizes the bride and grooms vows to one another."/>
                     : "" }
                     { guest.civil > 0 ? 
                         <EventCard eventName = "Civil Ceremony & Reception" date = "Sunday, August 18, 2024" time = "3:00pm-1:00am" location = "Burlington" description = "The civil wedding ceremony will take place followed by cocktail hour, dinner and dancing to celebrate the final day of the wedding week."/>
