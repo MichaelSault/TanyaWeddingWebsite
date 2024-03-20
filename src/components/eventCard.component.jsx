@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { ThemeProvider } from 'react-bootstrap';
 import { createTheme } from '@mui/material';
 
+import axios from 'axios';
 
 import '../App.css'
 
@@ -16,7 +17,7 @@ import '../App.css'
 const EventCard = forwardRef(
     (
         {
-            rsvpCode,
+            guestEmail,
             eventName,
             date,
             location,
@@ -33,18 +34,9 @@ const EventCard = forwardRef(
             event.preventDefault();
             console.log("user is rsvping for:", eventName);
         
-            const runnerData = await fetch('http://localhost:3001/rsvpEvent', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    Event: eventName,
-                    rsvpCode: rsvpCode
-                })
-            })
-            .then(res => res.json());
+            axios.put(`http://localhost:3001/rsvpEvent/`, guestEmail, eventName)
+            .then(res => console.log(res))
+            .catch((err) => console.log(err));
         
           };
     

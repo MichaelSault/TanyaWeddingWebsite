@@ -78,7 +78,7 @@ function GuestList() {
         console.log(updatedGuest);
         axios.put(`http://localhost:3001/update/${updatedGuest._id}`, updatedGuest)
         .then(res => console.log(res))
-        .catch((err) => console.Console.log(err));
+        .catch((err) => console.log(err));
 
         handleClose();
         window.location.reload();

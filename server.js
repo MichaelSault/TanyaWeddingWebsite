@@ -121,6 +121,7 @@ app.delete("/delete/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+//update a guests information by id
 app.put("/update/:id", (req, res) => {
     Guests.findByIdAndUpdate({_id: req.params.id}, {
         firstName: req.body.firstName,
@@ -143,6 +144,19 @@ app.put("/update/:id", (req, res) => {
     })
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
+});
+
+//update user's rsvp status
+app.put("/rsvpEvent", (req, res) => {
+    console.log(req);
+    Guests.findOneAndUpdate({email: req.params.id}, {
+        sangeet: req.body.sangeet,
+        maiyan: req.body.maiyan,
+        mendhi: req.body.mendhi,
+        choora: req.body.choora,
+        sikh: req.body.sikh,
+        civil: req.body.civil
+    })
 });
 
 ////////////////////////////////////////////////////
