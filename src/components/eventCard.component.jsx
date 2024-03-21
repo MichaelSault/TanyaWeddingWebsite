@@ -34,7 +34,7 @@ const EventCard = forwardRef(
             event.preventDefault();
             console.log("user is rsvping for:", eventName);
         
-            axios.put(`http://localhost:3001/rsvpEvent/`, guestEmail, eventName)
+            axios.put(`http://localhost:3001/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: 2})
             .then(res => console.log(res))
             .catch((err) => console.log(err));
         

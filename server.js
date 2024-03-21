@@ -148,15 +148,38 @@ app.put("/update/:id", (req, res) => {
 
 //update user's rsvp status
 app.put("/rsvpEvent", (req, res) => {
-    console.log(req);
-    Guests.findOneAndUpdate({email: req.params.id}, {
-        sangeet: req.body.sangeet,
-        maiyan: req.body.maiyan,
-        mendhi: req.body.mendhi,
-        choora: req.body.choora,
-        sikh: req.body.sikh,
-        civil: req.body.civil
+    console.log(req.body);
+    console.log(req.body.email);
+    console.log(req.body.eventName);
+    console.log(req.body.rsvpValue);
+    {req.body.eventName == "Sangeet & Jaggo" ? 
+        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
+            sangeet: req.body.rsvpValue,
+        })
+        : req.body.eventName == "Mendhi" ?
+        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
+            maiyan: req.body.rsvpValue,
+        })
+        : req.body.eventName == "Choora" ?
+        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
+            choora: req.body.rsvpValue,
+        })
+        : req.body.eventName == "Anand Karaj (Sikh Ceremony)" ?
+        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
+            sikh: req.body.rsvpValue,
+        })
+        : req.body.eventName == "Civil Ceremony & Reception" ?
+        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
+            civil: 2,
+        })
+        : req.body.eventName == "Maiyan" ?
+        Guests.findByIdAndUpdate({_id: "651cd6eebab2bb16c54faf13"}, {
+            Maiyan: req.body.rsvpValue,
+        })
+    : Guests.findByIdAndUpdate({_id: "651cd6eebab2bb16c54faf13"}, {
+        Maiyan: req.body.rsvpValue,
     })
+    }
 });
 
 ////////////////////////////////////////////////////
