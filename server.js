@@ -147,38 +147,53 @@ app.put("/update/:id", (req, res) => {
 });
 
 //update user's rsvp status
-app.put("/rsvpEvent", (req, res) => {
-    console.log(req.body);
+app.put("/rsvpEvent", async (req, res) => {
+
+    var rsvpValue = req.body.rsvpValue;
+    var rsvpValue2 = Number(rsvpValue);
+    console.log(rsvpValue, rsvpValue2);
+
+    var user = await Guests.find({email: req.body.email}).exec();
+    console.log(user[0]._id);
     console.log(req.body.email);
-    console.log(req.body.eventName);
-    console.log(req.body.rsvpValue);
+
     {req.body.eventName == "Sangeet & Jaggo" ? 
-        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
-            sangeet: req.body.rsvpValue,
+        Guests.findByIdAndUpdate({_id: user[0]._id}, {
+            sangeet: rsvpValue,
         })
+        .then((doc) => console.log(doc))
+        .catch((err) => console.log(err))
         : req.body.eventName == "Mendhi" ?
-        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
-            maiyan: req.body.rsvpValue,
+        Guests.findByIdAndUpdate({_id: user[0]._id}, {
+            mendhi: rsvpValue,
         })
+        .then((doc) => console.log(doc))
+        .catch((err) => console.log(err))
         : req.body.eventName == "Choora" ?
-        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
-            choora: req.body.rsvpValue,
+        Guests.findByIdAndUpdate({_id: user[0]._id}, {
+            choora: rsvpValue,
         })
+        .then((doc) => console.log(doc))
+        .catch((err) => console.log(err))
         : req.body.eventName == "Anand Karaj (Sikh Ceremony)" ?
-        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
-            sikh: req.body.rsvpValue,
+        Guests.findByIdAndUpdate({_id: user[0]._id}, {
+            sikh: rsvpValue,
         })
+        .then((doc) => console.log(doc))
+        .catch((err) => console.log(err))
         : req.body.eventName == "Civil Ceremony & Reception" ?
-        Guests.findByIdAndUpdate({id: "651cd6eebab2bb16c54faf13"}, {
-            civil: 2,
+        Guests.findByIdAndUpdate({_id: user[0]._id}, {
+            civil: rsvpValue,
         })
+        .then((doc) => console.log(doc))
+        .catch((err) => console.log(err))
         : req.body.eventName == "Maiyan" ?
-        Guests.findByIdAndUpdate({_id: "651cd6eebab2bb16c54faf13"}, {
-            Maiyan: req.body.rsvpValue,
+        Guests.findByIdAndUpdate({_id: user[0]._id}, {
+            maiyan: rsvpValue,
         })
-    : Guests.findByIdAndUpdate({_id: "651cd6eebab2bb16c54faf13"}, {
-        Maiyan: req.body.rsvpValue,
-    })
+        .then((doc) => console.log(doc))
+        .catch((err) => console.log(err))
+        : console.log("No Update");
     }
 });
 
