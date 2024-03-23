@@ -6,8 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { ThemeProvider } from 'react-bootstrap';
-import { createTheme } from '@mui/material';
 
 import axios from 'axios';
 
@@ -18,6 +16,7 @@ const EventCard = forwardRef(
     (
         {
             guestEmail,
+            rsvpValue,
             eventName,
             date,
             location,
@@ -30,15 +29,26 @@ const EventCard = forwardRef(
         ref
     ) => {
 
+        var rsvp = rsvpValue;
+        console.log(rsvp);
+
         const rsvpEvent = async(event) => {
             event.preventDefault();
             console.log("user is rsvping for:", eventName);
         
-            axios.put(`http://localhost:3001/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: 2})
+            axios.put(`http://localhost:3001/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: rsvp})
             .then(res => console.log(res))
             .catch((err) => console.log(err));
         
-          };
+            if (rsvp == 1) {
+                rsvp = 2;
+                
+            } else if (rsvp == 2) {
+                rsvp = 1;
+            }
+
+            console.log(rsvp);
+        };
     
     return (
         <>
@@ -66,14 +76,15 @@ const EventCard = forwardRef(
                         </Typography>
                     </CardContent>
 
-                    {active ?
+                    {rsvp == 1 ?
                     <CardActions className='cardLinks'>
                         <Button size="small" onClick={rsvpEvent}>RSVP</Button>
                     </CardActions>
-                    :
+                    : rsvp == 2 ?
                     <CardActions className='cardLinks'>
-                        <Button size="small" onClick={rsvpEvent}>RSVP</Button>
+                        <Button size="small" onClick={rsvpEvent}>Can't make it?</Button>
                     </CardActions>
+                    : <></>
                     }
                     </div>
                 </Card>
