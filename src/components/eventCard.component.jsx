@@ -35,11 +35,8 @@ const EventCard = forwardRef(
         const rsvpEvent = async(event) => {
             event.preventDefault();
             console.log("user is rsvping for:", eventName);
-        
-            axios.put(`http://localhost:3001/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: rsvp})
-            .then(res => console.log(res))
-            .catch((err) => console.log(err));
-        
+            console.log("event currently has value of:", rsvp);
+
             if (rsvp == 1) {
                 rsvp = 2;
                 
@@ -47,7 +44,13 @@ const EventCard = forwardRef(
                 rsvp = 1;
             }
 
-            console.log(rsvp);
+            console.log("updating rsvp value to:", rsvp);
+        
+            axios.put(`http://localhost:3001/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: rsvp})
+            .then(res => console.log(res))
+            .catch((err) => console.log(err));
+        
+            
         };
     
     return (
