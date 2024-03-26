@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import {useState, useEffect} from 'react';
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -29,7 +30,7 @@ const EventCard = forwardRef(
         ref
     ) => {
 
-        var rsvp = rsvpValue;
+        const [rsvp, setRSVP] = useState(rsvpValue);
         console.log(rsvp);
 
         const rsvpEvent = async(event) => {
@@ -38,10 +39,10 @@ const EventCard = forwardRef(
             console.log("event currently has value of:", rsvp);
 
             if (rsvp == 1) {
-                rsvp = 2;
+                setRSVP(2);
                 
             } else if (rsvp == 2) {
-                rsvp = 1;
+                setRSVP(1);
             }
 
             console.log("updating rsvp value to:", rsvp);
