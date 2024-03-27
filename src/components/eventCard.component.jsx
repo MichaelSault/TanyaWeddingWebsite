@@ -7,6 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Modal } from "react-bootstrap";
+
 
 import axios from 'axios';
 
@@ -29,6 +31,12 @@ const EventCard = forwardRef(
         },
         ref
     ) => {
+
+
+        //setters for post update modals
+        const [show, setShow] = useState(false);
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
 
         const [rsvp, setRSVP] = useState(rsvpValue);
         console.log(rsvp);
@@ -56,6 +64,29 @@ const EventCard = forwardRef(
     
     return (
         <>
+            <Modal className='center' show={show} onHide={handleClose}>
+                <Modal.Header>
+                    <Modal.Title>RSVP for {eventName}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {rsvp == 1 ?
+                        <CardActions className='cardLinks'>
+                            <Button size="small" onClick={rsvpEvent}>RSVP</Button>
+                        </CardActions>
+                        : rsvp == 2 ?
+                        <CardActions className='cardLinks'>
+                            <Button size="small" onClick={rsvpEvent}>Can't make it?</Button>
+                        </CardActions>
+                        : <></>
+                    }
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
             <div className='eventCardRSVP'>
                 <Card className='cardText'>
                     <CardMedia
@@ -82,11 +113,11 @@ const EventCard = forwardRef(
 
                     {rsvp == 1 ?
                     <CardActions className='cardLinks'>
-                        <Button size="small" onClick={rsvpEvent}>RSVP</Button>
+                        <Button size="small" onClick={handleShow}>RSVP</Button>
                     </CardActions>
                     : rsvp == 2 ?
                     <CardActions className='cardLinks'>
-                        <Button size="small" onClick={rsvpEvent}>Can't make it?</Button>
+                        <Button size="small" onClick={handleShow}>Can't make it?</Button>
                     </CardActions>
                     : <></>
                     }

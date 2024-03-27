@@ -97,6 +97,14 @@ body {
   justify-content: space-between;
 }
 
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30%;
+}
+
 .engagementShootCol {
   width: 50%;
   /* border-style: dashed; */
