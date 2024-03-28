@@ -13,6 +13,7 @@ import { Modal } from "react-bootstrap";
 import axios from 'axios';
 
 import '../App.css'
+import { Input } from '@mui/material';
 
 // eslint-disable-next-line react/display-name
 const EventCard = forwardRef(
@@ -71,14 +72,15 @@ const EventCard = forwardRef(
                 <Modal.Body>
                     {rsvp == 1 ?
                         <CardActions className='cardLinks'>
-                            <Button size="small" onClick={rsvpEvent}>RSVP</Button>
+                            <Button size="small" onClick={rsvpEvent}>Yes, I can attend!</Button>
                         </CardActions>
                         : rsvp == 2 ?
                         <CardActions className='cardLinks'>
-                            <Button size="small" onClick={rsvpEvent}>Can't make it?</Button>
+                            <Button size="small" onClick={rsvpEvent}>No, I can't make it</Button>
                         </CardActions>
                         : <></>
                     }
+                    Can anyone in your party not attend? : <Input type='text'></Input>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose}>
