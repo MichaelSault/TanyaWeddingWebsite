@@ -9,6 +9,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Modal } from "react-bootstrap";
 
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
+
 
 import axios from 'axios';
 
@@ -62,6 +65,24 @@ const EventCard = forwardRef(
         
             
         };
+
+        const handleChange = (event) => {
+            const {name, value} = event.target;
+            console.log(value);
+        
+            setGuest(prev => {
+                return {
+                    ...prev,
+                    [name]: value,
+                };
+            });
+        };
+
+        const handleSubmit = async(event) => {
+
+            //will update rsvp and reload page
+        
+          };
     
     return (
         <>
@@ -80,7 +101,29 @@ const EventCard = forwardRef(
                         </CardActions>
                         : <></>
                     }
-                    Can anyone in your party not attend? : <Input type='text'></Input>
+                    <FloatingLabel
+                        controlId="Comment"
+                        name="Comment"
+                        label="Can anyone in your party not attend?"
+                        className="mb-3"
+                        >
+
+                        <Form.Control type="text" name="diet" onChange={handleChange}/>
+
+                    </FloatingLabel>
+
+                    <FloatingLabel
+                        controlId="Diet"
+                        name="Diet"
+                        label="Do you have any dietary restrictions?"
+                        className="mb-3"
+                        >
+                            
+                        <Form.Control type="text" name="diet" onChange={handleChange}/>
+
+                    </FloatingLabel>
+
+                    <Button variant="outline-dark" style={{width:"100%"}} onClick={handleSubmit}>Update</Button>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose}>
