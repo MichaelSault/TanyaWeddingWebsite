@@ -90,17 +90,19 @@ const EventCard = forwardRef(
                 <Modal.Header>
                     <Modal.Title>RSVP for {eventName}</Modal.Title>
                 </Modal.Header>
+                
                 <Modal.Body>
-                    {rsvp == 1 ?
-                        <CardActions className='cardLinks'>
-                            <Button size="small" onClick={rsvpEvent}>Yes, I can attend!</Button>
-                        </CardActions>
-                        : rsvp == 2 ?
-                        <CardActions className='cardLinks'>
-                            <Button size="small" onClick={rsvpEvent}>No, I can't make it</Button>
-                        </CardActions>
-                        : <></>
-                    }
+
+                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                        <select className="form-select" name="civil" defaultValue={1} onChange={handleChange}>
+                            <option value={2}>Yes</option>
+                            <option value={1}>No</option>
+                        </select>
+                        <label htmlFor="floatingSelect">RSVP for your party</label>
+                    </div>
+
+                    <p>Your party includes:</p>
+
                     <FloatingLabel
                         controlId="Comment"
                         name="Comment"
