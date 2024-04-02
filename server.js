@@ -28,7 +28,9 @@ const guestSchema = mongoose.Schema({
     mendhi: Number,
     choora: Number,
     sikh: Number,
-    civil: Number
+    civil: Number,
+    rsvpAttendence: String,
+    rsvpDiet: String
 });
 
 const secretSchema = mongoose.Schema({

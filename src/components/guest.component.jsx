@@ -27,6 +27,9 @@ function Guest() {
         if (loggedInUser) {
             console.log("Guest is logged in");
             decodeJWT(loggedInUser);
+            //then query for the user's data from the db.
+            //use this to update the event cards
+            getGuestData(guest.email);
         } else {
             console.log("No guest is logged in");
             navigate("/#/RSVP");
@@ -50,6 +53,24 @@ function Guest() {
 
         console.log(tokenData);
         setGuest(tokenData);
+    }
+
+    const getGuestData = async (guestEmail) => {
+        console.log("guestEmail: ", guestEmail)
+        const guestData = await fetch('http://localhost:3001/getGuestData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Token: token
+        })
+        })
+        .then(res => res.json());
+
+        console.log(guestData);
+        setGuest(guestData);
     }
 
     return (
