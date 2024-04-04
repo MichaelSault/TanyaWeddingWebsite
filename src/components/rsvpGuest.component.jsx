@@ -47,7 +47,6 @@ export default function rsvpGuest() {
     console.log(loggedInUser);
     if (loggedInUser) {
         console.log("Guest is logged in");
-        navigate("/Guest", {relative: "path"})
     } else {
         console.log("No guest is logged in");
     }
@@ -234,6 +233,32 @@ export default function rsvpGuest() {
         <Form.Control 
             type="text" 
             name="civil" 
+            onChange={handleChange}
+        />
+        </FloatingLabel>
+
+        <FloatingLabel
+            controlId="diet"
+            name="diet"
+            label="Do you have any diet restrictions?"
+            className="mb-3"
+        >
+        <Form.Control 
+            type="text" 
+            name="diet" 
+            onChange={handleChange}
+        />
+        </FloatingLabel>
+
+        <FloatingLabel
+            controlId="comments"
+            name="comments"
+            label="Any additional comments?"
+            className="mb-3"
+        >
+        <Form.Control 
+            type="text" 
+            name="comments" 
             onChange={handleChange}
         />
         </FloatingLabel>

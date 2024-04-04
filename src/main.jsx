@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import RSVP from './components/RSVP.component.jsx';
 import Home from './components/home.component.jsx';
@@ -12,6 +12,7 @@ import AddGuest from './components/addGuest.component.jsx';
 import Guest from './components/guest.component.jsx';
 import Envelope from './components/envelope.component.jsx';
 import Photos from './components/photos.component.jsx';
+import RSVPGuest from './components/rsvpGuest.component.jsx';
 
 import Navbar from './components/navbar.component.jsx';
 
@@ -19,10 +20,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <> 
       <Navbar />
       <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/RSVP' element={<RSVP />}/>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/RSVP' element={<RSVP/>}/>
+            <Route path='/RSVPGuest' element={<RSVPGuest/>}/>
             <Route path='/Guests' element={<GuestList/>}/>
             <Route path='/Events' element={<Events/>}/>
             <Route path='/Invite' element={<AddGuest/>}/>
@@ -30,7 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='/Envelope' element={<Envelope/>}/>
             <Route path='/Photos' element={<Photos/>}/>
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </React.StrictMode>
   </>
 )

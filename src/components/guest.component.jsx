@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 import '../App.css'
+import { Button } from 'react-bootstrap';
 
 function Guest() {
     const navigate = useNavigate();
@@ -77,6 +78,7 @@ function Guest() {
         <>
             <TitleHeader Title={guest.firstName + " " + guest.lastName}/> 
             <h5>{guest.firstName} {guest.lastName}</h5>
+            <Button onClick={navigate("/RSVPGuest")}>RSVP Now</Button>
             <div id='bodyEventCards' className='hide-mobile'>
                 <div className='eventCardsRow'>
                     { guest.sangeet > 0 ? 
