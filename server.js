@@ -86,33 +86,15 @@ app.get("/guests", (req, res) => {
 
 //check if a guest exists using CODE
 app.get("/RSVPCode", async(req, res) => {
-    try {
-        console.log(req.query.code);
-        const guest = await Guests.find({code: req.query.code})
-        .catch((err) => console.log(err));
-        
-        console.log("Returned from Query");
-        console.log(guest[0]);
-        res.send(guest[0]);
-
-    } catch(error) {
-        console.log(error);
-    }
+    const result = await dbOperation.RSVPCode(req.query.code);
+    res.send(result);
 });
 
 //check if a guest exists using EMAIL
 app.get("/RSVPEmail", async(req, res) => {
     try {
-        console.log(req.query.email);
-        const guest = await Guests.find({email: req.query.email})
-        .catch((err) => console.log(err));
-        
-        console.log("Returned from Query");
-        console.log(guest[0]);
-        res.send(guest[0]);
-
-    } catch(error) {
-        console.log(error);
+        const result = await dbOperation.RSVPEmail(req.query.code);
+        res.send(result);
     }
 });
 
