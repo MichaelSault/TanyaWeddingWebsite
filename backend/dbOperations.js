@@ -1,8 +1,6 @@
 const express = require('express'),
-    JWT = require('./backend/JWT'),
     cors = require('cors'),
-    mongoose = require('mongoose'),
-    rsvp = require("./backend/rsvp.js");
+    mongoose = require('mongoose');
 
 const dotenv = require('dotenv');
 const { Int32 } = require('mongodb');
