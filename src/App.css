@@ -389,7 +389,14 @@ h6 {
   margin: 0;
   color: #5c5a5a;
   text-align: center;
+}
 
+.rsvpText {
+  font-size: 30px;
+  font-family: Elsie-Regular;
+  margin: 0;
+  color: #5c5a5a;
+  text-align: center;
 }
 
 .poiret {
@@ -509,7 +516,6 @@ hr {
   align-items: center;
   height: 100vh;
   justify-content: center;
-  padding: 10em 3em;
   /* border-style: dashed; */
   background-color: #f6f2e7;
 }
@@ -534,7 +540,7 @@ hr {
 }
 
 .rsvpDeadline {
-  height: 100%;
+  max-height: 50%;
   width: 50%;
   /* border-style: dashed; */
   display: flex;
@@ -756,7 +762,6 @@ hr {
 
   .rsvpDeadline {
     width: 100%;
-    padding-top: 4em;
     align-items: center;
     text-align: center;
   }

@@ -20,8 +20,22 @@ mongoose.connect(process.env.DB_CONN).catch(err => console.log(err));
 
 //DB SCHEMA AND MODEL
 const guestSchema = mongoose.Schema({
+    family: String,
     email: String,
     code: String,
+    firstName: String,
+    lastName: String,
+    sangeet: Number,
+    maiyan: Number,
+    mendhi: Number,
+    choora: Number,
+    sikh: Number,
+    civil: Number
+});
+
+//DB SCHEMA AND MODEL
+const RSVPSchema = mongoose.Schema({
+    email: String,
     firstName: String,
     lastName: String,
     sangeet: Number,
@@ -97,7 +111,7 @@ app.get("/RSVPEmail", async(req, res) => {
     res.send(result);
 });
 
-
+//delete a guest from the db
 app.delete("/delete/:id", (req, res) => {
     Guests.findByIdAndDelete({_id: req.params.id})
     .then(doc => console.log(doc))
