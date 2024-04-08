@@ -8,8 +8,7 @@ import '../App.css';
 function RSVPTag() {
 
     const [returnedData, setReturnedData] = useState({
-        email: "", 
-        code: "", 
+        family: "", 
         firstName: "", 
         lastName: "",
         sangeet: "",
@@ -23,8 +22,7 @@ function RSVPTag() {
     });
     
     const [rsvpData, setRsvpData] = useState({
-        email: String, 
-        code: String, 
+        family: String, 
         firstName: String, 
         lastName: String,
         sangeet: Number,

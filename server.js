@@ -54,6 +54,8 @@ const secretSchema = mongoose.Schema({
 
 const Guests = mongoose.model("Guests", guestSchema);
 
+const RSVPs = mongoose.model("RSVPs", RSVPSchema);
+
 const Secrets = mongoose.model("Secrets", secretSchema);
 
 app.get("/", (req, res) => {
@@ -88,6 +90,24 @@ app.post("/InviteGuest", async (req, res) => {
         choora: req.body.choora,
         sikh: req.body.sikh,
         civil: req.body.civil
+    }).then(doc => console.log(doc))
+    .catch(err => console.log(err));
+});
+
+//create a new rsvp response entry
+app.post("/CreateRsvpResponse", async (req, res) => {
+    Guests.create({
+        family: req.body.family,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        sangeet: req.body.sangeet,
+        maiyan: req.body.maiyan,
+        mendhi: req.body.mendhi,
+        choora: req.body.choora,
+        sikh: req.body.sikh,
+        civil: req.body.civil,
+        diet: req.body.diet,
+        comments: req.body.comments
     }).then(doc => console.log(doc))
     .catch(err => console.log(err));
 });
