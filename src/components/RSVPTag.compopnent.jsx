@@ -1,11 +1,17 @@
 import { Button } from '@mui/material';
 import {useState, useEffect} from 'react';
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
+import { Modal } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import axios from 'axios';
 import '../App.css';
 
 function RSVPTag() {
+
+    //setters for post update modals
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [returnedData, setReturnedData] = useState({
         family: "", 
@@ -68,6 +74,70 @@ function RSVPTag() {
 
     return (
         <>
+            <Modal show={show} onHide={handleClose}>
+            <Modal.Header>
+                <Modal.Title>Update a Guest</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <Form>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="firstName"
+                        name="firstName"
+                        label="First Name"
+                        className="mb-3"
+                    >
+                    <Form.Control
+                        name="firstName"
+                        value={rsvpData.firstName} 
+                        defaultValue={rsvpData.firstName}
+                        style={{marginBottom: '1rem'}} 
+                        onChange={handleChange}
+                    />
+                    </FloatingLabel>
+
+                    <FloatingLabel
+                        controlId="lastName"
+                        name="lastName"
+                        label="Last Name"
+                        className="mb-3"
+                    >
+                    <Form.Control 
+                        name="lastName"
+                        value={rsvpData.lastName} 
+                        defaultValue={rsvpData.lastName}
+                        style={{marginBottom: '1rem'}} 
+                        onChange={handleChange}
+                    />
+                    </FloatingLabel>
+                    
+                    <FloatingLabel
+                        controlId="email"
+                        name="email"
+                        label="Email"
+                        className="mb-3"
+                    >
+                    <Form.Control
+                        name="email"
+                        value={rsvpData.email} 
+                        defaultValue={rsvpData.email}
+                        onChange={handleChange}
+                        className="mb-3"
+                    />
+                    </FloatingLabel>
+                </Form.Group>
+            </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={handleClose}>
+                    Close
+                </Button>
+                <Button onClick={setRsvpData}>
+                    Save
+                </Button>
+            </Modal.Footer>
+        </Modal>
+
             <div className='rsvpRow'>
             <div className='rsvpTitle'>
                     <h6><i>We hope to see you from the altar!</i></h6>
@@ -102,7 +172,7 @@ function RSVPTag() {
             />
             </FloatingLabel>
 
-            <button disabled={false} className='rsvpTagButton elsie' onClick={handleSubmit}>Continue</button>
+            <button disabled={false} className='rsvpTagButton elsie' onClick={handleShow}>Continue</button>
             </div>
 
             </div>
