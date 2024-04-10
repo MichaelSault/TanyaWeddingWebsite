@@ -2,7 +2,6 @@ const express = require('express'),
     JWT = require('./backend/JWT'),
     cors = require('cors'),
     mongoose = require('mongoose'),
-    dbOperations = require('./backend/dbOperations'),
     rsvp = require("./backend/rsvp.js");
 
 const dotenv = require('dotenv');
@@ -121,14 +120,34 @@ app.get("/guests", (req, res) => {
 
 //check if a guest exists using CODE
 app.get("/RSVPCode", async(req, res) => {
-    const result = await dbOperations.RSVPCode(req.query.code);
-    res.send(result);
+    try {
+        console.log(req.query.code);
+        const guest = await Guests.find({code: req.query.code})
+        .catch((err) => console.log(err));
+        
+        console.log("Returned from Query");
+        console.log(guest[0]);
+        res.send(guest[0]);
+
+    } catch(error) {
+        console.log(error);
+    }
 });
 
 //check if a guest exists using EMAIL
 app.get("/RSVPEmail", async(req, res) => {
-    const result = await dbOperations.RSVPEmail(req.query.code);
-    res.send(result);
+    try {
+        console.log(req.query.email);
+        const guest = await Guests.find({email: req.query.email})
+        .catch((err) => console.log(err));
+        
+        console.log("Returned from Query");
+        console.log(guest[0]);
+        res.send(guest[0]);
+
+    } catch(error) {
+        console.log(error);
+    }
 });
 
 //delete a guest from the db
