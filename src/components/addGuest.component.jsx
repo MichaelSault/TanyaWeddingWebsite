@@ -9,6 +9,7 @@ import '../App.css';
 
 function AddGuest() {
     const [guest, setGuest] = useState({
+        familyID: "",
         firstName: "",
         lastName: "",
         email: "",
@@ -73,6 +74,21 @@ function AddGuest() {
             <h6>Invite a Guest</h6>
             <Form>
                 <Form.Group>
+                    <FloatingLabel
+                        controlId="familyID"
+                        name="familyID"
+                        label="FamilyID"
+                        className="mb-3"
+                    >
+                    <Form.Control
+                        name='familyID'
+                        value={guest.familyID} 
+                        placeholder='FamilyID' 
+                        style={{marginBottom: '1rem'}} 
+                        onChange={handleChange}
+                    />
+                    </FloatingLabel>
+
                     <FloatingLabel
                         controlId="firstName"
                         name="firstName"
