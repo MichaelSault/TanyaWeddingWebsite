@@ -19,7 +19,7 @@ mongoose.connect(process.env.DB_CONN).catch(err => console.log(err));
 
 //DB SCHEMA AND MODEL
 const guestSchema = mongoose.Schema({
-    family: String,
+    familyID: String,
     email: String,
     code: String,
     firstName: String,
@@ -34,6 +34,7 @@ const guestSchema = mongoose.Schema({
 
 //DB SCHEMA AND MODEL
 const RSVPSchema = mongoose.Schema({
+    familyID: String,
     email: String,
     firstName: String,
     lastName: String,
@@ -62,6 +63,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/InviteGuest", async (req, res) => {
+
+    console.log(req.body.familyID);
     //generates a random 5-digit rsvp code
     var rsvpCode = rsvp.makeCode(5);
 
@@ -81,6 +84,7 @@ app.post("/InviteGuest", async (req, res) => {
     Guests.create({
         email: req.body.email,
         code: rsvpCode,
+        familyID: req.body.familyID,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         sangeet: req.body.sangeet,
@@ -96,7 +100,7 @@ app.post("/InviteGuest", async (req, res) => {
 //create a new rsvp response entry
 app.post("/CreateRsvpResponse", async (req, res) => {
     Guests.create({
-        family: req.body.family,
+        familyID: req.body.familyID,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         sangeet: req.body.sangeet,
