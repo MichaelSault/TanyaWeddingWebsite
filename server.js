@@ -154,6 +154,29 @@ app.get("/RSVPEmail", async(req, res) => {
     }
 });
 
+//check if a guest exists using EMAIL
+app.get("/getFamily", async(req, res) => {
+    try {
+        console.log(req.query.firstName);
+        console.log(req.query.lastName);
+        const guest = await Guests.find({firstName: req.query.firstName, lastName: req.query.lastName})
+        .catch((err) => console.log(err));
+        
+        console.log("Returned from Query");
+        console.log(guest[0].familyID);
+
+        const family = await Guests.find({familyID: guest[0].familyID})
+        .catch((err) => console.log(err));
+
+        console.log(family);
+
+        res.send(family);
+
+    } catch(error) {
+        console.log(error);
+    }
+});
+
 //delete a guest from the db
 app.delete("/delete/:id", (req, res) => {
     Guests.findByIdAndDelete({_id: req.params.id})

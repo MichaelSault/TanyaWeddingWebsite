@@ -41,6 +41,8 @@ function RSVPTag() {
         comments: String
     });
 
+    const [returnedFamilyData, setReturnedFamilyData] = useState([]);
+
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -52,88 +54,142 @@ function RSVPTag() {
                 [name]: value,
             };
         });
-      };
+    };
+
+    const handleFamilyChange = (famIndex, event) => {
+        console.log(famIndex);
+        console.log(event.target.name);
+        const {name, value} = event.target.name;
+        console.log(value);
     
-      const handleSubmit = async(event) => {
+        let newArr = [...returnedFamilyData];
+
+        newArr[famIndex][event.target.name] = parseInt(event.target.value);
+
+        console.log(newArr);
+        setReturnedFamilyData(newArr);
+        console.log(returnedFamilyData);
+    };
+    
+    const handleSubmit = async(event) => {
         event.preventDefault();
         console.log(rsvpData.email);
-    
-        //use this function if RSVP-ing with CODE
-        /* const userData = await axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
-        .then(res => res.data)
-        .catch(err => console.log(err)); */
-    
-        //use this function if RSVP-ing with EMAIL
-        const userData = await axios.get("http://localhost:3001/RSVPEmail", {params: {email: rsvpData.email}})
+
+        //use this function if RSVP-ing with full name
+        const familyData = await axios.get("http://localhost:3001/getFamily", {params: {firstName: rsvpData.firstName, lastName: rsvpData.lastName}})
         .then(res => res.data)
         .catch(err => console.log(err));
-    
-        console.log(userData);
-        setReturnedData(userData);    
-      };
+
+        console.log(familyData);
+        setReturnedFamilyData(familyData);
+        console.log(returnedFamilyData);
+        handleShow(); 
+    };
+
+    const submitRSVP = async(event) => {
+        event.preventDefault();
+        console.log(returnedFamilyData);
+
+        {returnedFamilyData.map((family) => {
+            console.log(family);
+            //use this function if RSVP-ing with full name
+            const familyData = axios.post("http://localhost:3001/submitRSVP", family)
+            .then(res => res.data)
+            .catch(err => console.log(err));
+
+            console.log(familyData);
+        })}
+    };
+
 
     return (
         <>
             <Modal show={show} onHide={handleClose}>
             <Modal.Header>
-                <Modal.Title>Update a Guest</Modal.Title>
+                <Modal.Title>RSVP</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <Form>
-                <Form.Group>
-                    <FloatingLabel
-                        controlId="firstName"
-                        name="firstName"
-                        label="First Name"
-                        className="mb-3"
-                    >
-                    <Form.Control
-                        name="firstName"
-                        value={rsvpData.firstName} 
-                        defaultValue={rsvpData.firstName}
-                        style={{marginBottom: '1rem'}} 
-                        onChange={handleChange}
-                    />
-                    </FloatingLabel>
+                {returnedFamilyData.map((guest, index) => {
+                    return(
+                        <Form>
+                            <Form.Group>
+                                <Modal.Title>{returnedFamilyData[index].firstName} {returnedFamilyData[index].lastName}</Modal.Title>
 
-                    <FloatingLabel
-                        controlId="lastName"
-                        name="lastName"
-                        label="Last Name"
-                        className="mb-3"
-                    >
-                    <Form.Control 
-                        name="lastName"
-                        value={rsvpData.lastName} 
-                        defaultValue={rsvpData.lastName}
-                        style={{marginBottom: '1rem'}} 
-                        onChange={handleChange}
-                    />
-                    </FloatingLabel>
-                    
-                    <FloatingLabel
-                        controlId="email"
-                        name="email"
-                        label="Email"
-                        className="mb-3"
-                    >
-                    <Form.Control
-                        name="email"
-                        value={rsvpData.email} 
-                        defaultValue={rsvpData.email}
-                        onChange={handleChange}
-                        className="mb-3"
-                    />
-                    </FloatingLabel>
-                </Form.Group>
-            </Form>
+                                {returnedFamilyData[index].sangeet > 0 && (
+                                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                                        <select className="form-select" name="sangeet" value={returnedFamilyData[index].sangeet} defaultValue={returnedFamilyData[index].sangeet} onChange={(e) => handleFamilyChange(index, e)}>
+                                            <option value={1}>Not Attending</option>
+                                            <option value={2}>Attending</option>
+                                        </select>
+                                        <label htmlFor="floatingSelect">Sangeet</label>
+                                    </div>
+                                )}
+
+                                {returnedFamilyData[index].maiyan > 0 && (
+                                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                                        <select className="form-select" name="maiyan" value={returnedFamilyData[index].maiyan} defaultValue={returnedFamilyData[index].maiyan} onChange={(e) => handleFamilyChange(index, e)}>
+                                            <option value={1}>Not Attending</option>
+                                            <option value={2}>Attending</option>
+                                        </select>
+                                        <label htmlFor="floatingSelect">Maiyan</label>
+                                    </div>
+                                )}
+
+                                {returnedFamilyData[index].mendhi > 0 && (
+                                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                                        <select className="form-select" name="mendhi" value={returnedFamilyData[index].mendhi} defaultValue={returnedFamilyData[index].mendhi} onChange={(e) => handleFamilyChange(index, e)}>
+                                            <option value={1}>Not Attending</option>
+                                            <option value={2}>Attending</option>
+                                        </select>
+                                        <label htmlFor="floatingSelect">Mendhi</label>
+                                    </div>
+                                )}
+
+                                {returnedFamilyData[index].choora > 0 && (
+                                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                                        <select className="form-select" name="choora" value={returnedFamilyData[index].choora} defaultValue={returnedFamilyData[index].choora} onChange={(e) => handleFamilyChange(index, e)}>
+                                            <option value={1}>Not Attending</option>
+                                            <option value={2}>Attending</option>
+                                        </select>
+                                        <label htmlFor="floatingSelect">Choora</label>
+                                    </div>
+                                )}
+
+                                {returnedFamilyData[index].sikh > 0 && (
+                                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                                        <select className="form-select" name="sikh" value={returnedFamilyData[index].sikh} defaultValue={returnedFamilyData[index].sikh} onChange={(e) => handleFamilyChange(index, e)}>
+                                            <option value={1}>Not Attending</option>
+                                            <option value={2}>Attending</option>
+                                        </select>
+                                        <label htmlFor="floatingSelect">Sikh Ceremony</label>
+                                    </div>
+                                )}
+
+                                {returnedFamilyData[index].civil > 0 && (
+                                    <div className='form-floating' style={{marginBottom: '1rem'}}>
+                                        <select className="form-select" name="civil" value={returnedFamilyData[index].civil} defaultValue={returnedFamilyData[index].civil} onChange={(e) => handleFamilyChange(index, e)}>
+                                            <option value={1}>Not Attending</option>
+                                            <option value={2}>Attending</option>
+                                        </select>
+                                        <label htmlFor="floatingSelect">Civil Ceremony</label>
+                                    </div>
+                                )}
+                                
+                                
+                            </Form.Group>
+                        </Form>
+            
+                    )
+                })}
+
             </Modal.Body>
+            
             <Modal.Footer>
                 <Button onClick={handleClose}>
                     Close
                 </Button>
-                <Button onClick={setRsvpData}>
-                    Save
+                <Button onClick={submitRSVP}>
+                    Submit
                 </Button>
             </Modal.Footer>
         </Modal>
@@ -172,7 +228,7 @@ function RSVPTag() {
             />
             </FloatingLabel>
 
-            <button disabled={false} className='rsvpTagButton elsie' onClick={handleShow}>Continue</button>
+            <button disabled={false} className='rsvpTagButton elsie' onClick={handleSubmit}>Continue</button>
             </div>
 
             </div>
