@@ -16,6 +16,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('build'));
+    app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+    });
+}
+
 //eventually this should be removed due to security issues but while testing I'll leave it
 mongoose.connect(process.env.DB_CONN).catch(err => console.log(err));
 
