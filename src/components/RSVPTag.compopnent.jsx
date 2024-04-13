@@ -24,7 +24,7 @@ function RSVPTag() {
         sikh: "",
         civil: "",
         diet: "",
-        comments: ""
+        comment: ""
     });
     
     const [rsvpData, setRsvpData] = useState({
@@ -38,7 +38,7 @@ function RSVPTag() {
         sikh: Number,
         civil: Number,
         diet: String,
-        comments: String
+        comment: String
     });
 
     const [returnedFamilyData, setReturnedFamilyData] = useState([]);
@@ -64,7 +64,15 @@ function RSVPTag() {
     
         let newArr = [...returnedFamilyData];
 
-        newArr[famIndex][event.target.name] = parseInt(event.target.value);
+        console.log([event.target.name][0]);
+
+        if (([event.target.name] == ("diet"))||([event.target.name] == ("comment"))){
+            newArr[famIndex][event.target.name] = (event.target.value);
+            console.log(event.target.value);
+        } else {
+            newArr[famIndex][event.target.name] = parseInt(event.target.value);
+        }
+        
 
         console.log(newArr);
         setReturnedFamilyData(newArr);
@@ -174,8 +182,32 @@ function RSVPTag() {
                                         <label htmlFor="floatingSelect">Civil Ceremony</label>
                                     </div>
                                 )}
-                                
-                                
+                                <FloatingLabel
+                                    controlId="diet"
+                                    name="diet"
+                                    label="Dietary Restrictions"
+                                    className="mb-3"
+                                >
+                                <Form.Control 
+                                    type="text" 
+                                    name="diet" 
+                                    onChange={(e) => handleFamilyChange(index, e)}
+                                />
+                                </FloatingLabel>
+
+                                <FloatingLabel
+                                    controlId="comment"
+                                    name="comment"
+                                    label="Other Comments"
+                                    className="mb-3"
+                                >
+                                <Form.Control 
+                                    type="text" 
+                                    name="comment" 
+                                    onChange={(e) => handleFamilyChange(index, e)}
+                                />
+                                </FloatingLabel>
+
                             </Form.Group>
                         </Form>
             
