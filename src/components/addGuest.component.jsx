@@ -61,7 +61,7 @@ function AddGuest() {
         event.preventDefault();
         console.log(guest);
 
-        axios.post("http://localhost:3001/InviteGuest", guest)
+        axios.post("/api/InviteGuest", guest)
         .then(res => console.log(res))
         .catch(err => console.log(err));
 
