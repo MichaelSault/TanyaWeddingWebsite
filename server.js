@@ -44,8 +44,8 @@ const RSVPSchema = mongoose.Schema({
     choora: Number,
     sikh: Number,
     civil: Number,
-    rsvpAttendence: String,
-    rsvpDiet: String
+    diet: String,
+    comment: String
 });
 
 const secretSchema = mongoose.Schema({
@@ -98,8 +98,8 @@ app.post("/InviteGuest", async (req, res) => {
 });
 
 //create a new rsvp response entry
-app.post("/CreateRsvpResponse", async (req, res) => {
-    Guests.create({
+app.post("/submitRSVP", async (req, res) => {
+    RSVPs.create({
         familyID: req.body.familyID,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -110,7 +110,7 @@ app.post("/CreateRsvpResponse", async (req, res) => {
         sikh: req.body.sikh,
         civil: req.body.civil,
         diet: req.body.diet,
-        comments: req.body.comments
+        comment: req.body.comment
     }).then(doc => console.log(doc))
     .catch(err => console.log(err));
 });
