@@ -1,4 +1,4 @@
-import '../App.css';
+/* import '../App.css';
 
 import RegistryBanner from '../assets/Photos/RegistryBanner.png';
 import RegistryBannerMobile from '../assets/Photos/registryMobile.png';
@@ -25,4 +25,4 @@ function Registry() {
   )
 }
 
-export default Registry;
+export default Registry; */
