@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //eventually this should be removed due to security issues but while testing I'll leave it
-mongoose.connect(process.env.DB_CONN).catch(err => console.log(err));
+mongoose.connect("mongodb+srv://michaelsault:70OByv77QoUUlQLb@cluster0.rrfulxt.mongodb.net/?retryWrites=true&w=majority").catch(err => console.log(err));
 
 //DB SCHEMA AND MODEL
 const guestSchema = mongoose.Schema({
