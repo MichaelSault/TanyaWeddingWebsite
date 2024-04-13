@@ -30,7 +30,7 @@ function GuestList() {
   const c = 2;
 
     useEffect(() => {
-        axios.get("/api/guests")
+        axios.get("/api/getGuests")
         .then(res => {
             console.log(res);
             setGuests(res.data);
