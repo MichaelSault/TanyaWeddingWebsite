@@ -22,7 +22,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 
-
+import { configDotenv } from 'dotenv';
 
 import Code from './code.componenet';
 
@@ -37,6 +37,9 @@ function Home() {
   const scheduleRef = useRef();
   const faqRef = useRef();
   const engagementShootRef = useRef();
+
+  const DB_CONN = process.env.DB_CONN;
+
   // const songRef = useRef();
   // const registryRef = useRef();
   const attireRef = useRef();
@@ -131,7 +134,7 @@ function Home() {
 
         {/* <Navbar ref={scheduleRef} /> */}
         <TitleHeader Title={'Justin & Tanya'}/> 
-
+        <p>{DB_CONN}</p>
         <img src={Header} className="d-block" height="60%" alt="..."/>
 
         <div ref={scheduleRef}>
