@@ -4,6 +4,8 @@ const express = require('express'),
     mongoose = require('mongoose'),
     rsvp = require("./backend/rsvp.js");
 
+const path = require('path');
+
 const dotenv = require('dotenv');
 const { Int32 } = require('mongodb');
 dotenv.config();
