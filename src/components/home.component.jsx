@@ -8,7 +8,7 @@ import FAQ from './faq.componenet';
 import EngagementShoot from './engagementShoot.component';
 import Schedule from './schedule.component';
 import Songs from './songs.component';
-import Registry from './registry.component';
+// import Registry from './registry.component';
 import Attire from './attire.component';
 import RSVPTag from './RSVPTag.compopnent';
 import Navbar from './navbarScroll.component';
