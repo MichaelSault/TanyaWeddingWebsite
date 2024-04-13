@@ -1,5 +1,5 @@
 const express = require('express'),
-    JWT = require('./backend/JWT'),
+    JWT = require('./backend/JWT.js'),
     cors = require('cors'),
     mongoose = require('mongoose'),
     rsvp = require("./backend/rsvp.js");
@@ -19,9 +19,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('dist'));
+    app.use(express.static(path.join(__dirname, '/dist')));
     app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
+        res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
     });
 }
 
