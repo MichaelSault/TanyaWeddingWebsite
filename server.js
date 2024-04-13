@@ -10,6 +10,8 @@ dotenv.config();
 
 const app = express();
 
+const PORT = process.env.PORT || 3001;
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
@@ -324,6 +326,6 @@ app.post('/verifyJWT', async(req, res) => {
 });
 
 
-app.listen(3001, function() {
+app.listen(PORT, function() {
     console.log("Server is running");
 });

@@ -40,7 +40,7 @@ function Guest() {
 
     const decodeJWT = async (token) => {
         console.log("token: ", token)
-        const tokenData = await fetch('http://localhost:3001/decodeJWT', {
+        const tokenData = await fetch('/api/decodeJWT', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ function Guest() {
 
     const getGuestData = async (guestEmail) => {
         console.log("guestEmail: ", guestEmail)
-        const guestData = await fetch('http://localhost:3001/getGuestData', {
+        const guestData = await fetch('/api/getGuestData', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

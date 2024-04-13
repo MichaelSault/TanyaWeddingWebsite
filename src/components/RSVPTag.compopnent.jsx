@@ -84,7 +84,7 @@ function RSVPTag() {
         console.log(rsvpData.email);
 
         //use this function if RSVP-ing with full name
-        const familyData = await axios.get("http://localhost:3001/getFamily", {params: {firstName: rsvpData.firstName, lastName: rsvpData.lastName}})
+        const familyData = await axios.get("/api/getFamily", {params: {firstName: rsvpData.firstName, lastName: rsvpData.lastName}})
         .then(res => res.data)
         .catch(err => console.log(err));
 
@@ -101,7 +101,7 @@ function RSVPTag() {
         {returnedFamilyData.map((family) => {
             console.log(family);
             //use this function if RSVP-ing with full name
-            const familyData = axios.post("http://localhost:3001/submitRSVP", family)
+            const familyData = axios.post("/api/submitRSVP", family)
             .then(res => res.data)
             .catch(err => console.log(err));
 

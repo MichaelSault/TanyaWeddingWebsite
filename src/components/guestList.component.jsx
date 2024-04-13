@@ -30,7 +30,7 @@ function GuestList() {
   const c = 2;
 
     useEffect(() => {
-        axios.get("http://localhost:3001/guests")
+        axios.get("/api/guests")
         .then(res => {
             console.log(res);
             setGuests(res.data);
@@ -42,7 +42,7 @@ function GuestList() {
     const deletePost = (id) => {
         console.log(id);
         axios
-            .delete(`http://localhost:3001/delete/${id}`)
+            .delete(`/api/delete/${id}`)
             .then(res => console.log(res))
             .catch(err => console.log(err));
 
@@ -76,7 +76,7 @@ function GuestList() {
 
     const saveUpdatedGuest = () => {
         console.log(updatedGuest);
-        axios.put(`http://localhost:3001/update/${updatedGuest._id}`, updatedGuest)
+        axios.put(`/api/update/${updatedGuest._id}`, updatedGuest)
         .then(res => console.log(res))
         .catch((err) => console.log(err));
 

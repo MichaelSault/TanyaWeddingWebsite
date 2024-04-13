@@ -70,12 +70,12 @@ export default function rsvpGuest() {
     console.log(guest.email);
 
     //use this function if RSVP-ing with CODE
-    /* const userData = await axios.get("http://localhost:3001/RSVPCode", {params: {code: guest.code}})
+    /* const userData = await axios.get("/api/RSVPCode", {params: {code: guest.code}})
     .then(res => res.data)
     .catch(err => console.log(err)); */
 
     //use this function if RSVP-ing with EMAIL
-    const userData = await axios.get("http://localhost:3001/RSVPEmail", {params: {email: guest.email}})
+    const userData = await axios.get("/api/RSVPEmail", {params: {email: guest.email}})
     .then(res => res.data)
     .catch(err => console.log(err));
 
@@ -94,7 +94,7 @@ export default function rsvpGuest() {
 
     //use this block for RSVP-ing with CODE
     /* if (newData.code = guest.code){
-        JWT = await fetch('http://localhost:3001/JWT', {
+        JWT = await fetch('/api/JWT', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ export default function rsvpGuest() {
 
     //use this block for RSVP-ing with EMAIL
     if (newData.email = guest.email){
-        JWT = await fetch('http://localhost:3001/JWT', {
+        JWT = await fetch('/api/JWT', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
