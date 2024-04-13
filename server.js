@@ -28,6 +28,11 @@ if (process.env.NODE_ENV === 'production') {
 //eventually this should be removed due to security issues but while testing I'll leave it
 mongoose.connect("mongodb+srv://michaelsault:70OByv77QoUUlQLb@cluster0.rrfulxt.mongodb.net/?retryWrites=true&w=majority").catch(err => console.log(err));
 
+// Test connection
+mongoose.connection.once('open', function () {
+    console.log('MongoDB database connection established successfully')
+});
+
 //DB SCHEMA AND MODEL
 const guestSchema = mongoose.Schema({
     familyID: String,
