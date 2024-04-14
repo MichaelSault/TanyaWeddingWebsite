@@ -134,7 +134,7 @@ app.post("/submitRSVP", async (req, res) => {
 //fetches a complete list of guests
 app.get("/getGuests", (req, res) => {
     console.log("ran the guests function from server.js");
-    res.send("ran the guests function from server.js");
+    //res.send("ran the guests function from server.js");
     
     const guestList = Guests.find().then(items => res.json(items))
     .catch((err) => console.log(err));
