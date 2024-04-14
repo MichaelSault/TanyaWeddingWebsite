@@ -139,7 +139,7 @@ app.get("/getGuests", (req, res) => {
     const guestList = Guests.find().then(items => res.json(items))
     .catch((err) => console.log(err));
 
-    console.log(guestList);
+    console.log(guestList); c
     res.send(guestList);
     
 });
