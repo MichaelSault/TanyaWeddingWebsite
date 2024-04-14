@@ -18,12 +18,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/dist')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-    });
-}
+
+app.use(express.static(path.join(__dirname, '/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
 
 //eventually this should be removed due to security issues but while testing I'll leave it
 mongoose.connect("mongodb+srv://michaelsault:70OByv77QoUUlQLb@cluster0.rrfulxt.mongodb.net/?retryWrites=true&w=majority").catch(err => console.log(err));

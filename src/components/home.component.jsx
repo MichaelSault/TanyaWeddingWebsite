@@ -38,8 +38,6 @@ function Home() {
   const faqRef = useRef();
   const engagementShootRef = useRef();
 
-  const DB_CONN = process.env.DB_CONN;
-
   // const songRef = useRef();
   // const registryRef = useRef();
   const attireRef = useRef();
@@ -134,7 +132,7 @@ function Home() {
 
         {/* <Navbar ref={scheduleRef} /> */}
         <TitleHeader Title={'Justin & Tanya'}/> 
-        <p>{DB_CONN}</p>
+        <p>{process.env.DB_CONN}</p>
         <img src={Header} className="d-block" height="60%" alt="..."/>
 
         <div ref={scheduleRef}>
