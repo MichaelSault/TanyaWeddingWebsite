@@ -54,7 +54,7 @@
 body {
   flex-direction: column;
   justify-content: flex-start;
-  
+  background-color: #f6f2e7;
 }
 
 #bodyCarousel {
@@ -70,7 +70,7 @@ body {
 }
 
 #bodyGuestList {
-  max-width: 50%;
+  max-width: 75%;
   align-self: center;
   margin-bottom: 2em;
   height: 100%;
@@ -391,10 +391,19 @@ h6 {
   text-align: center;
 }
 
+#inviteBody {
+  max-width: 75%;
+  align-self: center;
+  margin-bottom: 2em;
+  padding-top: 20px;
+  height: 100vh;
+}
+
 .rsvpText {
   font-size: 30px;
   font-family: Elsie-Regular;
   margin: 0;
+  margin-bottom: 1.5em;
   color: #5c5a5a;
   text-align: center;
 }
@@ -458,6 +467,11 @@ hr {
   justify-content: flex-start;
 }
 
+.modal {
+  height: 90% !important;
+  top: 70px !important;
+}
+
 #primaryEvents {
   height: 100vh;
   display: flex;
@@ -506,12 +520,12 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: rgba(196, 196, 179, 0.6);
+  background-color: #f6f2e7;
 }
 
 .rsvpRow {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   height: 100vh;
@@ -662,6 +676,16 @@ hr {
   /* border-style: dashed; */
   justify-content: start;
   padding-top: 6em;
+}
+
+a.spotifyButton{
+  padding: 1px 6px;
+  border: 1px outset white;
+  border-radius: 3px;
+  color: darkgreen;
+  background-color: #141414;
+  text-decoration: none;
+  padding-bottom: 2px;
 }
 
 .titleText {

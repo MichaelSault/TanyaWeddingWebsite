@@ -10,12 +10,12 @@
 
 @font-face {
   font-family: 'Elsie-Regular';
-  src: local('Elsie-Regular'), url('./EElsie-Regular.ttf') format('truetype');
+  src: local('Elsie-Regular'), url('./Elsie-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Elsie-Black';
-  src: local('Elsie-Black'), url('./EElsie-Black.ttf') format('truetype');
+  src: local('Elsie-Black'), url('./Elsie-Black.ttf') format('truetype');
   font-weight: bold;
 }
 

@@ -59,7 +59,7 @@ const EventCard = forwardRef(
 
             console.log("updating rsvp value to:", rsvp);
         
-            axios.put(`http://localhost:3001/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: rsvp})
+            axios.put(`http://localhost:5000/rsvpEvent/`, {email: guestEmail, eventName: eventName, rsvpValue: rsvp})
             .then(res => console.log(res))
             .catch((err) => console.log(err));
         
@@ -70,7 +70,7 @@ const EventCard = forwardRef(
             const {name, value} = event.target;
             console.log(value);
         
-            setGuest(prev => {
+            setRSVP(prev => {
                 return {
                     ...prev,
                     [name]: value,

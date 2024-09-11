@@ -5,6 +5,7 @@ import { Modal } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import axios from 'axios';
 import '../App.css';
+import { WidthFull } from '@mui/icons-material';
 
 function RSVPTag() {
 
@@ -12,20 +13,6 @@ function RSVPTag() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const [returnedData, setReturnedData] = useState({
-        family: "", 
-        firstName: "", 
-        lastName: "",
-        sangeet: "",
-        maiyan: "",
-        mendhi: "",
-        choora: "",
-        sikh: "",
-        civil: "",
-        diet: "",
-        comment: ""
-    });
     
     const [rsvpData, setRsvpData] = useState({
         family: String, 
@@ -40,6 +27,10 @@ function RSVPTag() {
         diet: String,
         comment: String
     });
+
+    const [spotifyAccount, setSpotifyAccount] = useState({
+        familySpotify: String
+    })
 
     const [returnedFamilyData, setReturnedFamilyData] = useState([]);
 
@@ -78,13 +69,25 @@ function RSVPTag() {
         setReturnedFamilyData(newArr);
         console.log(returnedFamilyData);
     };
+
+    const handleSpotifyChange = (event) => {
+        const {name, value} = event.target;
+        console.log(value);
+    
+        setSpotifyAccount(prev => {
+            return {
+                ...prev,
+                [name]: value,
+            };
+        });
+    };
     
     const handleSubmit = async(event) => {
         event.preventDefault();
-        console.log(rsvpData.email);
+        console.log(rsvpData);
 
         //use this function if RSVP-ing with full name
-        const familyData = await axios.get("http://localhost:3001/getFamily", {params: {firstName: rsvpData.firstName, lastName: rsvpData.lastName}})
+        const familyData = await axios.get("http://localhost:5000/getFamily", {params: {firstName: rsvpData.firstName, lastName: rsvpData.lastName}})
         .then(res => res.data)
         .catch(err => console.log(err));
 
@@ -96,17 +99,27 @@ function RSVPTag() {
 
     const submitRSVP = async(event) => {
         event.preventDefault();
+        
         console.log(returnedFamilyData);
+
+        console.log(returnedFamilyData.length);
 
         {returnedFamilyData.map((family) => {
             console.log(family);
             //use this function if RSVP-ing with full name
-            const familyData = axios.post("http://localhost:3001/submitRSVP", family)
+            const familyData = axios.post("/submitRSVP", family)
             .then(res => res.data)
             .catch(err => console.log(err));
 
             console.log(familyData);
         })}
+
+        const spotifyData = axios.post("/submitSpotify", spotifyData)
+        .then(res => res.data)
+        .catch(err => console.log(err));
+
+        alert("RSVP Submitted Successfully");
+        handleClose();
     };
 
 
@@ -209,11 +222,28 @@ function RSVPTag() {
                                 </FloatingLabel>
 
                             </Form.Group>
+                            <hr className='hrRSVP'/>
                         </Form>
+                        
             
                     )
                 })}
-
+                <Form>
+                    <Form.Group>
+                        <FloatingLabel
+                            controlId="spotify"
+                            name="spotify"
+                            label="Spotify Account (To Add to Wedding Playlist)"
+                            className="mb-3"
+                        >
+                        <Form.Control 
+                            type="text" 
+                            name="spotify" 
+                            onChange={(e) => handleSpotifyChange(e)}
+                        />
+                        </FloatingLabel>
+                    </Form.Group>
+                </Form>
             </Modal.Body>
             
             <Modal.Footer>
@@ -232,7 +262,7 @@ function RSVPTag() {
                     <hr className='hrRSVP'/>
             </div>
             <div className='rsvpDeadline'>
-                <p className='elsie rsvpText'>We kindly request your response by May 6, 2024.  Cheers!</p>
+                <p className='elsie rsvpText'>We kindly request your response by July 11, 2024.  Cheers!</p>
             
             <FloatingLabel
                 controlId="firstName"

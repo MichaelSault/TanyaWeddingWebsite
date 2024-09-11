@@ -61,8 +61,9 @@ function AddGuest() {
         event.preventDefault();
         console.log(guest);
 
-        axios.post("http://localhost:3001/InviteGuest", guest)
+        axios.post("http://localhost:5000/InviteGuest", guest)
         .then(res => console.log(res))
+        .then(alert("Guest Added!"))
         .catch(err => console.log(err));
 
     };
@@ -70,7 +71,7 @@ function AddGuest() {
     return(
         <>
             <TitleHeader Title={'Invite a Guest'}/>
-            <div id='bodyTest' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
+            <div id='inviteBody' style={{width:"100%", margin:"auto auto", textAlign:"center"}}>
             <h6>Invite a Guest</h6>
             <Form>
                 <Form.Group>
